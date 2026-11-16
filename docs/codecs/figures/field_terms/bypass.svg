@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="716" viewBox="0 0 900 716" font-family="sans-serif">
+<title>Bypass and clip in field_terms</title>
+<defs><marker id="a1f2328" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L10,5 L0,9 z" fill="#1f2328"/></marker></defs>
+<rect x="0" y="0" width="900" height="716" fill="#ffffff"/>
+<text x="20" y="28" font-size="14" fill="#1f2328" font-weight="bold">(a)  encode, per (date, member) slice and target</text>
+<rect x="20" y="46" width="170" height="72" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1.4"/>
+<text x="105" y="65" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold">fit and predict</text>
+<text x="105" y="83" font-size="12.5" fill="#1f2328" text-anchor="middle">float32 c0 .. ck,</text>
+<text x="105" y="99" font-size="12.5" fill="#1f2328" text-anchor="middle">pred, r = fl32(x − pred)</text>
+<rect x="240" y="46" width="250" height="72" rx="6" fill="#ffffff" stroke="#1f2328" stroke-width="1.4"/>
+<text x="365" y="65" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold">every cell verified?</text>
+<text x="365" y="83" font-size="12.5" fill="#1f2328" text-anchor="middle">c0 .. ck finite, and f(lo), f(hi)</text>
+<text x="365" y="99" font-size="12.5" fill="#1f2328" text-anchor="middle">within b of x in every cell</text>
+<rect x="560" y="46" width="320" height="72" rx="6" fill="#f6dcc6" stroke="#d9711c" stroke-width="1.4"/>
+<text x="720" y="65" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold">keep the residual</text>
+<text x="720" y="83" font-size="12.5" fill="#1f2328" text-anchor="middle">emits r in place of x;</text>
+<text x="720" y="99" font-size="12.5" fill="#1f2328" text-anchor="middle">record: flags 0, c0 .. ck</text>
+<path d="M192,82 L238,82" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M492,82 L558,82" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<text x="525" y="74" font-size="12.5" fill="#1f2328" text-anchor="middle" font-weight="bold">yes</text>
+<text x="373" y="140" font-size="12.5" fill="#1f2328" font-weight="bold">no (any cell fails)</text>
+<rect x="20" y="168" width="250" height="72" rx="6" fill="#d1dfef" stroke="#2f6db5" stroke-width="1.4"/>
+<text x="145" y="187" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold">bypass the slice</text>
+<text x="145" y="205" font-size="12.5" fill="#1f2328" text-anchor="middle">emits x untouched;</text>
+<text x="145" y="221" font-size="12.5" fill="#1f2328" text-anchor="middle">record: flags 1 (bypass), zeros</text>
+<rect x="330" y="168" width="200" height="72" rx="6" fill="#ffffff" stroke="#1f2328" stroke-width="1.4"/>
+<text x="430" y="187" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold">target clipped and</text>
+<text x="430" y="205" font-size="12.5" fill="#1f2328" text-anchor="middle">|clip(x) − x| &gt; b</text>
+<text x="430" y="221" font-size="12.5" fill="#1f2328" text-anchor="middle">in some cell?</text>
+<rect x="600" y="168" width="280" height="72" rx="6" fill="#f0f2f4" stroke="#1f2328" stroke-width="1.4"/>
+<text x="740" y="187" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold">ValueError</text>
+<text x="740" y="205" font-size="12.5" fill="#1f2328" text-anchor="middle">data outside the clip by more</text>
+<text x="740" y="221" font-size="12.5" fill="#1f2328" text-anchor="middle">than b: widen the clip</text>
+<path d="M365,120 L365,146 L145,146 L145,166" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M272,204 L328,204" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M532,204 L598,204" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<text x="565" y="196" font-size="12.5" fill="#1f2328" text-anchor="middle" font-weight="bold">yes</text>
+<path d="M430,242 L430,270" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<text x="438" y="262" font-size="12.5" fill="#1f2328" font-weight="bold">no</text>
+<text x="430" y="288" font-size="12.5" fill="#1f2328" text-anchor="middle">the codec after the stage codes x itself, within b_L ≤ b; other slices keep their residuals</text>
+<text x="20" y="336" font-size="14" fill="#1f2328" font-weight="bold">(b)  decode, per record (the stage owns its targets' clips)</text>
+<rect x="20" y="350" width="420" height="58" rx="6" fill="#f6dcc6" stroke="#d9711c" stroke-width="1.4"/>
+<text x="230" y="369" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold">flags 0</text>
+<text x="230" y="387" font-size="12.5" fill="#1f2328" text-anchor="middle">x' = clip(fl32(r' + pred)), pred from c0 .. ck and the sources</text>
+<rect x="460" y="350" width="420" height="58" rx="6" fill="#d1dfef" stroke="#2f6db5" stroke-width="1.4"/>
+<text x="670" y="369" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold">flags 1 (bypass)</text>
+<text x="670" y="387" font-size="12.5" fill="#1f2328" text-anchor="middle">x' = clip(v), v as the codec after the stage returned it</text>
+<text x="20" y="452" font-size="14" fill="#1f2328" font-weight="bold">(c)  a bypassed cell clipped at lo, in units of b = 0.05 (b_L = b (1 − 2^−6))</text>
+<rect x="60" y="510" width="468" height="36" fill="#f0f2f4" stroke="none" stroke-width="1.0"/>
+<rect x="240" y="510" width="360" height="36" fill="none" stroke="#1f2328" stroke-width="1" stroke-dasharray="3 3"/>
+<path d="M60,528 L609,528" fill="none" stroke="#8c959f" stroke-width="1.0"/>
+<path d="M528,502 L528,554" fill="none" stroke="#1f2328" stroke-width="2"/>
+<text x="534" y="502" font-size="12.5" fill="#1f2328" font-weight="bold">lo</text>
+<rect x="242.8" y="520" width="354.4" height="16" fill="#d1dfef" stroke="#2f6db5" stroke-width="1.2"/>
+<rect x="528" y="524" width="69.2" height="8" fill="#2f6db5" stroke="#2f6db5" stroke-width="1.0"/>
+<path d="M420,506 L420,550" fill="none" stroke="#1f2328" stroke-width="1.6"/>
+<text x="420" y="566" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold">x</text>
+<text x="244" y="504" font-size="12" fill="#57606a">x ± b</text>
+<text x="20" y="484" font-size="12.5" fill="#1f2328" font-weight="bold">x = lo − 0.6 b: accepted</text>
+<text x="618" y="524" font-size="12.5" fill="#1f2328">max |clip(v) − x| = 0.984 b</text>
+<text x="618" y="541" font-size="12.5" fill="#1f2328">= max(b_L, lo − x) ≤ b</text>
+<rect x="60" y="622" width="468" height="36" fill="#f0f2f4" stroke="none" stroke-width="1.0"/>
+<rect x="96" y="622" width="360" height="36" fill="none" stroke="#1f2328" stroke-width="1" stroke-dasharray="3 3"/>
+<path d="M60,640 L609,640" fill="none" stroke="#8c959f" stroke-width="1.0"/>
+<path d="M528,614 L528,666" fill="none" stroke="#1f2328" stroke-width="2"/>
+<text x="534" y="614" font-size="12.5" fill="#1f2328" font-weight="bold">lo</text>
+<rect x="98.8" y="632" width="354.4" height="16" fill="#d1dfef" stroke="#2f6db5" stroke-width="1.2"/>
+<circle cx="528" cy="640" r="5" fill="#2f6db5" stroke="#2f6db5" stroke-width="1.0"/>
+<path d="M276,618 L276,662" fill="none" stroke="#1f2328" stroke-width="1.6"/>
+<text x="276" y="678" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold">x</text>
+<text x="100" y="616" font-size="12" fill="#57606a">x ± b</text>
+<text x="20" y="596" font-size="12.5" fill="#1f2328" font-weight="bold">x = lo − 1.4 b: refused at encode (ValueError)</text>
+<text x="618" y="636" font-size="12.5" fill="#1f2328">clip(v) = lo for every v:</text>
+<text x="618" y="653" font-size="12.5" fill="#1f2328">|lo − x| = 1.400 b &gt; b</text>
+<rect x="20" y="695" width="14" height="14" fill="#d1dfef" stroke="#2f6db5" stroke-width="1"/>
+<text x="40" y="706" font-size="12.5" fill="#1f2328">v the codec may return (within b_L of x)</text>
+<rect x="346" y="695" width="14" height="14" fill="#2f6db5" stroke="#2f6db5" stroke-width="1"/>
+<text x="366" y="706" font-size="12.5" fill="#1f2328">clip(v)</text>
+<rect x="432.8" y="695" width="14" height="14" fill="#f0f2f4" stroke="#d0d7de" stroke-width="1"/>
+<text x="452.8" y="706" font-size="12.5" fill="#1f2328">below lo: clipped</text>
+</svg>

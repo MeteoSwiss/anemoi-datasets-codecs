@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="934" viewBox="0 0 900 934" font-family="sans-serif">
+<title>Decode time per ICON-CH1 date</title>
+<rect x="0" y="0" width="900" height="934" fill="#ffffff"/>
+<text x="20" y="26" font-size="16" fill="#1f2328" font-weight="bold">Decode time per date, ICON-CH1 sample (AMD EPYC 7713)</text>
+<text x="20" y="46" font-size="12.5" fill="#57606a">Solid bar: best; lighter extension: median. Each panel is one run; timings from different runs move by 5-10%.</text>
+<text x="20" y="78" font-size="14" fill="#1f2328" font-weight="bold">(a)  The C decoder alone, bench_decode (sample date 0)</text>
+<path d="M150,92 L150,200" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M240,92 L240,200" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M330,92 L330,200" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M420,92 L420,200" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M510,92 L510,200" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M600,92 L600,200" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M690,92 L690,200" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<text x="140" y="111" font-size="12.5" fill="#1f2328" text-anchor="end">AVX2, 1 thread</text>
+<rect x="150" y="98" width="51" height="18" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<text x="209.9" y="111" font-size="12.5" fill="#1f2328">340.1 / 345.7 ms</text>
+<text x="140" y="137" font-size="12.5" fill="#1f2328" text-anchor="end">AVX2, 16 threads</text>
+<rect x="150" y="124" width="6.1" height="18" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<text x="164.2" y="137" font-size="12.5" fill="#1f2328">40.7 / 41.5 ms</text>
+<text x="140" y="163" font-size="12.5" fill="#1f2328" text-anchor="end">scalar, 1 thread</text>
+<rect x="150" y="150" width="403.8" height="18" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<path d="M555.8,150 H576 Q580,150 580,154 V164 Q580,168 576,168 H555.8 Z" fill="#d1dfef" stroke="none" stroke-width="1.0"/>
+<text x="588" y="163" font-size="12.5" fill="#1f2328">2692.1 / 2866.8 ms</text>
+<text x="140" y="189" font-size="12.5" fill="#1f2328" text-anchor="end">scalar, 16 threads</text>
+<rect x="150" y="176" width="37.2" height="18" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<text x="195.4" y="189" font-size="12.5" fill="#1f2328">248.2 / 249.5 ms</text>
+<text x="150" y="216" font-size="12" fill="#57606a" text-anchor="middle">0</text>
+<text x="240" y="216" font-size="12" fill="#57606a" text-anchor="middle">600</text>
+<text x="330" y="216" font-size="12" fill="#57606a" text-anchor="middle">1200</text>
+<text x="420" y="216" font-size="12" fill="#57606a" text-anchor="middle">1800</text>
+<text x="510" y="216" font-size="12" fill="#57606a" text-anchor="middle">2400</text>
+<text x="600" y="216" font-size="12" fill="#57606a" text-anchor="middle">3000</text>
+<text x="690" y="216" font-size="12" fill="#57606a" text-anchor="middle">3600</text>
+<text x="709.9" y="216" font-size="12" fill="#57606a">ms</text>
+<text x="20" y="258" font-size="14" fill="#1f2328" font-weight="bold">(b)  Zarr read of sample date 6, every stage included (bench_chain)</text>
+<path d="M190,272 L190,580" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M252.5,272 L252.5,580" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M315,272 L315,580" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M377.5,272 L377.5,580" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M440,272 L440,580" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M502.5,272 L502.5,580" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M565,272 L565,580" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M627.5,272 L627.5,580" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M690,272 L690,580" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<text x="180" y="290" font-size="12.5" fill="#57606a" text-anchor="end" font-weight="bold">1 thread</text>
+<text x="180" y="313" font-size="12.5" fill="#1f2328" text-anchor="end">single, tree k = 1</text>
+<rect x="190" y="300" width="275.6" height="18" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<rect x="467.6" y="300" width="0.6" height="18" fill="#d1dfef" stroke="none" stroke-width="1.0"/>
+<text x="476.2" y="313" font-size="12.5" fill="#1f2328">441.0 / 445.2 ms</text>
+<text x="180" y="339" font-size="12.5" fill="#1f2328" text-anchor="end">chain, tree k = 1</text>
+<rect x="190" y="326" width="338.1" height="18" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<path d="M530.1,326 H554.8 Q558.8,326 558.8,330 V340 Q558.8,344 554.8,344 H530.1 Z" fill="#d1dfef" stroke="none" stroke-width="1.0"/>
+<text x="566.8" y="339" font-size="12.5" fill="#1f2328">540.9 / 590.1 ms</text>
+<text x="180" y="365" font-size="12.5" fill="#1f2328" text-anchor="end">single, tree_b k = 3</text>
+<rect x="190" y="352" width="329.4" height="18" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<text x="528.6" y="365" font-size="12.5" fill="#1f2328">527.1 / 528.9 ms</text>
+<text x="180" y="391" font-size="12.5" fill="#1f2328" text-anchor="end">chain, tree_b k = 3</text>
+<rect x="190" y="378" width="385.1" height="18" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<path d="M577.1,378 H578.7 Q582.7,378 582.7,382 V392 Q582.7,396 578.7,396 H577.1 Z" fill="#d1dfef" stroke="none" stroke-width="1.0"/>
+<text x="590.7" y="391" font-size="12.5" fill="#1f2328">616.2 / 628.3 ms</text>
+<text x="180" y="417" font-size="12.5" fill="#1f2328" text-anchor="end">Blosc lz4</text>
+<rect x="190" y="404" width="145.1" height="18" fill="#7d8590" stroke="none" stroke-width="1.0"/>
+<path d="M337.1,404 H337.5 Q341.5,404 341.5,408 V418 Q341.5,422 337.5,422 H337.1 Z" fill="#d8dade" stroke="none" stroke-width="1.0"/>
+<text x="349.5" y="417" font-size="12.5" fill="#1f2328">232.2 / 242.4 ms</text>
+<text x="180" y="442" font-size="12.5" fill="#57606a" text-anchor="end" font-weight="bold">16 threads</text>
+<text x="180" y="465" font-size="12.5" fill="#1f2328" text-anchor="end">single, tree k = 1</text>
+<rect x="190" y="452" width="81.4" height="18" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<rect x="273.4" y="452" width="0.6" height="18" fill="#d1dfef" stroke="none" stroke-width="1.0"/>
+<text x="282.1" y="465" font-size="12.5" fill="#1f2328">130.3 / 134.5 ms</text>
+<text x="180" y="491" font-size="12.5" fill="#1f2328" text-anchor="end">chain, tree k = 1</text>
+<rect x="190" y="478" width="142.5" height="18" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<rect x="334.5" y="478" width="2.6" height="18" fill="#d1dfef" stroke="none" stroke-width="1.0"/>
+<text x="345.1" y="491" font-size="12.5" fill="#1f2328">228.0 / 235.4 ms</text>
+<text x="180" y="517" font-size="12.5" fill="#1f2328" text-anchor="end">single, tree_b k = 3</text>
+<rect x="190" y="504" width="103.8" height="18" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<rect x="295.8" y="504" width="0.1" height="18" fill="#d1dfef" stroke="none" stroke-width="1.0"/>
+<text x="303.9" y="517" font-size="12.5" fill="#1f2328">166.1 / 169.5 ms</text>
+<text x="180" y="543" font-size="12.5" fill="#1f2328" text-anchor="end">chain, tree_b k = 3</text>
+<rect x="190" y="530" width="165" height="18" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<rect x="357" y="530" width="1.8" height="18" fill="#d1dfef" stroke="none" stroke-width="1.0"/>
+<text x="366.8" y="543" font-size="12.5" fill="#1f2328">264.0 / 270.1 ms</text>
+<text x="180" y="569" font-size="12.5" fill="#1f2328" text-anchor="end">Blosc lz4</text>
+<rect x="190" y="556" width="105.5" height="18" fill="#7d8590" stroke="none" stroke-width="1.0"/>
+<rect x="297.5" y="556" width="3.4" height="18" fill="#d8dade" stroke="none" stroke-width="1.0"/>
+<text x="308.9" y="569" font-size="12.5" fill="#1f2328">168.8 / 177.4 ms</text>
+<text x="190" y="596" font-size="12" fill="#57606a" text-anchor="middle">0</text>
+<text x="252.5" y="596" font-size="12" fill="#57606a" text-anchor="middle">100</text>
+<text x="315" y="596" font-size="12" fill="#57606a" text-anchor="middle">200</text>
+<text x="377.5" y="596" font-size="12" fill="#57606a" text-anchor="middle">300</text>
+<text x="440" y="596" font-size="12" fill="#57606a" text-anchor="middle">400</text>
+<text x="502.5" y="596" font-size="12" fill="#57606a" text-anchor="middle">500</text>
+<text x="565" y="596" font-size="12" fill="#57606a" text-anchor="middle">600</text>
+<text x="627.5" y="596" font-size="12" fill="#57606a" text-anchor="middle">700</text>
+<text x="690" y="596" font-size="12" fill="#57606a" text-anchor="middle">800</text>
+<text x="706.4" y="596" font-size="12" fill="#57606a">ms</text>
+<rect x="190" y="613" width="12" height="12" fill="#2f6db5" stroke="none" stroke-width="1"/>
+<text x="208" y="622" font-size="12.5" fill="#1f2328">best</text>
+<rect x="253" y="613" width="12" height="12" fill="#d1dfef" stroke="none" stroke-width="1"/>
+<text x="271" y="622" font-size="12.5" fill="#1f2328">median (extension)</text>
+<rect x="417.5" y="613" width="12" height="12" fill="#7d8590" stroke="none" stroke-width="1"/>
+<text x="435.5" y="622" font-size="12.5" fill="#1f2328">Blosc lz4, the reference (reads 298.95 MiB instead of 36-55)</text>
+<text x="20" y="656" font-size="14" fill="#1f2328" font-weight="bold">(c)  Where the chain's time goes, tree k = 1, one profiled read</text>
+<path d="M190,670 L190,726" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M273.3,670 L273.3,726" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M356.7,670 L356.7,726" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M440,670 L440,726" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M523.3,670 L523.3,726" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M606.7,670 L606.7,726" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M690,670 L690,726" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<text x="180" y="689" font-size="12.5" fill="#1f2328" text-anchor="end">1 thread</text>
+<rect x="190" y="676" width="347.2" height="18" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<text x="363.6" y="689" font-size="12" fill="#ffffff" text-anchor="middle">419</text>
+<rect x="539.2" y="676" width="73.8" height="18" fill="#2e8b57" stroke="none" stroke-width="1.0"/>
+<text x="576.1" y="689" font-size="12" fill="#ffffff" text-anchor="middle">91</text>
+<path d="M615,676 H622.7 Q626.7,676 626.7,680 V690 Q626.7,694 622.7,694 H615 Z" fill="#d9711c" stroke="none" stroke-width="1.0"/>
+<text x="634.7" y="689" font-size="12.5" fill="#1f2328">419 + 91 + 14 = 524 ms</text>
+<text x="180" y="715" font-size="12.5" fill="#1f2328" text-anchor="end">16 threads</text>
+<rect x="190" y="702" width="40.5" height="18" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<text x="210.2" y="715" font-size="12" fill="#ffffff" text-anchor="middle">51</text>
+<rect x="232.5" y="702" width="73.8" height="18" fill="#2e8b57" stroke="none" stroke-width="1.0"/>
+<text x="269.4" y="715" font-size="12" fill="#ffffff" text-anchor="middle">91</text>
+<path d="M308.3,702 H316 Q320,702 320,706 V716 Q320,720 316,720 H308.3 Z" fill="#d9711c" stroke="none" stroke-width="1.0"/>
+<text x="328" y="715" font-size="12.5" fill="#1f2328">51 + 91 + 14 = 156 ms</text>
+<text x="190" y="742" font-size="12" fill="#57606a" text-anchor="middle">0</text>
+<text x="273.3" y="742" font-size="12" fill="#57606a" text-anchor="middle">100</text>
+<text x="356.7" y="742" font-size="12" fill="#57606a" text-anchor="middle">200</text>
+<text x="440" y="742" font-size="12" fill="#57606a" text-anchor="middle">300</text>
+<text x="523.3" y="742" font-size="12" fill="#57606a" text-anchor="middle">400</text>
+<text x="606.7" y="742" font-size="12" fill="#57606a" text-anchor="middle">500</text>
+<text x="690" y="742" font-size="12" fill="#57606a" text-anchor="middle">600</text>
+<text x="706.4" y="742" font-size="12" fill="#57606a">ms</text>
+<rect x="190" y="759" width="12" height="12" fill="#2f6db5" stroke="none" stroke-width="1"/>
+<text x="208" y="768" font-size="12.5" fill="#1f2328">icon_lattice_bytes (102 fields)</text>
+<rect x="448.8" y="759" width="12" height="12" fill="#2e8b57" stroke="none" stroke-width="1"/>
+<text x="466.8" y="768" font-size="12.5" fill="#1f2328">static_ref (one write of the 115-field date)</text>
+<rect x="190" y="779" width="12" height="12" fill="#d9711c" stroke="none" stroke-width="1"/>
+<text x="208" y="788" font-size="12.5" fill="#1f2328">field_terms (six targets, in place)</text>
+<text x="20" y="818" font-size="12" fill="#57606a">(a) One real chunk written at the defaults (31.2 MiB, 115 fields) decoded into a preallocated buffer, 3 interleaved rounds</text>
+<text x="20" y="834" font-size="12" fill="#57606a">in separate processes. The Blosc library decodes a date in about 90 ms on one core and 13-26 ms on 16-32 threads.</text>
+<text x="20" y="850" font-size="12" fill="#57606a">(b) Stores written at the defaults, the chains without a forcing bound; a[...] after two warm-up reads, best / median of 3</text>
+<text x="20" y="866" font-size="12" fill="#57606a">rounds of 7, each round and thread count in its own process; Blosc with as many threads. Every store decodes to the same</text>
+<text x="20" y="882" font-size="12" fill="#57606a">bits at every thread count.</text>
+<text x="20" y="898" font-size="12" fill="#57606a">(c) The stages of one read of an earlier run (rounding: grid); the envelope is well under 1 ms. static_ref is</text>
+<text x="20" y="914" font-size="12" fill="#57606a">single-threaded numpy, so at 16 threads it is most of the chain's extra time over the single codec.</text>
+</svg>

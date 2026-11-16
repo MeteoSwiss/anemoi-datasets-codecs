@@ -1,0 +1,94 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "anemoi-datasets-codecs"
+version = "0.1.0"
+description = "Zarr 3 codecs for anemoi datasets: lossy within a per-variable error bound or exact, developed for the ICON grid"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "BSD-3-Clause"
+license-files = ["LICENSE"]
+authors = [{ name = "Francesco Zanetta", email = "francesco.zanetta@meteoswiss.ch" }]
+keywords = ["zarr", "codec", "compression", "anemoi", "icon", "weather", "lossy compression"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: C",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Topic :: Scientific/Engineering :: Atmospheric Science",
+    "Topic :: System :: Archiving :: Compression",
+]
+dependencies = [
+    "numpy>=1.24",
+    # >= 3.1: CodecPipeline.from_array_metadata_and_store (the pipeline learns the store, zarr3.SidecarPipeline)
+    "zarr>=3.1.0",
+    # Blosc: the lossless field codec and the sidecar static files
+    "numcodecs>=0.14",
+    "threadpoolctl>=3",
+]
+
+[project.optional-dependencies]
+# encoder-side tools: lattice recovery from an ICON grid file
+grid = ["scipy>=1.10", "netCDF4>=1.6"]
+# the lab's reference compressors (docs/lab.md "The ceiling"); zfpy 1.0.1.post0 breaks numcodecs' version parsing
+lab = ["zfpy==1.0.1", "pysz", "zstandard", "scipy>=1.10"]
+
+[project.urls]
+Homepage = "https://github.com/MeteoSwiss/anemoi-datasets-codecs"
+Repository = "https://github.com/MeteoSwiss/anemoi-datasets-codecs"
+Documentation = "https://github.com/MeteoSwiss/anemoi-datasets-codecs/tree/main/docs"
+Issues = "https://github.com/MeteoSwiss/anemoi-datasets-codecs/issues"
+
+[project.scripts]
+anemoi-datasets-codecs = "anemoi_datasets_codecs.cli:main"
+
+[project.entry-points."zarr"]
+codec_pipeline = "anemoi_datasets_codecs.zarr3:SidecarPipeline"
+
+[project.entry-points."zarr.codecs"]
+icon_lattice = "anemoi_datasets_codecs.icon_lattice.zarr3:IconLatticeCodec"
+icon_lattice_bytes = "anemoi_datasets_codecs.icon_lattice.zarr3:IconLatticeBytesCodec"
+static_ref = "anemoi_datasets_codecs.static_ref.zarr3:StaticRefCodec"
+field_terms = "anemoi_datasets_codecs.field_terms.zarr3:FieldTermsCodec"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+include-package-data = false
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# the C sources are in the sdist only (MANIFEST.in): the wheel carries the compiled module
+[tool.setuptools.package-data]
+"anemoi_datasets_codecs.icon_lattice" = ["data/grids/*.npz", "data/grids/index.json"]
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.6", "scipy>=1.10", "netCDF4>=1.6"]
+
+[tool.uv]
+# rebuild the extension when the C sources or the build change
+cache-keys = [{ file = "pyproject.toml" }, { file = "setup.py" }, { file = "src/anemoi_datasets_codecs/icon_lattice/csrc/*" }]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "realdata: needs the ICON-CH1 sample store / grid file (skipped when missing)",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+extend-exclude = ["*.md"]  # code blocks in the docs keep their aligned comments
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["B905"]

@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="712" viewBox="0 0 900 712" font-family="sans-serif">
+<title>What the field_terms stage does</title>
+<defs><marker id="a1f2328" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L10,5 L0,9 z" fill="#1f2328"/></marker></defs>
+<rect x="0" y="0" width="900" height="712" fill="#ffffff"/>
+<text x="20" y="28" font-size="14" fill="#1f2328" font-weight="bold">(a)  first in the chain: compressors = [field_terms, static_ref, icon_lattice_bytes]</text>
+<text x="68" y="62" font-size="12.5" fill="#57606a" text-anchor="middle">chunk (one date)</text>
+<text x="318" y="62" font-size="12.5" fill="#57606a" text-anchor="middle">after field_terms</text>
+<text x="568" y="62" font-size="12.5" fill="#57606a" text-anchor="middle">after static_ref</text>
+<text x="832" y="62" font-size="12.5" fill="#57606a" text-anchor="middle">stored chunk</text>
+<rect x="16" y="74" width="104" height="22" fill="#d1e5da" stroke="#2e8b57" stroke-width="1.2"/>
+<text x="68" y="90" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">FIS</text>
+<rect x="266" y="74" width="104" height="22" fill="#d1e5da" stroke="#2e8b57" stroke-width="1.2"/>
+<text x="318" y="90" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">FIS</text>
+<rect x="16" y="100" width="104" height="22" fill="#f6dcc6" stroke="#d9711c" stroke-width="1.2"/>
+<text x="68" y="116" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">PMSL</text>
+<rect x="266" y="100" width="104" height="22" fill="#ffffff" stroke="#d9711c" stroke-width="1.4" stroke-dasharray="4 2"/>
+<text x="318" y="116" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">r of PMSL</text>
+<rect x="16" y="126" width="104" height="22" fill="#f6dcc6" stroke="#d9711c" stroke-width="1.2"/>
+<text x="68" y="142" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">T_2M</text>
+<rect x="266" y="126" width="104" height="22" fill="#ffffff" stroke="#d9711c" stroke-width="1.4" stroke-dasharray="4 2"/>
+<text x="318" y="142" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">r of T_2M</text>
+<rect x="16" y="152" width="104" height="22" fill="#d1dfef" stroke="#2f6db5" stroke-width="1.2"/>
+<text x="68" y="168" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">U_10M</text>
+<rect x="266" y="152" width="104" height="22" fill="#d1dfef" stroke="#2f6db5" stroke-width="1.2"/>
+<text x="318" y="168" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">U_10M</text>
+<rect x="516" y="74" width="104" height="22" fill="#ffffff" stroke="#d9711c" stroke-width="1.4" stroke-dasharray="4 2"/>
+<text x="568" y="90" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">r of PMSL</text>
+<rect x="516" y="100" width="104" height="22" fill="#ffffff" stroke="#d9711c" stroke-width="1.4" stroke-dasharray="4 2"/>
+<text x="568" y="116" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">r of T_2M</text>
+<rect x="516" y="126" width="104" height="22" fill="#d1dfef" stroke="#2f6db5" stroke-width="1.2"/>
+<text x="568" y="142" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">U_10M</text>
+<text x="266" y="188" font-size="12" fill="#57606a">headers:</text>
+<rect x="266" y="194" width="104" height="22" fill="#f0f2f4" stroke="#8c959f" stroke-width="1"/>
+<text x="318" y="210" font-size="12" fill="#1f2328" text-anchor="middle">field_terms, 44 B</text>
+<text x="516" y="188" font-size="12" fill="#57606a">headers:</text>
+<rect x="516" y="194" width="104" height="22" fill="#f0f2f4" stroke="#8c959f" stroke-width="1"/>
+<text x="568" y="210" font-size="12" fill="#1f2328" text-anchor="middle">field_terms, 44 B</text>
+<rect x="516" y="220" width="104" height="22" fill="#f0f2f4" stroke="#8c959f" stroke-width="1"/>
+<text x="568" y="236" font-size="12" fill="#1f2328" text-anchor="middle">static_ref: FIS sha</text>
+<rect x="766" y="74" width="132" height="168" rx="4" fill="#f0f2f4" stroke="#1f2328" stroke-width="1.2"/>
+<text x="774" y="92" font-size="12" fill="#1f2328">envelope FCHN:</text>
+<text x="774" y="109" font-size="12" fill="#1f2328">the shape, the</text>
+<text x="774" y="126" font-size="12" fill="#1f2328">two headers,</text>
+<text x="774" y="143" font-size="12" fill="#1f2328">then the LATC</text>
+<text x="774" y="160" font-size="12" fill="#1f2328">container of</text>
+<text x="774" y="177" font-size="12" fill="#1f2328">r of PMSL,</text>
+<text x="774" y="194" font-size="12" fill="#1f2328">r of T_2M, U_10M</text>
+<path d="M124,124 L262,124" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<text x="193" y="116" font-size="12" fill="#1f2328" text-anchor="middle" font-weight="bold" font-family="monospace">field_terms</text>
+<text x="193" y="144" font-size="12" fill="#57606a" text-anchor="middle">targets → residuals</text>
+<text x="193" y="160" font-size="12" fill="#57606a" text-anchor="middle">r = fl32(x − pred);</text>
+<text x="193" y="176" font-size="12" fill="#57606a" text-anchor="middle">coefficients in</text>
+<text x="193" y="192" font-size="12" fill="#57606a" text-anchor="middle">its header</text>
+<path d="M374,124 L512,124" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<text x="443" y="116" font-size="12" fill="#1f2328" text-anchor="middle" font-weight="bold" font-family="monospace">static_ref</text>
+<text x="443" y="144" font-size="12" fill="#57606a" text-anchor="middle">drops FIS (exact,</text>
+<text x="443" y="160" font-size="12" fill="#57606a" text-anchor="middle">restored from the</text>
+<text x="443" y="176" font-size="12" fill="#57606a" text-anchor="middle">sidecar by sha256)</text>
+<path d="M624,124 L762,124" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<text x="693" y="116" font-size="12" fill="#1f2328" text-anchor="middle" font-weight="bold" font-family="monospace">icon_lattice_bytes</text>
+<text x="693" y="144" font-size="12" fill="#57606a" text-anchor="middle">codes the rest,</text>
+<text x="693" y="160" font-size="12" fill="#57606a" text-anchor="middle">the residuals at</text>
+<text x="693" y="176" font-size="12" fill="#57606a" text-anchor="middle">b_L = b (1 − m)</text>
+<rect x="20" y="257" width="14" height="14" fill="#d1e5da" stroke="#2e8b57" stroke-width="1"/>
+<text x="40" y="268" font-size="12.5" fill="#1f2328">exact source</text>
+<rect x="143" y="257" width="14" height="14" fill="#f6dcc6" stroke="#d9711c" stroke-width="1"/>
+<text x="163" y="268" font-size="12.5" fill="#1f2328">target x</text>
+<rect x="237" y="257" width="14" height="14" fill="#ffffff" stroke="#d9711c" stroke-width="1.4" stroke-dasharray="3 2"/>
+<text x="257" y="268" font-size="12.5" fill="#1f2328">its residual r</text>
+<rect x="374.5" y="257" width="14" height="14" fill="#d1dfef" stroke="#2f6db5" stroke-width="1"/>
+<text x="394.5" y="268" font-size="12.5" fill="#1f2328">other lossy field (unchanged)</text>
+<text x="880" y="268" font-size="12.5" fill="#57606a" text-anchor="end">decode: right to left</text>
+<text x="20" y="314" font-size="14" fill="#1f2328" font-weight="bold">(b)  one (date, member) slice of T_2M against its source FIS, 16 cells</text>
+<path d="M84,550 L490,550" fill="none" stroke="#8c959f" stroke-width="1.0"/>
+<path d="M84,340 L84,550" fill="none" stroke="#8c959f" stroke-width="1.0"/>
+<path d="M80,529 L84,529" fill="none" stroke="#8c959f" stroke-width="1.0"/>
+<text x="76" y="533" font-size="12" fill="#57606a" text-anchor="end">250</text>
+<path d="M80,476.5 L84,476.5" fill="none" stroke="#8c959f" stroke-width="1.0"/>
+<text x="76" y="480.5" font-size="12" fill="#57606a" text-anchor="end">255</text>
+<path d="M80,424 L84,424" fill="none" stroke="#8c959f" stroke-width="1.0"/>
+<text x="76" y="428" font-size="12" fill="#57606a" text-anchor="end">260</text>
+<path d="M80,371.5 L84,371.5" fill="none" stroke="#8c959f" stroke-width="1.0"/>
+<text x="76" y="375.5" font-size="12" fill="#57606a" text-anchor="end">265</text>
+<path d="M84,466 L490,466" fill="none" stroke="#8c959f" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="90" y="482" font-size="12" fill="#57606a">256 K: float32 spacing</text>
+<text x="90" y="498" font-size="12" fill="#57606a">2^−15 K above, 2^−16 K below</text>
+<text x="38" y="445" font-size="12.5" fill="#1f2328" text-anchor="middle" transform="rotate(-90 38 445)">x = T_2M (K)</text>
+<path d="M84,346 L490,550" fill="none" stroke="#d9711c" stroke-width="2"/>
+<text x="273.5" y="371.5" font-size="12.5" fill="#d9711c" font-weight="bold">pred = fl32(c0 + c1 s)</text>
+<path d="M112.5,360.3 L112.5,360.3" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<path d="M194.3,398.6 L194.3,401.4" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<path d="M205.3,410.4 L205.3,406.9" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<path d="M214.1,412.3 L214.1,411.3" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<path d="M222,418.7 L222,415.3" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<path d="M223.1,412.5 L223.1,415.9" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<path d="M275.9,444 L275.9,442.4" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<path d="M284.4,441.9 L284.4,446.7" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<path d="M298.1,449.4 L298.1,453.5" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<path d="M316.3,460.2 L316.3,462.7" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<path d="M342.8,483.7 L342.8,476" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<path d="M398.8,504.2 L398.8,504.2" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<path d="M406.8,506.2 L406.8,508.2" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<path d="M415.7,510.1 L415.7,512.6" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<path d="M435.2,527 L435.2,522.4" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<path d="M443.9,527.1 L443.9,526.8" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<circle cx="112.5" cy="360.3" r="3.6" fill="#1f2328" stroke="#1f2328" stroke-width="1.4"/>
+<circle cx="194.3" cy="398.6" r="3.6" fill="#1f2328" stroke="#1f2328" stroke-width="1.4"/>
+<circle cx="205.3" cy="410.4" r="3.6" fill="#1f2328" stroke="#1f2328" stroke-width="1.4"/>
+<circle cx="214.1" cy="412.3" r="3.6" fill="#1f2328" stroke="#1f2328" stroke-width="1.4"/>
+<circle cx="222" cy="418.7" r="3.6" fill="#1f2328" stroke="#1f2328" stroke-width="1.4"/>
+<circle cx="223.1" cy="412.5" r="3.6" fill="#1f2328" stroke="#1f2328" stroke-width="1.4"/>
+<circle cx="275.9" cy="444" r="3.6" fill="#1f2328" stroke="#1f2328" stroke-width="1.4"/>
+<circle cx="284.4" cy="441.9" r="3.6" fill="#1f2328" stroke="#1f2328" stroke-width="1.4"/>
+<circle cx="298.1" cy="449.4" r="3.6" fill="#1f2328" stroke="#1f2328" stroke-width="1.4"/>
+<circle cx="316.3" cy="460.2" r="3.6" fill="#1f2328" stroke="#1f2328" stroke-width="1.4"/>
+<circle cx="342.8" cy="483.7" r="3.6" fill="#ffffff" stroke="#1f2328" stroke-width="1.4"/>
+<circle cx="398.8" cy="504.2" r="3.6" fill="#1f2328" stroke="#1f2328" stroke-width="1.4"/>
+<circle cx="406.8" cy="506.2" r="3.6" fill="#1f2328" stroke="#1f2328" stroke-width="1.4"/>
+<circle cx="415.7" cy="510.1" r="3.6" fill="#1f2328" stroke="#1f2328" stroke-width="1.4"/>
+<circle cx="435.2" cy="527" r="3.6" fill="#1f2328" stroke="#1f2328" stroke-width="1.4"/>
+<circle cx="443.9" cy="527.1" r="3.6" fill="#1f2328" stroke="#1f2328" stroke-width="1.4"/>
+<text x="334.8" y="499.7" font-size="12" fill="#57606a" text-anchor="end">cell 10</text>
+<path d="M84,672 L490,672" fill="none" stroke="#8c959f" stroke-width="1.0"/>
+<path d="M84,572 L84,672" fill="none" stroke="#8c959f" stroke-width="1.0"/>
+<path d="M84,622 L490,622" fill="none" stroke="#d9711c" stroke-width="1.2"/>
+<path d="M80,672 L84,672" fill="none" stroke="#8c959f" stroke-width="1.0"/>
+<text x="76" y="676" font-size="12" fill="#57606a" text-anchor="end">−1</text>
+<path d="M80,622 L84,622" fill="none" stroke="#8c959f" stroke-width="1.0"/>
+<text x="76" y="626" font-size="12" fill="#57606a" text-anchor="end">0</text>
+<path d="M80,572 L84,572" fill="none" stroke="#8c959f" stroke-width="1.0"/>
+<text x="76" y="576" font-size="12" fill="#57606a" text-anchor="end">1</text>
+<path d="M112.5,622 L112.5,622" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<circle cx="112.5" cy="622" r="3.6" fill="#2f6db5" stroke="#2f6db5" stroke-width="1.4"/>
+<path d="M194.3,622 L194.3,608.9" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<circle cx="194.3" cy="608.9" r="3.6" fill="#2f6db5" stroke="#2f6db5" stroke-width="1.4"/>
+<path d="M205.3,622 L205.3,638.4" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<circle cx="205.3" cy="638.4" r="3.6" fill="#2f6db5" stroke="#2f6db5" stroke-width="1.4"/>
+<path d="M214.1,622 L214.1,626.6" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<circle cx="214.1" cy="626.6" r="3.6" fill="#2f6db5" stroke="#2f6db5" stroke-width="1.4"/>
+<path d="M222,622 L222,638.1" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<circle cx="222" cy="638.1" r="3.6" fill="#2f6db5" stroke="#2f6db5" stroke-width="1.4"/>
+<path d="M223.1,622 L223.1,606" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<circle cx="223.1" cy="606" r="3.6" fill="#2f6db5" stroke="#2f6db5" stroke-width="1.4"/>
+<path d="M275.9,622 L275.9,629.7" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<circle cx="275.9" cy="629.7" r="3.6" fill="#2f6db5" stroke="#2f6db5" stroke-width="1.4"/>
+<path d="M284.4,622 L284.4,599.4" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<circle cx="284.4" cy="599.4" r="3.6" fill="#2f6db5" stroke="#2f6db5" stroke-width="1.4"/>
+<path d="M298.1,622 L298.1,602.4" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<circle cx="298.1" cy="602.4" r="3.6" fill="#2f6db5" stroke="#2f6db5" stroke-width="1.4"/>
+<path d="M316.3,622 L316.3,610.3" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<circle cx="316.3" cy="610.3" r="3.6" fill="#2f6db5" stroke="#2f6db5" stroke-width="1.4"/>
+<path d="M342.8,622 L342.8,658.4" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<circle cx="342.8" cy="658.4" r="3.6" fill="#ffffff" stroke="#2f6db5" stroke-width="1.4"/>
+<path d="M398.8,622 L398.8,622" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<circle cx="398.8" cy="622" r="3.6" fill="#2f6db5" stroke="#2f6db5" stroke-width="1.4"/>
+<path d="M406.8,622 L406.8,612.6" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<circle cx="406.8" cy="612.6" r="3.6" fill="#2f6db5" stroke="#2f6db5" stroke-width="1.4"/>
+<path d="M415.7,622 L415.7,609.9" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<circle cx="415.7" cy="609.9" r="3.6" fill="#2f6db5" stroke="#2f6db5" stroke-width="1.4"/>
+<path d="M435.2,622 L435.2,643.9" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<circle cx="435.2" cy="643.9" r="3.6" fill="#2f6db5" stroke="#2f6db5" stroke-width="1.4"/>
+<path d="M443.9,622 L443.9,623.3" fill="none" stroke="#57606a" stroke-width="1.2"/>
+<circle cx="443.9" cy="623.3" r="3.6" fill="#2f6db5" stroke="#2f6db5" stroke-width="1.4"/>
+<text x="38" y="622" font-size="12.5" fill="#1f2328" text-anchor="middle" transform="rotate(-90 38 622)">r (K)</text>
+<path d="M84,672 L84,676" fill="none" stroke="#8c959f" stroke-width="1.0"/>
+<text x="84" y="690" font-size="12" fill="#57606a" text-anchor="middle">0</text>
+<path d="M219.3,672 L219.3,676" fill="none" stroke="#8c959f" stroke-width="1.0"/>
+<text x="219.3" y="690" font-size="12" fill="#57606a" text-anchor="middle">10 000</text>
+<path d="M354.7,672 L354.7,676" fill="none" stroke="#8c959f" stroke-width="1.0"/>
+<text x="354.7" y="690" font-size="12" fill="#57606a" text-anchor="middle">20 000</text>
+<path d="M490,672 L490,676" fill="none" stroke="#8c959f" stroke-width="1.0"/>
+<text x="490" y="690" font-size="12" fill="#57606a" text-anchor="middle">30 000</text>
+<text x="287" y="708" font-size="12.5" fill="#1f2328" text-anchor="middle">s = FIS (m²/s²), the exact source</text>
+<text x="532" y="354" font-size="12.5" fill="#1f2328">fit: robust (IRLS) in float64 on the 16 cells,</text>
+<text x="532" y="371" font-size="12.5" fill="#1f2328">then rounded to float32:</text>
+<text x="544" y="388" font-size="12.5" fill="#1f2328" font-family="monospace">c1 = −6.4759003e−4</text>
+<text x="544" y="408" font-size="12.5" fill="#1f2328" font-family="monospace">c0 = 267.4304</text>
+<text x="544" y="428" font-size="12.5" fill="#57606a">(c0: the mean of x − c1 s, not fitted)</text>
+<text x="532" y="458" font-size="12.5" fill="#1f2328">x: 250.1809 to 266.06482 K</text>
+<text x="532" y="478" font-size="12.5" fill="#1f2328">r: −0.72824097 to 0.45266724 K</text>
+<text x="532" y="508" font-size="12.5" fill="#1f2328" font-weight="bold">cell 10 (hollow):</text>
+<text x="544" y="528" font-size="12.5" fill="#1f2328" font-family="monospace">s = 19122.967, x = 254.3183</text>
+<text x="544" y="547" font-size="12.5" fill="#1f2328" font-family="monospace">pred = 255.04654</text>
+<text x="544" y="566" font-size="12.5" fill="#1f2328" font-family="monospace">r = fl32(x − pred) = −0.72824097</text>
+<text x="532" y="599" font-size="12.5" fill="#1f2328">Header record of the slice: flags 0, c0, c1</text>
+<text x="532" y="616" font-size="12.5" fill="#1f2328">(12 bytes). r replaces x in the chunk and the</text>
+<text x="532" y="633" font-size="12.5" fill="#1f2328">lattice codec codes it within b_L = b (1 − 2^−6)</text>
+<text x="532" y="650" font-size="12.5" fill="#1f2328">≈ 0.0492 K. PMSL gets its own record;</text>
+<text x="532" y="667" font-size="12.5" fill="#1f2328">FIS and U_10M pass unchanged.</text>
+</svg>

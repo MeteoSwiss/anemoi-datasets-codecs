@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="530" viewBox="0 0 900 530" font-family="sans-serif">
+<title>field_terms, encode and decode</title>
+<defs><marker id="a1f2328" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L10,5 L0,9 z" fill="#1f2328"/></marker><marker id="ad9711c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L10,5 L0,9 z" fill="#d9711c"/></marker><marker id="a2f6db5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L10,5 L0,9 z" fill="#2f6db5"/></marker></defs>
+<rect x="0" y="0" width="900" height="530" fill="#ffffff"/>
+<text x="20" y="28" font-size="14" fill="#1f2328" font-weight="bold">encoder, per (date, member) slice and target x with bound b and sources s_1 .. s_k</text>
+<rect x="20" y="52" width="128" height="118" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1.4"/>
+<text x="84" y="71" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold">inputs</text>
+<text x="84" y="89" font-size="12" fill="#1f2328" text-anchor="middle">x, s_1 .. s_k:</text>
+<text x="84" y="105" font-size="12" fill="#1f2328" text-anchor="middle">float32 cells,</text>
+<text x="84" y="121" font-size="12" fill="#1f2328" text-anchor="middle">finite (else</text>
+<text x="84" y="137" font-size="12" fill="#1f2328" text-anchor="middle">ValueError)</text>
+<rect x="165" y="52" width="128" height="118" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1.4"/>
+<text x="229" y="71" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold">fit</text>
+<text x="229" y="89" font-size="12" fill="#1f2328" text-anchor="middle">float64, all cells:</text>
+<text x="229" y="105" font-size="12" fill="#1f2328" text-anchor="middle">least squares, then</text>
+<text x="229" y="121" font-size="12" fill="#1f2328" text-anchor="middle">8 reweighted steps,</text>
+<text x="229" y="137" font-size="12" fill="#1f2328" text-anchor="middle">weights 1 / max(</text>
+<text x="229" y="153" font-size="12" fill="#1f2328" text-anchor="middle">|residual|, b / 2)</text>
+<rect x="310" y="52" width="128" height="118" rx="6" fill="#f6dcc6" stroke="#d9711c" stroke-width="1.4"/>
+<text x="374" y="71" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold">coefficients</text>
+<text x="374" y="89" font-size="12" fill="#1f2328" text-anchor="middle">slopes → float32;</text>
+<text x="374" y="105" font-size="12" fill="#1f2328" text-anchor="middle">c0 = fl32(mean of</text>
+<text x="374" y="121" font-size="12" fill="#1f2328" text-anchor="middle">x − Σ c_i s_i)</text>
+<text x="374" y="137" font-size="12" fill="#1f2328" text-anchor="middle">(or 0)</text>
+<rect x="455" y="52" width="128" height="118" rx="6" fill="#f6dcc6" stroke="#d9711c" stroke-width="1.4"/>
+<text x="519" y="71" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold">predict</text>
+<text x="519" y="89" font-size="12" fill="#1f2328" text-anchor="middle">p = c0, then</text>
+<text x="519" y="105" font-size="12" fill="#1f2328" text-anchor="middle">p = p + c_i s_i</text>
+<text x="519" y="121" font-size="12" fill="#1f2328" text-anchor="middle">float64, in order</text>
+<text x="519" y="137" font-size="12" fill="#1f2328" text-anchor="middle">pred = fl32(p)</text>
+<rect x="600" y="52" width="128" height="118" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1.4"/>
+<text x="664" y="71" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold">residual</text>
+<text x="664" y="89" font-size="12" fill="#1f2328" text-anchor="middle">r = fl32(x − pred)</text>
+<text x="664" y="105" font-size="12" fill="#1f2328" text-anchor="middle">float32</text>
+<text x="664" y="121" font-size="12" fill="#1f2328" text-anchor="middle">subtraction</text>
+<rect x="745" y="52" width="128" height="118" rx="6" fill="#ffffff" stroke="#1f2328" stroke-width="1.4"/>
+<text x="809" y="71" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold">verify</text>
+<text x="809" y="89" font-size="12" fill="#1f2328" text-anchor="middle">lo, hi: ends of</text>
+<text x="809" y="105" font-size="12" fill="#1f2328" text-anchor="middle">r ± b_L, outwards;</text>
+<text x="809" y="121" font-size="12" fill="#1f2328" text-anchor="middle">|f(lo) − x| ≤ b and</text>
+<text x="809" y="137" font-size="12" fill="#1f2328" text-anchor="middle">|f(hi) − x| ≤ b</text>
+<path d="M150,111 L163,111" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M295,111 L308,111" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M440,111 L453,111" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M585,111 L598,111" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M730,111 L743,111" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M809,172 L809,208" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<text x="815" y="192" font-size="12" fill="#57606a">every cell</text>
+<text x="873" y="224" font-size="12.5" fill="#1f2328" text-anchor="end">pass: emit r, record flags 0, c0 .. ck</text>
+<text x="873" y="241" font-size="12.5" fill="#1f2328" text-anchor="end">fail: emit x, record flags 1 (bypass)</text>
+<text x="20" y="224" font-size="12.5" fill="#57606a">Each slice is fitted on its own; the records of all slices (date-major, then</text>
+<text x="20" y="241" font-size="12.5" fill="#57606a">member, then term) form the header, which travels in the chain envelope.</text>
+<path d="M519,170 L519,340" fill="none" stroke="#d9711c" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="525" y="276" font-size="12" fill="#d9711c">the same code</text>
+<text x="525" y="291" font-size="12" fill="#d9711c">(arith.predict)</text>
+<text x="20" y="318" font-size="14" fill="#1f2328" font-weight="bold">decoder, in place on the array the codecs after the stage returned: no fit</text>
+<rect x="20" y="340" width="128" height="118" rx="6" fill="#f6dcc6" stroke="#d9711c" stroke-width="1.4"/>
+<text x="84" y="359" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold">record</text>
+<text x="84" y="377" font-size="12" fill="#1f2328" text-anchor="middle">from the header:</text>
+<text x="84" y="393" font-size="12" fill="#1f2328" text-anchor="middle">flags, c0 .. ck</text>
+<text x="84" y="409" font-size="12" fill="#1f2328" text-anchor="middle">(float32)</text>
+<rect x="165" y="340" width="128" height="118" rx="6" fill="#d1e5da" stroke="#2e8b57" stroke-width="1.4"/>
+<text x="229" y="359" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold">sources</text>
+<text x="229" y="377" font-size="12" fill="#1f2328" text-anchor="middle">s_1 .. s_k from the</text>
+<text x="229" y="393" font-size="12" fill="#1f2328" text-anchor="middle">same array: exact,</text>
+<text x="229" y="409" font-size="12" fill="#1f2328" text-anchor="middle">bit-identical to</text>
+<text x="229" y="425" font-size="12" fill="#1f2328" text-anchor="middle">the encoder's</text>
+<rect x="310" y="340" width="128" height="118" rx="6" fill="#f6dcc6" stroke="#d9711c" stroke-width="1.4"/>
+<text x="374" y="359" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold">predict</text>
+<text x="374" y="377" font-size="12" fill="#1f2328" text-anchor="middle">as in the encoder:</text>
+<text x="374" y="393" font-size="12" fill="#1f2328" text-anchor="middle">pred identical,</text>
+<text x="374" y="409" font-size="12" fill="#1f2328" text-anchor="middle">bit for bit</text>
+<rect x="455" y="340" width="128" height="118" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1.4"/>
+<text x="519" y="359" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold">reconstruct</text>
+<text x="519" y="377" font-size="12" fill="#1f2328" text-anchor="middle">x' = fl32(r' + pred)</text>
+<text x="519" y="393" font-size="12" fill="#1f2328" text-anchor="middle">float32 addition;</text>
+<text x="519" y="409" font-size="12" fill="#1f2328" text-anchor="middle">r' within b_L of r</text>
+<rect x="600" y="340" width="128" height="118" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1.4"/>
+<text x="664" y="359" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold">clip</text>
+<text x="664" y="377" font-size="12" fill="#1f2328" text-anchor="middle">max(x', fl32(lo)),</text>
+<text x="664" y="393" font-size="12" fill="#1f2328" text-anchor="middle">then min(x',</text>
+<text x="664" y="409" font-size="12" fill="#1f2328" text-anchor="middle">fl32(hi)), when</text>
+<text x="664" y="425" font-size="12" fill="#1f2328" text-anchor="middle">configured</text>
+<rect x="745" y="340" width="128" height="118" rx="6" fill="#d1dfef" stroke="#2f6db5" stroke-width="1.4"/>
+<text x="809" y="359" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold">output</text>
+<text x="809" y="377" font-size="12" fill="#1f2328" text-anchor="middle">x' in place of r',</text>
+<text x="809" y="393" font-size="12" fill="#1f2328" text-anchor="middle">|x' − x| ≤ b</text>
+<path d="M295,399 L308,399" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M440,399 L453,399" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M585,399 L598,399" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M730,399 L743,399" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M84,340 L84,330 L340,330 L340,338" fill="none" stroke="#d9711c" stroke-width="1.4" marker-end="url(#ad9711c)"/>
+<path d="M84,460 L84,484 L664,484 L664,460" fill="none" stroke="#2f6db5" stroke-width="1.4" marker-end="url(#a2f6db5)"/>
+<text x="374" y="502" font-size="12.5" fill="#1f2328" text-anchor="middle">flags 1 (bypass): the value the codec after the stage returned is only clipped</text>
+</svg>

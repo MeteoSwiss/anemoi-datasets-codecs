@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="622" viewBox="0 0 900 622" font-family="sans-serif">
+<title>Encode time per ICON-CH1 date</title>
+<rect x="0" y="0" width="900" height="622" fill="#ffffff"/>
+<text x="20" y="26" font-size="16" fill="#1f2328" font-weight="bold">Encode time per date, ICON-CH1</text>
+<text x="20" y="46" font-size="12.5" fill="#57606a">Python / numpy encoder with C passes, fitting and verification included.</text>
+<text x="20" y="78" font-size="14" fill="#1f2328" font-weight="bold">(a)  LatticeCodec.encode of one sample date: range over its encodes</text>
+<path d="M190,92 L190,348" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M273.3,92 L273.3,348" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M356.7,92 L356.7,348" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M440,92 L440,348" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M523.3,92 L523.3,348" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M606.7,92 L606.7,348" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M690,92 L690,348" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<text x="180" y="110" font-size="12.5" fill="#57606a" text-anchor="end" font-weight="bold">1 thread</text>
+<text x="180" y="133" font-size="12.5" fill="#1f2328" text-anchor="end">date 0</text>
+<rect x="190" y="120" width="495.8" height="18" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<text x="693.8" y="133" font-size="12.5" fill="#1f2328">59.5 s</text>
+<text x="180" y="159" font-size="12.5" fill="#1f2328" text-anchor="end">date 6</text>
+<rect x="190" y="146" width="367.5" height="18" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<text x="565.5" y="159" font-size="12.5" fill="#1f2328">44.1 s</text>
+<text x="180" y="185" font-size="12.5" fill="#1f2328" text-anchor="end">date 13</text>
+<rect x="190" y="172" width="362.5" height="18" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<text x="560.5" y="185" font-size="12.5" fill="#1f2328">43.5 s</text>
+<text x="180" y="211" font-size="12.5" fill="#1f2328" text-anchor="end">date 19</text>
+<rect x="190" y="198" width="353.3" height="18" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<text x="551.3" y="211" font-size="12.5" fill="#1f2328">42.4 s</text>
+<text x="180" y="236" font-size="12.5" fill="#57606a" text-anchor="end" font-weight="bold">16 threads</text>
+<text x="180" y="259" font-size="12.5" fill="#1f2328" text-anchor="end">date 0</text>
+<rect x="190" y="246" width="117.5" height="18" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<path d="M309.5,246 H326 Q330,246 330,250 V260 Q330,264 326,264 H309.5 Z" fill="#d1dfef" stroke="none" stroke-width="1.0"/>
+<text x="338" y="259" font-size="12.5" fill="#1f2328">14.1-16.8 s</text>
+<text x="180" y="285" font-size="12.5" fill="#1f2328" text-anchor="end">date 6</text>
+<rect x="190" y="272" width="117.5" height="18" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<text x="315.5" y="285" font-size="12.5" fill="#1f2328">14.1 s</text>
+<text x="180" y="311" font-size="12.5" fill="#1f2328" text-anchor="end">date 13</text>
+<rect x="190" y="298" width="117.5" height="18" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<text x="317.2" y="311" font-size="12.5" fill="#1f2328">14.1-14.3 s</text>
+<text x="180" y="337" font-size="12.5" fill="#1f2328" text-anchor="end">date 19</text>
+<rect x="190" y="324" width="116.7" height="18" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<text x="314.7" y="337" font-size="12.5" fill="#1f2328">14 s</text>
+<text x="190" y="364" font-size="12" fill="#57606a" text-anchor="middle">0</text>
+<text x="273.3" y="364" font-size="12" fill="#57606a" text-anchor="middle">10</text>
+<text x="356.7" y="364" font-size="12" fill="#57606a" text-anchor="middle">20</text>
+<text x="440" y="364" font-size="12" fill="#57606a" text-anchor="middle">30</text>
+<text x="523.3" y="364" font-size="12" fill="#57606a" text-anchor="middle">40</text>
+<text x="606.7" y="364" font-size="12" fill="#57606a" text-anchor="middle">50</text>
+<text x="690" y="364" font-size="12" fill="#57606a" text-anchor="middle">60</text>
+<text x="703" y="364" font-size="12" fill="#57606a">s</text>
+<rect x="190" y="381" width="12" height="12" fill="#2f6db5" stroke="none" stroke-width="1"/>
+<text x="208" y="390" font-size="12.5" fill="#1f2328">fastest encode</text>
+<rect x="325.5" y="381" width="12" height="12" fill="#d1dfef" stroke="none" stroke-width="1"/>
+<text x="343.5" y="390" font-size="12.5" fill="#1f2328">slowest encode (extension)</text>
+<text x="20" y="424" font-size="14" fill="#1f2328" font-weight="bold">(b)  anemoi-datasets create of sample dates 0-2, tree k = 1, 16 codec threads</text>
+<path d="M190,438 L190,494" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M273.3,438 L273.3,494" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M356.7,438 L356.7,494" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M440,438 L440,494" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M523.3,438 L523.3,494" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M606.7,438 L606.7,494" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M690,438 L690,494" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<text x="180" y="457" font-size="12.5" fill="#1f2328" text-anchor="end">chain, forcing bound 1e-6</text>
+<path d="M190,444 H358.5 Q362.5,444 362.5,448 V458 Q362.5,462 358.5,462 H190 Z" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<text x="370.5" y="457" font-size="12.5" fill="#1f2328">207 s for 3 dates; open_dataset + read 3.35 s</text>
+<text x="180" y="483" font-size="12.5" fill="#1f2328" text-anchor="end">single codec</text>
+<path d="M190,470 H284.3 Q288.3,470 288.3,474 V484 Q288.3,488 284.3,488 H190 Z" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<text x="296.3" y="483" font-size="12.5" fill="#1f2328">118 s for 3 dates; open_dataset + read 3.05 s</text>
+<text x="190" y="510" font-size="12" fill="#57606a" text-anchor="middle">0</text>
+<text x="273.3" y="510" font-size="12" fill="#57606a" text-anchor="middle">100</text>
+<text x="356.7" y="510" font-size="12" fill="#57606a" text-anchor="middle">200</text>
+<text x="440" y="510" font-size="12" fill="#57606a" text-anchor="middle">300</text>
+<text x="523.3" y="510" font-size="12" fill="#57606a" text-anchor="middle">400</text>
+<text x="606.7" y="510" font-size="12" fill="#57606a" text-anchor="middle">500</text>
+<text x="690" y="510" font-size="12" fill="#57606a" text-anchor="middle">600</text>
+<text x="706.4" y="510" font-size="12" fill="#57606a">s</text>
+<text x="20" y="538" font-size="12" fill="#57606a">(a) A direct call (no zarr) at the defaults, one run on 32 reserved cores of a shared node. At 16 threads every date is</text>
+<text x="20" y="554" font-size="12" fill="#57606a">encoded without and with its date; at one thread once (date 0 is the first encode of the process).</text>
+<text x="20" y="570" font-size="12" fill="#57606a">(b) Wall-clock time of the command (init, load, finalise, patch, cleanup, verify); anemoi's own report of the create is 82</text>
+<text x="20" y="586" font-size="12" fill="#57606a">s (chain) and 106 s (single codec), most of it loading the source field by field. The read is open_dataset in a fresh</text>
+<text x="20" y="602" font-size="12" fill="#57606a">process with the cache off (cold); both stores within their bounds (worst error / bound 0.99998).</text>
+</svg>

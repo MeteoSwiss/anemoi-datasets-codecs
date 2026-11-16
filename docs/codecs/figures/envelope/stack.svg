@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" font-family="sans-serif">
+<title>The header stack</title>
+<defs><marker id="a1f2328" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L10,5 L0,9 z" fill="#1f2328"/></marker><marker id="a2f6db5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L10,5 L0,9 z" fill="#2f6db5"/></marker></defs>
+<rect x="0" y="0" width="900" height="560" fill="#ffffff"/>
+<text x="20" y="26" font-size="14" fill="#1f2328" font-weight="bold">encode: a stage pushes its header; the codec after the stages passes the stack through</text>
+<rect x="20" y="42" width="196" height="30" rx="6" fill="#f0f2f4" stroke="#1f2328" stroke-width="1.4"/>
+<text x="118" y="62" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold" font-family="monospace">bytes</text>
+<rect x="242" y="42" width="196" height="30" rx="6" fill="#f0f2f4" stroke="#d9711c" stroke-width="1.4"/>
+<text x="340" y="62" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold" font-family="monospace">field_terms</text>
+<rect x="464" y="42" width="196" height="30" rx="6" fill="#f0f2f4" stroke="#2e8b57" stroke-width="1.4"/>
+<text x="562" y="62" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold" font-family="monospace">static_ref</text>
+<rect x="686" y="42" width="196" height="30" rx="6" fill="#f0f2f4" stroke="#1f2328" stroke-width="1.4"/>
+<text x="784" y="62" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold" font-family="monospace">icon_lattice_bytes</text>
+<path d="M218,57 L240,57" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M440,57 L462,57" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M662,57 L684,57" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<text x="118" y="94" font-size="12.5" fill="#1f2328" text-anchor="middle">the bare chunk:</text>
+<text x="118" y="110" font-size="12.5" fill="#1f2328" text-anchor="middle">no envelope, no stack</text>
+<text x="340" y="94" font-size="12.5" fill="#1f2328" text-anchor="middle">push ('field_terms', 44 B)</text>
+<text x="340" y="110" font-size="12.5" fill="#1f2328" text-anchor="middle">onto an empty stack</text>
+<text x="562" y="94" font-size="12.5" fill="#1f2328" text-anchor="middle">push ('static_ref', 216 B)</text>
+<text x="562" y="110" font-size="12.5" fill="#1f2328" text-anchor="middle">fields 17 → 12</text>
+<text x="784" y="94" font-size="12.5" fill="#1f2328" text-anchor="middle">the stack passes unread;</text>
+<text x="784" y="110" font-size="12.5" fill="#1f2328" text-anchor="middle">the field array → LATC</text>
+<rect x="265" y="174" width="150" height="24" fill="#f6dcc6" stroke="#d9711c" stroke-width="1.4"/>
+<text x="340" y="190.5" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">field_terms, 44 B</text>
+<rect x="487" y="174" width="150" height="24" fill="#f6dcc6" stroke="#d9711c" stroke-width="1.4"/>
+<text x="562" y="190.5" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">field_terms, 44 B</text>
+<rect x="487" y="150" width="150" height="24" fill="#d1e5da" stroke="#2e8b57" stroke-width="1.4"/>
+<text x="562" y="166.5" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">static_ref, 216 B</text>
+<rect x="709" y="174" width="150" height="24" fill="#f6dcc6" stroke="#d9711c" stroke-width="1.4"/>
+<text x="784" y="190.5" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">field_terms, 44 B</text>
+<rect x="709" y="150" width="150" height="24" fill="#d1e5da" stroke="#2e8b57" stroke-width="1.4"/>
+<text x="784" y="166.5" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">static_ref, 216 B</text>
+<text x="118" y="172" font-size="12.5" fill="#57606a" text-anchor="middle">the stack it hands on,</text>
+<text x="118" y="188" font-size="12.5" fill="#57606a" text-anchor="middle">bottom first:</text>
+<text x="784" y="216" font-size="12" fill="#57606a" text-anchor="middle">stored: kind 1</text>
+<text x="20" y="252" font-size="14" fill="#1f2328" font-weight="bold">decode: a stage checks that the top header is its own and pops it</text>
+<rect x="20" y="268" width="196" height="30" rx="6" fill="#f0f2f4" stroke="#1f2328" stroke-width="1.4"/>
+<text x="118" y="288" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold" font-family="monospace">bytes</text>
+<rect x="242" y="268" width="196" height="30" rx="6" fill="#f0f2f4" stroke="#d9711c" stroke-width="1.4"/>
+<text x="340" y="288" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold" font-family="monospace">field_terms</text>
+<rect x="464" y="268" width="196" height="30" rx="6" fill="#f0f2f4" stroke="#2e8b57" stroke-width="1.4"/>
+<text x="562" y="288" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold" font-family="monospace">static_ref</text>
+<rect x="686" y="268" width="196" height="30" rx="6" fill="#f0f2f4" stroke="#1f2328" stroke-width="1.4"/>
+<text x="784" y="288" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold" font-family="monospace">icon_lattice_bytes</text>
+<path d="M240,283 L218,283" fill="none" stroke="#2f6db5" stroke-width="1.4" marker-end="url(#a2f6db5)"/>
+<path d="M462,283 L440,283" fill="none" stroke="#2f6db5" stroke-width="1.4" marker-end="url(#a2f6db5)"/>
+<path d="M684,283 L662,283" fill="none" stroke="#2f6db5" stroke-width="1.4" marker-end="url(#a2f6db5)"/>
+<text x="118" y="320" font-size="12.5" fill="#1f2328" text-anchor="middle">views the bytes as</text>
+<text x="118" y="336" font-size="12.5" fill="#1f2328" text-anchor="middle">the chunk array</text>
+<text x="340" y="320" font-size="12.5" fill="#1f2328" text-anchor="middle">top id = 'field_terms'? pop;</text>
+<text x="340" y="336" font-size="12.5" fill="#1f2328" text-anchor="middle">nothing left: it was the</text>
+<text x="340" y="352" font-size="12.5" fill="#1f2328" text-anchor="middle">first stage</text>
+<text x="562" y="320" font-size="12.5" fill="#1f2328" text-anchor="middle">top id = 'static_ref'? pop</text>
+<text x="562" y="336" font-size="12.5" fill="#1f2328" text-anchor="middle">fields 12 → 17</text>
+<text x="784" y="320" font-size="12.5" fill="#1f2328" text-anchor="middle">the stack passes unread;</text>
+<text x="784" y="336" font-size="12.5" fill="#1f2328" text-anchor="middle">LATC → the field array</text>
+<text x="784" y="352" font-size="12.5" fill="#1f2328" text-anchor="middle">(kind 1 → kind 0)</text>
+<rect x="265" y="400" width="150" height="24" fill="#ffffff" stroke="#8c959f" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="340" y="416.5" font-size="12" fill="#57606a" text-anchor="middle">empty</text>
+<rect x="265" y="370" width="150" height="24" fill="#ffffff" stroke="#d9711c" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="340" y="386.5" font-size="12" fill="#57606a" text-anchor="middle">popped: field_terms</text>
+<rect x="487" y="400" width="150" height="24" fill="#f6dcc6" stroke="#d9711c" stroke-width="1.4"/>
+<text x="562" y="416.5" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">field_terms, 44 B</text>
+<rect x="487" y="370" width="150" height="24" fill="#ffffff" stroke="#2e8b57" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="562" y="386.5" font-size="12" fill="#57606a" text-anchor="middle">popped: static_ref</text>
+<rect x="709" y="400" width="150" height="24" fill="#f6dcc6" stroke="#d9711c" stroke-width="1.4"/>
+<text x="784" y="416.5" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">field_terms, 44 B</text>
+<rect x="709" y="376" width="150" height="24" fill="#d1e5da" stroke="#2e8b57" stroke-width="1.4"/>
+<text x="784" y="392.5" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">static_ref, 216 B</text>
+<text x="118" y="398" font-size="12.5" fill="#57606a" text-anchor="middle">the stack it hands on,</text>
+<text x="118" y="414" font-size="12.5" fill="#57606a" text-anchor="middle">bottom first:</text>
+<text x="340" y="444" font-size="12.5" fill="#57606a" text-anchor="middle">hands zarr the bare chunk,</text>
+<text x="340" y="460" font-size="12.5" fill="#57606a" text-anchor="middle">which must have the spec's</text>
+<text x="340" y="476" font-size="12.5" fill="#57606a" text-anchor="middle">shape (1, 17, 1, 16 361)</text>
+<rect x="20" y="506" width="860" height="46" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1"/>
+<text x="32" y="525" font-size="12.5" fill="#1f2328">stage id = codec name. A top header that is not the stage's own fails the chunk, e.g. static_ref given an</text>
+<text x="32" y="542" font-size="12.5" fill="#1f2328">envelope whose stack is [field_terms]: “static_ref: the envelope's top header is 'field_terms', not this stage's”</text>
+</svg>

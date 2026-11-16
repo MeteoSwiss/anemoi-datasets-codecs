@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="874" viewBox="0 0 900 874" font-family="sans-serif">
+<title>One chunk through a codec chain</title>
+<defs><marker id="a1f2328" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L10,5 L0,9 z" fill="#1f2328"/></marker><marker id="a2f6db5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L10,5 L0,9 z" fill="#2f6db5"/></marker></defs>
+<rect x="0" y="0" width="900" height="874" fill="#ffffff"/>
+<text x="20" y="26" font-size="14" fill="#1f2328" font-weight="bold">one chunk through compressors=[field_terms, static_ref, icon_lattice_bytes]</text>
+<rect x="20" y="40" width="860" height="62" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1"/>
+<text x="32" y="60" font-size="12.5" fill="#1f2328" font-weight="bold">zarr gives every codec the same chunk spec, the array's: (1, 17, 1, 16 361) float32</text>
+<text x="32" y="78" font-size="12.5" fill="#1f2328">at array creation (validate, against the chunk grid) and for every chunk (chunk_spec, "spec" below). No</text>
+<text x="32" y="94" font-size="12.5" fill="#1f2328">codec announces another shape (the stages keep resolve_metadata the identity): it travels in the envelope.</text>
+<text x="20" y="140" font-size="12.5" fill="#57606a" font-weight="bold">codec</text>
+<text x="244" y="140" font-size="12.5" fill="#57606a" font-weight="bold">what passes between two codecs</text>
+<text x="586" y="140" font-size="12.5" fill="#57606a" font-weight="bold">what the codec checks</text>
+<rect x="20" y="156" width="200" height="40" rx="6" fill="#ffffff" stroke="#1f2328" stroke-width="1.4" stroke-dasharray="5 3"/>
+<text x="120" y="173" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold">chunk of the array</text>
+<text x="120" y="189" font-size="12" fill="#57606a" text-anchor="middle">NDBuffer (1, 17, 1, 16 361)</text>
+<rect x="20" y="272" width="200" height="40" rx="6" fill="#f0f2f4" stroke="#1f2328" stroke-width="1.4"/>
+<text x="120" y="289" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold" font-family="monospace">bytes</text>
+<text x="120" y="305" font-size="12" fill="#57606a" text-anchor="middle">zarr's array → bytes</text>
+<rect x="20" y="388" width="200" height="40" rx="6" fill="#f0f2f4" stroke="#d9711c" stroke-width="1.4"/>
+<text x="120" y="405" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold" font-family="monospace">field_terms</text>
+<text x="120" y="421" font-size="12" fill="#57606a" text-anchor="middle">targets → residuals</text>
+<rect x="20" y="504" width="200" height="40" rx="6" fill="#f0f2f4" stroke="#2e8b57" stroke-width="1.4"/>
+<text x="120" y="521" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold" font-family="monospace">static_ref</text>
+<text x="120" y="537" font-size="12" fill="#57606a" text-anchor="middle">drops the static fields</text>
+<rect x="20" y="620" width="200" height="40" rx="6" fill="#f0f2f4" stroke="#1f2328" stroke-width="1.4"/>
+<text x="120" y="637" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold" font-family="monospace">icon_lattice_bytes</text>
+<text x="120" y="653" font-size="12" fill="#57606a" text-anchor="middle">lattice codec, chain: true</text>
+<rect x="20" y="736" width="200" height="40" rx="6" fill="#ffffff" stroke="#1f2328" stroke-width="1.4" stroke-dasharray="5 3"/>
+<text x="120" y="753" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold">store</text>
+<text x="120" y="769" font-size="12" fill="#57606a" text-anchor="middle">the chunk file</text>
+<path d="M64,198 L64,270" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M176,270 L176,198" fill="none" stroke="#2f6db5" stroke-width="1.4" marker-end="url(#a2f6db5)"/>
+<path d="M64,314 L64,386" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M176,386 L176,314" fill="none" stroke="#2f6db5" stroke-width="1.4" marker-end="url(#a2f6db5)"/>
+<path d="M64,430 L64,502" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M176,502 L176,430" fill="none" stroke="#2f6db5" stroke-width="1.4" marker-end="url(#a2f6db5)"/>
+<path d="M64,546 L64,618" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M176,618 L176,546" fill="none" stroke="#2f6db5" stroke-width="1.4" marker-end="url(#a2f6db5)"/>
+<path d="M64,662 L64,734" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M176,734 L176,662" fill="none" stroke="#2f6db5" stroke-width="1.4" marker-end="url(#a2f6db5)"/>
+<text x="58" y="234" font-size="12" fill="#1f2328" text-anchor="end">encode</text>
+<text x="182" y="234" font-size="12" fill="#2f6db5">decode</text>
+<text x="244" y="236" font-size="12.5" fill="#1f2328">the chunk as a float32 array, shape (1, 17, 1, 16 361)</text>
+<rect x="244" y="324" width="14.8" height="18" fill="#f6dcc6" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="258.8" y="324" width="14.8" height="18" fill="#f6dcc6" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="273.6" y="324" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="288.5" y="324" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="303.3" y="324" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="318.1" y="324" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="332.9" y="324" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="347.8" y="324" width="14.8" height="18" fill="#d1e5da" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="362.6" y="324" width="14.8" height="18" fill="#d1e5da" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="377.4" y="324" width="14.8" height="18" fill="#d1e5da" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="392.2" y="324" width="14.8" height="18" fill="#d1e5da" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="407.1" y="324" width="14.8" height="18" fill="#d1e5da" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="421.9" y="324" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="436.7" y="324" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="451.5" y="324" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="466.4" y="324" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="481.2" y="324" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<text x="244" y="358" font-size="12.5" fill="#1f2328">bare: little-endian float32, no envelope</text>
+<text x="244" y="374" font-size="12.5" fill="#57606a">1 112 548 B; shape only from the spec</text>
+<rect x="244" y="440" width="36" height="18" fill="#d0d7de" stroke="#1f2328" stroke-width="0.8"/>
+<text x="262" y="453.5" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">FCHN</text>
+<rect x="280" y="440" width="16" height="18" fill="#d9711c" stroke="#1f2328" stroke-width="0.8"/>
+<rect x="296" y="440" width="14.8" height="18" fill="#f6dcc6" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="310.8" y="440" width="14.8" height="18" fill="#f6dcc6" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="325.6" y="440" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="340.5" y="440" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="355.3" y="440" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="370.1" y="440" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="384.9" y="440" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="399.8" y="440" width="14.8" height="18" fill="#d1e5da" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="414.6" y="440" width="14.8" height="18" fill="#d1e5da" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="429.4" y="440" width="14.8" height="18" fill="#d1e5da" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="444.2" y="440" width="14.8" height="18" fill="#d1e5da" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="459.1" y="440" width="14.8" height="18" fill="#d1e5da" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="473.9" y="440" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="488.7" y="440" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="503.5" y="440" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="518.4" y="440" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="533.2" y="440" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<text x="244" y="474" font-size="12.5" fill="#1f2328">kind 0, shape (1, 17, 1, 16 361)</text>
+<text x="244" y="490" font-size="12.5" fill="#57606a">1 112 668 B: 120 B prefix + the field array</text>
+<rect x="244" y="556" width="36" height="18" fill="#d0d7de" stroke="#1f2328" stroke-width="0.8"/>
+<text x="262" y="569.5" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">FCHN</text>
+<rect x="280" y="556" width="16" height="18" fill="#d9711c" stroke="#1f2328" stroke-width="0.8"/>
+<rect x="296" y="556" width="16" height="18" fill="#2e8b57" stroke="#1f2328" stroke-width="0.8"/>
+<rect x="312" y="556" width="14.8" height="18" fill="#f6dcc6" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="326.8" y="556" width="14.8" height="18" fill="#f6dcc6" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="341.6" y="556" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="356.5" y="556" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="371.3" y="556" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="386.1" y="556" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="400.9" y="556" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="415.8" y="556" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="430.6" y="556" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="445.4" y="556" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="460.2" y="556" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="475.1" y="556" width="14.8" height="18" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<text x="244" y="590" font-size="12.5" fill="#1f2328">kind 0, shape (1, 12, 1, 16 361)</text>
+<text x="244" y="606" font-size="12.5" fill="#57606a">785 688 B: 360 B prefix + the field array</text>
+<rect x="244" y="672" width="36" height="18" fill="#d0d7de" stroke="#1f2328" stroke-width="0.8"/>
+<text x="262" y="685.5" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">FCHN</text>
+<rect x="280" y="672" width="16" height="18" fill="#d9711c" stroke="#1f2328" stroke-width="0.8"/>
+<rect x="296" y="672" width="16" height="18" fill="#2e8b57" stroke="#1f2328" stroke-width="0.8"/>
+<rect x="312" y="672" width="61.1" height="18" fill="#d1dfef" stroke="#2f6db5" stroke-width="1"/>
+<text x="342.5" y="685.5" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">LATC</text>
+<text x="244" y="706" font-size="12.5" fill="#1f2328">kind 1, shape (1, 12, 1, 16 361)</text>
+<text x="244" y="722" font-size="12.5" fill="#57606a">270 024 B: 360 B prefix + the LATC container</text>
+<text x="640" y="286" font-size="12" fill="#1f2328">writes the chunk as little-endian float32</text>
+<text x="586" y="402" font-size="12" fill="#57606a" font-weight="bold">create</text>
+<text x="640" y="402" font-size="12" fill="#1f2328">float32; 4-D chunks holding every</text>
+<text x="640" y="417" font-size="12" fill="#1f2328">field of a date</text>
+<text x="586" y="432" font-size="12" fill="#57606a" font-weight="bold">encode</text>
+<text x="640" y="432" font-size="12" fill="#1f2328">a bare chunk of the spec's shape;</text>
+<text x="640" y="447" font-size="12" fill="#1f2328">17 fields = its variables</text>
+<text x="586" y="462" font-size="12" fill="#57606a" font-weight="bold">decode</text>
+<text x="640" y="462" font-size="12" fill="#1f2328">top header 'field_terms'? pop it;</text>
+<text x="640" y="477" font-size="12" fill="#1f2328">17 fields out; the stack is empty:</text>
+<text x="640" y="492" font-size="12" fill="#1f2328">the result has the spec's shape</text>
+<text x="586" y="518" font-size="12" fill="#57606a" font-weight="bold">create</text>
+<text x="640" y="518" font-size="12" fill="#1f2328">the same as field_terms</text>
+<text x="586" y="533" font-size="12" fill="#57606a" font-weight="bold">encode</text>
+<text x="640" y="533" font-size="12" fill="#1f2328">kind 0; dates, members and cells =</text>
+<text x="640" y="548" font-size="12" fill="#1f2328">the spec's; 17 fields = its variables</text>
+<text x="586" y="563" font-size="12" fill="#57606a" font-weight="bold">decode</text>
+<text x="640" y="563" font-size="12" fill="#1f2328">top header 'static_ref'? pop it;</text>
+<text x="640" y="578" font-size="12" fill="#1f2328">12 fields in; dates, members and</text>
+<text x="640" y="593" font-size="12" fill="#1f2328">cells = the spec's</text>
+<text x="586" y="634" font-size="12" fill="#57606a" font-weight="bold">create</text>
+<text x="640" y="634" font-size="12" fill="#1f2328">float32; 4-D chunks holding every</text>
+<text x="640" y="649" font-size="12" fill="#1f2328">field of a date; cells and members</text>
+<text x="640" y="664" font-size="12" fill="#1f2328">of its lattice (not the field count)</text>
+<text x="586" y="679" font-size="12" fill="#57606a" font-weight="bold">encode</text>
+<text x="640" y="679" font-size="12" fill="#1f2328">kind 0; dates, members, cells = the</text>
+<text x="640" y="694" font-size="12" fill="#1f2328">spec's; 12 fields = its variables</text>
+<text x="586" y="709" font-size="12" fill="#57606a" font-weight="bold">decode</text>
+<text x="640" y="709" font-size="12" fill="#1f2328">kind 1; the same shape checks</text>
+<text x="640" y="750" font-size="12" fill="#1f2328">stores the bytes it is given</text>
+<rect x="20" y="799" width="14" height="14" fill="#d0d7de" stroke="#1f2328" stroke-width="1"/>
+<text x="40" y="810" font-size="12.5" fill="#1f2328">envelope prefix</text>
+<rect x="166.8" y="799" width="14" height="14" fill="#d9711c" stroke="#1f2328" stroke-width="1"/>
+<text x="186.8" y="810" font-size="12.5" fill="#1f2328">field_terms header</text>
+<rect x="335.2" y="799" width="14" height="14" fill="#2e8b57" stroke="#1f2328" stroke-width="1"/>
+<text x="355.2" y="810" font-size="12.5" fill="#1f2328">static_ref header</text>
+<rect x="496.5" y="799" width="14" height="14" fill="#d1dfef" stroke="#2f6db5" stroke-width="1"/>
+<text x="516.5" y="810" font-size="12.5" fill="#1f2328">LATC container</text>
+<rect x="20" y="821" width="14" height="14" fill="#f6dcc6" stroke="#8c959f" stroke-width="1"/>
+<text x="40" y="832" font-size="12.5" fill="#1f2328">field_terms targets (T_2M, PMSL)</text>
+<rect x="290" y="821" width="14" height="14" fill="#d1e5da" stroke="#8c959f" stroke-width="1"/>
+<text x="310" y="832" font-size="12.5" fill="#1f2328">static fields (5)</text>
+<rect x="451.2" y="821" width="14" height="14" fill="#f0f2f4" stroke="#8c959f" stroke-width="1"/>
+<text x="471.2" y="832" font-size="12.5" fill="#1f2328">other fields</text>
+<text x="20" y="856" font-size="12" fill="#57606a">bars: payload to scale, prefix and headers not to scale</text>
+</svg>

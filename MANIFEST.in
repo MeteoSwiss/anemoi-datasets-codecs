@@ -1,0 +1,7 @@
+# The sdist: the package, the C sources setup.py compiles, and the tests with the scripts and data they use (the
+# wheel carries the compiled module and the bundled lattices, not these).
+graft src/anemoi_datasets_codecs/icon_lattice/csrc
+graft tests
+graft scripts
+include LICENSE README.md setup.py
+global-exclude __pycache__ *.py[cod] *.so

@@ -1,0 +1,106 @@
+{
+  "_comment": "Every number of docs/benchmarks/figures/*.svg, transcribed from docs/benchmarks.md (the record; this file only repeats it). Sizes in MiB (2^20 bytes), times in ms unless the key says s. Each block names the section of the document, the machine where it matters and the conditions. Sizes are deterministic (for a package version, configuration and numpy) and comparable across runs; times are comparable only within one run.",
+  "dataset": {
+    "name": "ICON-CH1 sample",
+    "variables": 115,
+    "static_fields": 13,
+    "cells": 1147980,
+    "raw_float32_mib": 503.6,
+    "raw_float32_note": "115 x 1,147,980 x 4 bytes = 528,070,800 bytes = 503.6 MiB (Setup table)"
+  },
+  "sizes_date6": {
+    "section": "Codec chains; Configuration choices (the defaults row); Physics layer (recipes rows)",
+    "machine": "sizes do not depend on the machine; numpy 2.5.4, zarr 3.4.2",
+    "conditions": "sample date 6, one date per chunk; rounding: grid and recipe_fit: false unless the row says otherwise; zarr writes without valid dates (forcings lossless); the defaults row (rounding: direct, recipe_fit: true) through the engine without dates (the bytes a zarr write gives, forcings as recipes); the recipes rows from scripts/physics_size.py with dates",
+    "rows": [
+      {"key": "raw", "label": "raw float32", "mib": 503.6, "note": "computed from the shape, not a store"},
+      {"key": "blosc", "label": "Blosc lz4 (clevel 5, byte shuffle)", "mib": 298.95},
+      {"key": "single_tree_k1", "label": "single codec, tree k = 1", "mib": 43.394},
+      {"key": "chain_tree_k1", "label": "chain [field_terms, static_ref, icon_lattice_bytes], tree k = 1", "mib": 43.386},
+      {"key": "single_tree_b_k3", "label": "single codec, tree_b k = 3", "mib": 56.351},
+      {"key": "chain_tree_b_k3", "label": "chain, tree_b k = 3", "mib": 56.231},
+      {"key": "defaults_tree_k1", "label": "single codec, the defaults (rounding: direct, physics.recipe_fit: true), tree k = 1", "mib": 35.69, "note": "Configuration choices, date 6: 37,427,804 B"},
+      {"key": "recipes_tree_k1", "label": "single codec with dates (forcings as recipes), tree k = 1", "mib": 36.71, "note": "Physics layer table, physics-on row"},
+      {"key": "recipes_tree_b_k3", "label": "single codec with dates (forcings as recipes), tree_b k = 3", "mib": 49.67, "note": "Physics layer table, physics-on row"}
+    ]
+  },
+  "structures": {
+    "section": "Size, structure and k table",
+    "conditions": "mean over the 20 sample dates, forcings as recipes, statics referenced, one run; the worst error / bound is 1 / k",
+    "rows": [
+      {"structure": "tree", "k": 1, "mib": 32.89, "worst_error_over_bound": 1.0},
+      {"structure": "tree_b", "k": 1, "mib": 29.95, "worst_error_over_bound": 1.0},
+      {"structure": "hc2_k3", "k": 1, "mib": 28.8, "worst_error_over_bound": 1.0},
+      {"structure": "tree_b", "k": 3, "mib": 45.7, "worst_error_over_bound": 0.333},
+      {"structure": "tree_b", "k": 5, "mib": 54.11, "worst_error_over_bound": 0.2}
+    ]
+  },
+  "physics": {
+    "section": "Physics layer",
+    "conditions": "sample date 6 with dates, scripts/physics_size.py, every chunk decoded and checked against the bounds",
+    "columns": ["tree k = 1", "tree_b k = 3"],
+    "default_mib": [36.71, 49.67],
+    "rows": [
+      {"setting": "surface_terms: false", "mib": [38.55, 51.63], "delta": [1.84, 1.97]},
+      {"setting": "level_terms: false", "mib": [37.18, 50.11], "delta": [0.47, 0.44]},
+      {"setting": "hydrostatic: false", "mib": [38.7, 52.86], "delta": [1.99, 3.2]},
+      {"setting": "cross: off (all cross terms)", "mib": [41.03, 55.31], "delta": [4.32, 5.64]},
+      {"setting": "forcings: false (with dates)", "mib": [43.39, 56.35], "delta": [6.68, 6.68]},
+      {"setting": "physics: off", "mib": [47.72, 61.99], "delta": [11.0, 12.3]}
+    ]
+  },
+  "bench_decode": {
+    "section": "Decode speed",
+    "machine": "AMD EPYC 7713, 32 cores reserved, one run",
+    "conditions": "one real CH1 chunk (date 0 through zarr at the defaults, 31.2 MiB, 115 fields) decoded into a preallocated buffer, 3 interleaved rounds in separate processes (9 decodes per round AVX2, 3 scalar); scripts/bench/bench_decode.py",
+    "rows": [
+      {"variant": "AVX2", "threads": 1, "best_ms": [340.1], "median_ms": [345.7]},
+      {"variant": "AVX2", "threads": 16, "best_ms": [40.7], "median_ms": [41.5]},
+      {"variant": "scalar", "threads": 1, "best_ms": [2692.1], "median_ms": [2866.8]},
+      {"variant": "scalar", "threads": 16, "best_ms": [248.2], "median_ms": [249.5]}
+    ],
+    "blosc_note": "the Blosc library decodes the same date (298.95 MiB) in about 90 ms on one core and 13-26 ms on 16-32 threads, depending on the run (text, not a table row)"
+  },
+  "zarr_read": {
+    "section": "Codec chains",
+    "machine": "AMD EPYC 7713 (32 cores reserved), gcc 12.3, numpy 2.5.4, zarr 3.4.2, AVX2 kernels",
+    "conditions": "zarr read of sample date 6 written at the defaults (chains of physics expand without a forcing bound) (a[...], decode and every stage) after two warm-up reads; best / median of 3 rounds of 7, each round and thread count in its own process; Blosc with as many threads; scripts/bench/bench_chain.py",
+    "rows": [
+      {"store": "single, tree k = 1", "t1": {"best_ms": 441.0, "median_ms": 445.2}, "t16": {"best_ms": 130.3, "median_ms": 134.5}},
+      {"store": "chain, tree k = 1", "t1": {"best_ms": 540.9, "median_ms": 590.1}, "t16": {"best_ms": 228.0, "median_ms": 235.4}},
+      {"store": "single, tree_b k = 3", "t1": {"best_ms": 527.1, "median_ms": 528.9}, "t16": {"best_ms": 166.1, "median_ms": 169.5}},
+      {"store": "chain, tree_b k = 3", "t1": {"best_ms": 616.2, "median_ms": 628.3}, "t16": {"best_ms": 264.0, "median_ms": 270.1}},
+      {"store": "Blosc lz4", "t1": {"best_ms": 232.2, "median_ms": 242.4}, "t16": {"best_ms": 168.8, "median_ms": 177.4}}
+    ]
+  },
+  "chain_stages": {
+    "section": "Codec chains (where the time goes in the chain)",
+    "conditions": "chain, tree k = 1, rounding: grid, one profiled read per thread count of an earlier run; the envelope well under 1 ms (not drawn)",
+    "stages": [
+      {"stage": "icon_lattice_bytes (102 fields)", "t1_ms": 419, "t16_ms": 51},
+      {"stage": "static_ref (one write of the 115-field date, single-threaded numpy)", "t1_ms": 91, "t16_ms": 91},
+      {"stage": "field_terms (in place, six targets)", "t1_ms": 14, "t16_ms": 14}
+    ]
+  },
+  "encode": {
+    "section": "Encode speed",
+    "machine": "AMD EPYC 7713, 32 cores reserved on a node shared with other jobs, one run",
+    "conditions": "LatticeCodec.encode of one sample date at the defaults, direct call (no zarr), fitting and verification included; scripts/bench/bench_encode.py; 16 threads: range over the encodes without and with the date; 1 thread: one encode without dates (date 0 is the first encode of the process)",
+    "rows": [
+      {"date": 0, "t1_s": [59.5, 59.5], "t16_s": [14.1, 16.8]},
+      {"date": 6, "t1_s": [44.1, 44.1], "t16_s": [14.1, 14.1]},
+      {"date": 13, "t1_s": [43.5, 43.5], "t16_s": [14.1, 14.3]},
+      {"date": 19, "t1_s": [42.4, 42.4], "t16_s": [14.0, 14.0]}
+    ]
+  },
+  "anemoi_create": {
+    "section": "anemoi-datasets end to end",
+    "machine": "Python 3.13, zarr 3.4.2, anemoi-datasets 0.5.50; 16 codec threads",
+    "conditions": "anemoi-datasets create (init, load, finalise, patch, cleanup, verify) of sample dates 0-2, tree k = 1, the defaults; wall-clock time of the command; open_dataset + read of the 3 dates in a fresh process, cold, cache off",
+    "rows": [
+      {"store": "chain, forcing bound 1e-6", "mib_per_date": 31.505, "create_s": 207, "read_s": 3.35, "worst_error_over_bound": 0.99998},
+      {"store": "single codec", "mib_per_date": 31.283, "create_s": 118, "read_s": 3.05, "worst_error_over_bound": 0.99998}
+    ],
+    "codec_part_note": "anemoi's own report of the create: 82 s (chain) and 106 s (single codec), most of it loading the source field by field; the rest of the wall-clock time is start-up"
+  }
+}

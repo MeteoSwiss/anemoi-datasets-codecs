@@ -1,0 +1,220 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="836" viewBox="0 0 900 836" font-family="sans-serif">
+<title>The chunk format, container version 3</title>
+<rect x="0" y="0" width="900" height="836" fill="#ffffff"/>
+<text x="20" y="28" font-size="14" fill="#1f2328" font-weight="bold">(a)  chunk header (integers little endian)</text>
+<rect x="24" y="58" width="84" height="34" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="66" y="80" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">LATC</text>
+<text x="24" y="52" font-size="12" fill="#57606a">0</text>
+<text x="66" y="110" font-size="12" fill="#1f2328" text-anchor="middle">magic</text>
+<text x="66" y="125" font-size="12" fill="#57606a" text-anchor="middle">4 bytes</text>
+<rect x="108" y="58" width="42" height="34" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="129" y="80" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">3</text>
+<text x="108" y="52" font-size="12" fill="#57606a">4</text>
+<text x="129" y="110" font-size="12" fill="#1f2328" text-anchor="middle">version</text>
+<text x="129" y="125" font-size="12" fill="#57606a" text-anchor="middle">u16</text>
+<rect x="150" y="58" width="42" height="34" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="171" y="80" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">0</text>
+<text x="150" y="52" font-size="12" fill="#57606a">6</text>
+<text x="171" y="110" font-size="12" fill="#1f2328" text-anchor="middle">flags</text>
+<text x="171" y="125" font-size="12" fill="#57606a" text-anchor="middle">u16</text>
+<rect x="192" y="58" width="84" height="34" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="234" y="80" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">17</text>
+<text x="192" y="52" font-size="12" fill="#57606a">8</text>
+<text x="234" y="110" font-size="12" fill="#1f2328" text-anchor="middle">n_fields</text>
+<text x="234" y="125" font-size="12" fill="#57606a" text-anchor="middle">u32</text>
+<rect x="276" y="58" width="84" height="34" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="318" y="80" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">1</text>
+<text x="276" y="52" font-size="12" fill="#57606a">12</text>
+<text x="318" y="110" font-size="12" fill="#1f2328" text-anchor="middle">n_dates</text>
+<text x="318" y="125" font-size="12" fill="#57606a" text-anchor="middle">u32</text>
+<rect x="360" y="58" width="84" height="34" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="402" y="80" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">320</text>
+<text x="360" y="52" font-size="12" fill="#57606a">16</text>
+<text x="402" y="110" font-size="12" fill="#1f2328" text-anchor="middle">header_bytes</text>
+<text x="402" y="125" font-size="12" fill="#57606a" text-anchor="middle">u32</text>
+<rect x="444" y="58" width="84" height="34" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="486" y="80" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">0</text>
+<text x="444" y="52" font-size="12" fill="#57606a">20</text>
+<text x="486" y="110" font-size="12" fill="#1f2328" text-anchor="middle">reserved</text>
+<text x="486" y="125" font-size="12" fill="#57606a" text-anchor="middle">u32</text>
+<rect x="528" y="58" width="336" height="34" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="696" y="80" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">21ef9db35c409691…</text>
+<text x="528" y="52" font-size="12" fill="#57606a">24</text>
+<text x="696" y="110" font-size="12" fill="#1f2328" text-anchor="middle">structure sha256, first 16 bytes</text>
+<text x="696" y="125" font-size="12" fill="#57606a" text-anchor="middle">16 bytes</text>
+<text x="864" y="52" font-size="12" fill="#57606a" text-anchor="end">40</text>
+<rect x="24" y="164" width="140" height="30" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="94" y="184" font-size="12.5" fill="#1f2328" text-anchor="middle">dates: i64 × 1</text>
+<rect x="164" y="164" width="210" height="30" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="269" y="184" font-size="12.5" fill="#1f2328" text-anchor="middle">records: 16 B × 17</text>
+<rect x="374" y="164" width="96" height="30" fill="#ffffff" stroke="#1f2328" stroke-width="1"/>
+<text x="422" y="184" font-size="12.5" fill="#1f2328" text-anchor="middle">0-pad to 8</text>
+<rect x="470" y="164" width="406" height="30" fill="#e6edf6" stroke="#1f2328" stroke-width="1"/>
+<text x="673" y="184" font-size="12.5" fill="#1f2328" text-anchor="middle">payloads in field order, see (b)</text>
+<text x="24" y="158" font-size="12" fill="#57606a">40</text>
+<text x="164" y="158" font-size="12" fill="#57606a">48</text>
+<text x="470" y="158" font-size="12" fill="#57606a">header_bytes = 320 (a multiple of 8)</text>
+<text x="24" y="214" font-size="12.5" fill="#1f2328">record: u8 mode, u8 fallback, u16 0, u32 0, u64 payload bytes (payloads padded to 4 bytes); dates in s since 1970</text>
+<text x="20" y="260" font-size="14" fill="#1f2328" font-weight="bold">(b)  the 17 fields of the test chunk (tests/conftest.py): 133 680 bytes</text>
+<rect x="24" y="276" width="42.3" height="26" fill="#2f6db5" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="66.3" y="276" width="55.9" height="26" fill="#2f6db5" stroke="#ffffff" stroke-width="0.6"/>
+<text x="94.3" y="294" font-size="12" fill="#ffffff" text-anchor="middle" font-family="monospace">PMSL</text>
+<rect x="122.2" y="276" width="193.4" height="26" fill="#2f6db5" stroke="#ffffff" stroke-width="0.6"/>
+<text x="218.9" y="294" font-size="12" fill="#ffffff" text-anchor="middle" font-family="monospace">WIDE</text>
+<rect x="315.6" y="276" width="28.3" height="26" fill="#2f6db5" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="343.9" y="276" width="19" height="26" fill="#2f6db5" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="362.8" y="276" width="115.8" height="26" fill="#2f6db5" stroke="#ffffff" stroke-width="0.6"/>
+<text x="420.7" y="294" font-size="12" fill="#ffffff" text-anchor="middle" font-family="monospace">NOISY</text>
+<rect x="478.6" y="276" width="0.6" height="26" fill="#77b492" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="478.6" y="276" width="0.6" height="26" fill="#abd1bc" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="478.9" y="276" width="0.6" height="26" fill="#abd1bc" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="479.1" y="276" width="0.6" height="26" fill="#abd1bc" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="479.3" y="276" width="0.6" height="26" fill="#abd1bc" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="479.5" y="276" width="0.6" height="26" fill="#abd1bc" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="479.7" y="276" width="0.6" height="26" fill="#7d8590" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="480.1" y="276" width="0.6" height="26" fill="#7d8590" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="480.5" y="276" width="0.6" height="26" fill="#7d8590" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="480.9" y="276" width="0.6" height="26" fill="#77b492" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="480.9" y="276" width="395.1" height="26" fill="#2e8b57" stroke="#ffffff" stroke-width="0.6"/>
+<text x="678.5" y="294" font-size="12" fill="#ffffff" text-anchor="middle" font-family="monospace">EXTRA</text>
+<text x="876" y="320" font-size="12" fill="#57606a" text-anchor="end">payload bytes to scale; the 10 payloads of at most 64 bytes are the hairlines before EXTRA</text>
+<rect x="24" y="339" width="12" height="12" fill="#2f6db5" stroke="#8c959f" stroke-width="0.5"/>
+<text x="42" y="350" font-size="12.5" fill="#1f2328" font-family="monospace">T_2M</text>
+<text x="174" y="350" font-size="12" fill="#1f2328">LATTICE</text>
+<text x="296" y="350" font-size="12.5" fill="#1f2328" text-anchor="end">6 628</text>
+<rect x="24" y="360" width="12" height="12" fill="#2f6db5" stroke="#8c959f" stroke-width="0.5"/>
+<text x="42" y="371" font-size="12.5" fill="#1f2328" font-family="monospace">PMSL</text>
+<text x="174" y="371" font-size="12" fill="#1f2328">LATTICE</text>
+<text x="296" y="371" font-size="12.5" fill="#1f2328" text-anchor="end">8 744</text>
+<rect x="24" y="381" width="12" height="12" fill="#2f6db5" stroke="#8c959f" stroke-width="0.5"/>
+<text x="42" y="392" font-size="12.5" fill="#1f2328" font-family="monospace">WIDE</text>
+<text x="174" y="392" font-size="12" fill="#1f2328">LATTICE</text>
+<text x="296" y="392" font-size="12.5" fill="#1f2328" text-anchor="end">30 272</text>
+<rect x="24" y="402" width="12" height="12" fill="#2f6db5" stroke="#8c959f" stroke-width="0.5"/>
+<text x="42" y="413" font-size="12.5" fill="#1f2328" font-family="monospace">CLCT</text>
+<text x="174" y="413" font-size="12" fill="#1f2328">LATTICE</text>
+<text x="296" y="413" font-size="12.5" fill="#1f2328" text-anchor="end">4 424</text>
+<rect x="24" y="423" width="12" height="12" fill="#2f6db5" stroke="#8c959f" stroke-width="0.5"/>
+<text x="42" y="434" font-size="12.5" fill="#1f2328" font-family="monospace">TOT_PREC_1H</text>
+<text x="174" y="434" font-size="12" fill="#1f2328">LATTICE</text>
+<text x="296" y="434" font-size="12.5" fill="#1f2328" text-anchor="end">2 968</text>
+<rect x="24" y="444" width="12" height="12" fill="#2f6db5" stroke="#8c959f" stroke-width="0.5"/>
+<text x="42" y="455" font-size="12.5" fill="#1f2328" font-family="monospace">NOISY</text>
+<text x="174" y="455" font-size="12" fill="#1f2328">LATTICE</text>
+<text x="296" y="455" font-size="12.5" fill="#1f2328" text-anchor="end">18 124</text>
+<rect x="314" y="339" width="12" height="12" fill="#77b492" stroke="#8c959f" stroke-width="0.5"/>
+<text x="332" y="350" font-size="12.5" fill="#1f2328" font-family="monospace">FLAT</text>
+<text x="464" y="350" font-size="12" fill="#1f2328">CONSTANT</text>
+<text x="586" y="350" font-size="12.5" fill="#1f2328" text-anchor="end">4</text>
+<rect x="314" y="360" width="12" height="12" fill="#abd1bc" stroke="#8c959f" stroke-width="0.5"/>
+<text x="332" y="371" font-size="12.5" fill="#1f2328" font-family="monospace">FIS</text>
+<text x="464" y="371" font-size="12" fill="#1f2328">STATIC_REF</text>
+<text x="586" y="371" font-size="12.5" fill="#1f2328" text-anchor="end">32</text>
+<rect x="314" y="381" width="12" height="12" fill="#abd1bc" stroke="#8c959f" stroke-width="0.5"/>
+<text x="332" y="392" font-size="12.5" fill="#1f2328" font-family="monospace">sin_latitude</text>
+<text x="464" y="392" font-size="12" fill="#1f2328">STATIC_REF</text>
+<text x="586" y="392" font-size="12.5" fill="#1f2328" text-anchor="end">32</text>
+<rect x="314" y="402" width="12" height="12" fill="#abd1bc" stroke="#8c959f" stroke-width="0.5"/>
+<text x="332" y="413" font-size="12.5" fill="#1f2328" font-family="monospace">cos_latitude</text>
+<text x="464" y="413" font-size="12" fill="#1f2328">STATIC_REF</text>
+<text x="586" y="413" font-size="12.5" fill="#1f2328" text-anchor="end">32</text>
+<rect x="314" y="423" width="12" height="12" fill="#abd1bc" stroke="#8c959f" stroke-width="0.5"/>
+<text x="332" y="434" font-size="12.5" fill="#1f2328" font-family="monospace">sin_longitude</text>
+<text x="464" y="434" font-size="12" fill="#1f2328">STATIC_REF</text>
+<text x="586" y="434" font-size="12.5" fill="#1f2328" text-anchor="end">32</text>
+<rect x="314" y="444" width="12" height="12" fill="#abd1bc" stroke="#8c959f" stroke-width="0.5"/>
+<text x="332" y="455" font-size="12.5" fill="#1f2328" font-family="monospace">cos_longitude</text>
+<text x="464" y="455" font-size="12" fill="#1f2328">STATIC_REF</text>
+<text x="586" y="455" font-size="12.5" fill="#1f2328" text-anchor="end">32</text>
+<rect x="604" y="339" width="12" height="12" fill="#7d8590" stroke="#8c959f" stroke-width="0.5"/>
+<text x="622" y="350" font-size="12.5" fill="#1f2328" font-family="monospace">cos_local_time</text>
+<text x="754" y="350" font-size="12" fill="#1f2328">RECIPE</text>
+<text x="876" y="350" font-size="12.5" fill="#1f2328" text-anchor="end">64</text>
+<rect x="604" y="360" width="12" height="12" fill="#7d8590" stroke="#8c959f" stroke-width="0.5"/>
+<text x="622" y="371" font-size="12.5" fill="#1f2328" font-family="monospace">sin_local_time</text>
+<text x="754" y="371" font-size="12" fill="#1f2328">RECIPE</text>
+<text x="876" y="371" font-size="12.5" fill="#1f2328" text-anchor="end">64</text>
+<rect x="604" y="381" width="12" height="12" fill="#7d8590" stroke="#8c959f" stroke-width="0.5"/>
+<text x="622" y="392" font-size="12.5" fill="#1f2328" font-family="monospace">insolation</text>
+<text x="754" y="392" font-size="12" fill="#1f2328">RECIPE</text>
+<text x="876" y="392" font-size="12.5" fill="#1f2328" text-anchor="end">64</text>
+<rect x="604" y="402" width="12" height="12" fill="#77b492" stroke="#8c959f" stroke-width="0.5"/>
+<text x="622" y="413" font-size="12.5" fill="#1f2328" font-family="monospace">cos_julian_day</text>
+<text x="754" y="413" font-size="12" fill="#1f2328">CONSTANT</text>
+<text x="876" y="413" font-size="12.5" fill="#1f2328" text-anchor="end">4</text>
+<rect x="604" y="423" width="12" height="12" fill="#2e8b57" stroke="#8c959f" stroke-width="0.5"/>
+<text x="622" y="434" font-size="12.5" fill="#1f2328" font-family="monospace">EXTRA</text>
+<text x="754" y="434" font-size="12" fill="#1f2328">LOSSLESS</text>
+<text x="876" y="434" font-size="12.5" fill="#1f2328" text-anchor="end">61 840</text>
+<text x="24" y="484" font-size="12.5" fill="#57606a">mode:</text>
+<rect x="74" y="473" width="14" height="14" fill="#2f6db5" stroke="none" stroke-width="1"/>
+<text x="94" y="484" font-size="12.5" fill="#1f2328">0 LATTICE</text>
+<rect x="175.2" y="473" width="14" height="14" fill="#2e8b57" stroke="none" stroke-width="1"/>
+<text x="195.2" y="484" font-size="12.5" fill="#1f2328">1 LOSSLESS</text>
+<rect x="283.8" y="473" width="14" height="14" fill="#77b492" stroke="none" stroke-width="1"/>
+<text x="303.8" y="484" font-size="12.5" fill="#1f2328">2 CONSTANT</text>
+<rect x="392.2" y="473" width="14" height="14" fill="#abd1bc" stroke="none" stroke-width="1"/>
+<text x="412.2" y="484" font-size="12.5" fill="#1f2328">3 STATIC_REF</text>
+<rect x="515.2" y="473" width="14" height="14" fill="#7d8590" stroke="none" stroke-width="1"/>
+<text x="535.2" y="484" font-size="12.5" fill="#1f2328">4 RECIPE</text>
+<text x="609.2" y="484" font-size="12.5" fill="#57606a">(green: exact)</text>
+<text x="20" y="530" font-size="14" fill="#1f2328" font-weight="bold">(c)  the LATTICE payload of T_2M: 6 628 bytes</text>
+<rect x="24" y="564" width="121.6" height="34" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="84.8" y="586" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">8 × u8</text>
+<text x="24" y="558" font-size="12" fill="#57606a">0</text>
+<text x="84.8" y="616" font-size="12" fill="#1f2328" text-anchor="middle">vt et steps tables</text>
+<text x="84.8" y="631" font-size="12" fill="#1f2328" text-anchor="middle">n_cross flags pbits m</text>
+<rect x="145.6" y="564" width="243.2" height="34" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="267.2" y="586" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">4 × f32</text>
+<text x="145.6" y="558" font-size="12" fill="#57606a">8</text>
+<text x="267.2" y="616" font-size="12" fill="#1f2328" text-anchor="middle">offset, step g,</text>
+<text x="267.2" y="631" font-size="12" fill="#1f2328" text-anchor="middle">clip low, clip high</text>
+<rect x="388.8" y="564" width="243.2" height="34" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="510.4" y="586" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">4 × u32</text>
+<text x="388.8" y="558" font-size="12" fill="#57606a">24</text>
+<text x="510.4" y="616" font-size="12" fill="#1f2328" text-anchor="middle">escape units, rANS,</text>
+<text x="510.4" y="631" font-size="12" fill="#1f2328" text-anchor="middle">table, step-section bytes</text>
+<rect x="632" y="564" width="121.6" height="34" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="692.8" y="586" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">4 × u16</text>
+<text x="632" y="558" font-size="12" fill="#57606a">40</text>
+<text x="692.8" y="616" font-size="12" fill="#1f2328" text-anchor="middle">cross source</text>
+<text x="692.8" y="631" font-size="12" fill="#1f2328" text-anchor="middle">field indices</text>
+<rect x="753.6" y="564" width="60.8" height="34" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="784" y="586" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">4 × u8</text>
+<text x="753.6" y="558" font-size="12" fill="#57606a">48</text>
+<rect x="814.4" y="564" width="60.8" height="34" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="844.8" y="586" font-size="12" fill="#1f2328" text-anchor="middle">zero</text>
+<text x="814.4" y="558" font-size="12" fill="#57606a">52</text>
+<text x="875.2" y="558" font-size="12" fill="#57606a" text-anchor="end">56</text>
+<text x="814.4" y="616" font-size="12" fill="#1f2328" text-anchor="middle">shifts</text>
+<rect x="24" y="660" width="99.3" height="36" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="73.6" y="675" font-size="12" fill="#1f2328" text-anchor="middle">header</text>
+<text x="73.6" y="690" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">56 B</text>
+<rect x="123.3" y="660" width="134" height="36" fill="#ffffff" stroke="#1f2328" stroke-width="1"/>
+<text x="190.3" y="675" font-size="12" fill="#1f2328" text-anchor="middle">mask term</text>
+<text x="190.3" y="690" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">0 B</text>
+<rect x="257.2" y="660" width="87.7" height="36" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="301.1" y="675" font-size="12" fill="#1f2328" text-anchor="middle">steps</text>
+<text x="301.1" y="690" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">98 B</text>
+<rect x="344.9" y="660" width="99.3" height="36" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="394.6" y="675" font-size="12" fill="#1f2328" text-anchor="middle">tables</text>
+<text x="394.6" y="690" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">296 B</text>
+<rect x="444.2" y="660" width="76.1" height="36" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="482.3" y="675" font-size="12" fill="#1f2328" text-anchor="middle">pad4</text>
+<text x="482.3" y="690" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">2 B</text>
+<rect x="520.4" y="660" width="168.6" height="36" fill="#d1dfef" stroke="#1f2328" stroke-width="1"/>
+<text x="604.7" y="675" font-size="12" fill="#1f2328" text-anchor="middle">rANS streams</text>
+<text x="604.7" y="690" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">6174 B</text>
+<rect x="689" y="660" width="110.8" height="36" fill="#ffffff" stroke="#1f2328" stroke-width="1"/>
+<text x="744.4" y="675" font-size="12" fill="#1f2328" text-anchor="middle">escapes</text>
+<text x="744.4" y="690" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">0 B</text>
+<rect x="799.9" y="660" width="76.1" height="36" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="837.9" y="675" font-size="12" fill="#1f2328" text-anchor="middle">pad4</text>
+<text x="837.9" y="690" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">2 B</text>
+<text x="24" y="652" font-size="12" fill="#57606a">then, in order (not to scale):</text>
+<text x="24" y="716" font-size="12.5" fill="#1f2328">this payload: 5 structure steps, 5 tables, rANS precision 10 bits, m = 3, 2 cross terms (sources FIS and PMSL), no mask term</text>
+<text x="24" y="733" font-size="12.5" fill="#1f2328">steps: per step u8 n_ctx, table map, thresholds, W (i16), C (i32), per range u32 rANS bytes and escape units</text>
+<rect x="20" y="766" width="860" height="50" rx="6" fill="#f0f2f4" stroke="#1f2328" stroke-width="1.2"/>
+<text x="32" y="786" font-size="12.5" fill="#1f2328" font-weight="bold">frozen (container version 3): every offset, type and order above, the mode codes and the decode rule.</text>
+<text x="32" y="804" font-size="12.5" fill="#1f2328">not frozen: what the encoder writes into them (weights, tables, contexts, which terms, sizes).</text>
+</svg>

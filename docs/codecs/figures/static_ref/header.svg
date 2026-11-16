@@ -1,0 +1,268 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="934" viewBox="0 0 900 934" font-family="sans-serif">
+<title>The static_ref header, version 1</title>
+<rect x="0" y="0" width="900" height="934" fill="#ffffff"/>
+<text x="20" y="28" font-size="14" fill="#1f2328" font-weight="bold">(a)  the fixed part: 16 bytes (integers little endian), and its bytes in this chunk</text>
+<rect x="24" y="58" width="53" height="34" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="50.5" y="79.5" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">1</text>
+<text x="24" y="52" font-size="12" fill="#57606a">0</text>
+<text x="50.5" y="110" font-size="12" fill="#1f2328" text-anchor="middle">version</text>
+<text x="50.5" y="125" font-size="12" fill="#57606a" text-anchor="middle">u8</text>
+<text x="50.5" y="142" font-size="12" fill="#57606a" text-anchor="middle" font-family="monospace">01</text>
+<rect x="77" y="58" width="53" height="34" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="103.5" y="79.5" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">0</text>
+<text x="77" y="52" font-size="12" fill="#57606a">1</text>
+<text x="103.5" y="110" font-size="12" fill="#1f2328" text-anchor="middle"></text>
+<text x="103.5" y="125" font-size="12" fill="#57606a" text-anchor="middle">u8</text>
+<text x="103.5" y="142" font-size="12" fill="#57606a" text-anchor="middle" font-family="monospace">00</text>
+<rect x="130" y="58" width="106" height="34" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="183" y="79.5" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">0</text>
+<text x="130" y="52" font-size="12" fill="#57606a">2</text>
+<text x="183" y="110" font-size="12" fill="#1f2328" text-anchor="middle">reserved</text>
+<text x="183" y="125" font-size="12" fill="#57606a" text-anchor="middle">u16</text>
+<text x="183" y="142" font-size="12" fill="#57606a" text-anchor="middle" font-family="monospace">00 00</text>
+<rect x="236" y="58" width="212" height="34" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="342" y="79.5" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">5</text>
+<text x="236" y="52" font-size="12" fill="#57606a">4</text>
+<text x="342" y="110" font-size="12" fill="#1f2328" text-anchor="middle">n_static</text>
+<text x="342" y="125" font-size="12" fill="#57606a" text-anchor="middle">u32</text>
+<text x="342" y="142" font-size="12" fill="#57606a" text-anchor="middle" font-family="monospace">05 00 00 00</text>
+<rect x="448" y="58" width="212" height="34" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="554" y="79.5" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">20</text>
+<text x="448" y="52" font-size="12" fill="#57606a">8</text>
+<text x="554" y="110" font-size="12" fill="#1f2328" text-anchor="middle">n_slots</text>
+<text x="554" y="125" font-size="12" fill="#57606a" text-anchor="middle">u32</text>
+<text x="554" y="142" font-size="12" fill="#57606a" text-anchor="middle" font-family="monospace">14 00 00 00</text>
+<rect x="660" y="58" width="212" height="34" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="766" y="79.5" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">0</text>
+<text x="660" y="52" font-size="12" fill="#57606a">12</text>
+<text x="766" y="110" font-size="12" fill="#1f2328" text-anchor="middle">reserved</text>
+<text x="766" y="125" font-size="12" fill="#57606a" text-anchor="middle">u32</text>
+<text x="766" y="142" font-size="12" fill="#57606a" text-anchor="middle" font-family="monospace">00 00 00 00</text>
+<text x="872" y="52" font-size="12" fill="#57606a" text-anchor="end">16</text>
+<text x="24" y="162" font-size="12.5" fill="#1f2328">n_slots = dates × n_static × members = 2 × 5 × 2; then the n_slots records, back to back, no padding</text>
+<text x="20" y="204" font-size="14" fill="#1f2328" font-weight="bold">(b)  a slot record: 40 bytes (slot 1 of this header), then m bytes for INLINE</text>
+<rect x="24" y="236" width="21" height="34" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="34.5" y="257.5" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">2</text>
+<text x="24" y="230" font-size="12" fill="#57606a">0</text>
+<rect x="45" y="236" width="21" height="34" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="55.5" y="257.5" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">0</text>
+<text x="45" y="230" font-size="12" fill="#57606a">1</text>
+<rect x="66" y="236" width="42" height="34" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="87" y="257.5" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">0</text>
+<text x="66" y="230" font-size="12" fill="#57606a">2</text>
+<rect x="108" y="236" width="84" height="34" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="150" y="257.5" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">0</text>
+<text x="108" y="230" font-size="12" fill="#57606a">4</text>
+<rect x="192" y="236" width="672" height="34" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="528" y="257.5" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">5cfe5b7ba763b436025d0ad746f0137e…</text>
+<text x="192" y="230" font-size="12" fill="#57606a">8</text>
+<text x="864" y="230" font-size="12" fill="#57606a" text-anchor="end">40</text>
+<text x="24" y="288" font-size="12" fill="#1f2328">kind</text>
+<text x="150" y="288" font-size="12" fill="#1f2328" text-anchor="middle">arg</text>
+<text x="528" y="288" font-size="12" fill="#1f2328" text-anchor="middle">sha256 of the slot's float32 little-endian bytes</text>
+<text x="24" y="306" font-size="12" fill="#57606a">u8 kind, u8 0, u16 0, u32 arg, 32 bytes sha256</text>
+<text x="528" y="306" font-size="12" fill="#57606a" text-anchor="middle" font-family="monospace">bytes: 02 | 00 | 00 00 | 00 00 00 00 | 5c fe 5b 7b …</text>
+<text x="24" y="332" font-size="12.5" fill="#1f2328">slot 1 = (FIS, date 0, member 1): kind 2 REPEAT, arg = 0, the earlier slot with the same sha256.</text>
+<text x="24" y="350" font-size="12.5" fill="#1f2328">kind 0 REFERENCE: arg 0, the values are the sidecar file statics/&lt;sha256&gt;.f4.blosc.</text>
+<text x="24" y="368" font-size="12.5" fill="#1f2328">kind 1 INLINE: arg = m &gt; 0, and m bytes follow the record: the numcodecs Blosc frame of the values (zstd 9, bit shuffle).</text>
+<text x="20" y="412" font-size="14" fill="#1f2328" font-weight="bold">(c)  the 20 slots of the chunk, C order of x[:, static_fields, :, :]</text>
+<text x="154" y="450" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">FIS</text>
+<text x="114" y="466" font-size="12" fill="#57606a" text-anchor="middle">m0</text>
+<text x="194" y="466" font-size="12" fill="#57606a" text-anchor="middle">m1</text>
+<text x="314" y="450" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">sin_latitude</text>
+<text x="274" y="466" font-size="12" fill="#57606a" text-anchor="middle">m0</text>
+<text x="354" y="466" font-size="12" fill="#57606a" text-anchor="middle">m1</text>
+<text x="474" y="450" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">cos_latitude</text>
+<text x="434" y="466" font-size="12" fill="#57606a" text-anchor="middle">m0</text>
+<text x="514" y="466" font-size="12" fill="#57606a" text-anchor="middle">m1</text>
+<text x="634" y="450" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">sin_longitude</text>
+<text x="594" y="466" font-size="12" fill="#57606a" text-anchor="middle">m0</text>
+<text x="674" y="466" font-size="12" fill="#57606a" text-anchor="middle">m1</text>
+<text x="794" y="450" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">cos_longitude</text>
+<text x="754" y="466" font-size="12" fill="#57606a" text-anchor="middle">m0</text>
+<text x="834" y="466" font-size="12" fill="#57606a" text-anchor="middle">m1</text>
+<text x="24" y="486" font-size="12.5" fill="#1f2328" font-weight="bold">with a store target: 816 bytes = 16 + 20 × 40 (5 REFERENCE, 15 REPEAT)</text>
+<rect x="75" y="496" width="76" height="40" fill="#d1e5da" stroke="#2e8b57" stroke-width="1"/>
+<text x="113" y="512" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">0 REF</text>
+<text x="113" y="528" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">5cfe5b7b</text>
+<rect x="155" y="496" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="193" y="512" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">1 REP</text>
+<text x="193" y="528" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 0</text>
+<rect x="235" y="496" width="76" height="40" fill="#d1e5da" stroke="#2e8b57" stroke-width="1"/>
+<text x="273" y="512" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">2 REF</text>
+<text x="273" y="528" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">1ad063f3</text>
+<rect x="315" y="496" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="353" y="512" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">3 REP</text>
+<text x="353" y="528" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 2</text>
+<rect x="395" y="496" width="76" height="40" fill="#d1e5da" stroke="#2e8b57" stroke-width="1"/>
+<text x="433" y="512" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">4 REF</text>
+<text x="433" y="528" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">d3f6a887</text>
+<rect x="475" y="496" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="513" y="512" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">5 REP</text>
+<text x="513" y="528" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 4</text>
+<rect x="555" y="496" width="76" height="40" fill="#d1e5da" stroke="#2e8b57" stroke-width="1"/>
+<text x="593" y="512" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">6 REF</text>
+<text x="593" y="528" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">d67c9ea7</text>
+<rect x="635" y="496" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="673" y="512" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">7 REP</text>
+<text x="673" y="528" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 6</text>
+<rect x="715" y="496" width="76" height="40" fill="#d1e5da" stroke="#2e8b57" stroke-width="1"/>
+<text x="753" y="512" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">8 REF</text>
+<text x="753" y="528" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">0bb3335e</text>
+<rect x="795" y="496" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="833" y="512" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">9 REP</text>
+<text x="833" y="528" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 8</text>
+<rect x="75" y="540" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="113" y="556" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">10 REP</text>
+<text x="113" y="572" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 0</text>
+<rect x="155" y="540" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="193" y="556" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">11 REP</text>
+<text x="193" y="572" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 0</text>
+<rect x="235" y="540" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="273" y="556" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">12 REP</text>
+<text x="273" y="572" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 2</text>
+<rect x="315" y="540" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="353" y="556" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">13 REP</text>
+<text x="353" y="572" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 2</text>
+<rect x="395" y="540" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="433" y="556" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">14 REP</text>
+<text x="433" y="572" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 4</text>
+<rect x="475" y="540" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="513" y="556" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">15 REP</text>
+<text x="513" y="572" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 4</text>
+<rect x="555" y="540" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="593" y="556" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">16 REP</text>
+<text x="593" y="572" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 6</text>
+<rect x="635" y="540" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="673" y="556" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">17 REP</text>
+<text x="673" y="572" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 6</text>
+<rect x="715" y="540" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="753" y="556" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">18 REP</text>
+<text x="753" y="572" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 8</text>
+<rect x="795" y="540" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="833" y="556" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">19 REP</text>
+<text x="833" y="572" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 8</text>
+<text x="66" y="520.5" font-size="12" fill="#57606a" text-anchor="end">date 0</text>
+<text x="66" y="564.5" font-size="12" fill="#57606a" text-anchor="end">date 1</text>
+<text x="24" y="608" font-size="12.5" fill="#1f2328" font-weight="bold">inline: true: 151 434 bytes = 16 + 20 × 40 + 150 618 of Blosc frames (5 INLINE, 15 REPEAT)</text>
+<rect x="75" y="618" width="76" height="40" fill="#2e8b57" stroke="#2e8b57" stroke-width="1"/>
+<text x="113" y="634" font-size="12" fill="#ffffff" text-anchor="middle" font-family="monospace">0 INL</text>
+<text x="113" y="650" font-size="12" fill="#ffffff" text-anchor="middle" font-family="monospace">60 124 B</text>
+<rect x="155" y="618" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="193" y="634" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">1 REP</text>
+<text x="193" y="650" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 0</text>
+<rect x="235" y="618" width="76" height="40" fill="#2e8b57" stroke="#2e8b57" stroke-width="1"/>
+<text x="273" y="634" font-size="12" fill="#ffffff" text-anchor="middle" font-family="monospace">2 INL</text>
+<text x="273" y="650" font-size="12" fill="#ffffff" text-anchor="middle" font-family="monospace">22 305 B</text>
+<rect x="315" y="618" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="353" y="634" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">3 REP</text>
+<text x="353" y="650" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 2</text>
+<rect x="395" y="618" width="76" height="40" fill="#2e8b57" stroke="#2e8b57" stroke-width="1"/>
+<text x="433" y="634" font-size="12" fill="#ffffff" text-anchor="middle" font-family="monospace">4 INL</text>
+<text x="433" y="650" font-size="12" fill="#ffffff" text-anchor="middle" font-family="monospace">22 258 B</text>
+<rect x="475" y="618" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="513" y="634" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">5 REP</text>
+<text x="513" y="650" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 4</text>
+<rect x="555" y="618" width="76" height="40" fill="#2e8b57" stroke="#2e8b57" stroke-width="1"/>
+<text x="593" y="634" font-size="12" fill="#ffffff" text-anchor="middle" font-family="monospace">6 INL</text>
+<text x="593" y="650" font-size="12" fill="#ffffff" text-anchor="middle" font-family="monospace">23 024 B</text>
+<rect x="635" y="618" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="673" y="634" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">7 REP</text>
+<text x="673" y="650" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 6</text>
+<rect x="715" y="618" width="76" height="40" fill="#2e8b57" stroke="#2e8b57" stroke-width="1"/>
+<text x="753" y="634" font-size="12" fill="#ffffff" text-anchor="middle" font-family="monospace">8 INL</text>
+<text x="753" y="650" font-size="12" fill="#ffffff" text-anchor="middle" font-family="monospace">22 907 B</text>
+<rect x="795" y="618" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="833" y="634" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">9 REP</text>
+<text x="833" y="650" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 8</text>
+<rect x="75" y="662" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="113" y="678" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">10 REP</text>
+<text x="113" y="694" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 0</text>
+<rect x="155" y="662" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="193" y="678" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">11 REP</text>
+<text x="193" y="694" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 0</text>
+<rect x="235" y="662" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="273" y="678" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">12 REP</text>
+<text x="273" y="694" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 2</text>
+<rect x="315" y="662" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="353" y="678" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">13 REP</text>
+<text x="353" y="694" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 2</text>
+<rect x="395" y="662" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="433" y="678" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">14 REP</text>
+<text x="433" y="694" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 4</text>
+<rect x="475" y="662" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="513" y="678" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">15 REP</text>
+<text x="513" y="694" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 4</text>
+<rect x="555" y="662" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="593" y="678" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">16 REP</text>
+<text x="593" y="694" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 6</text>
+<rect x="635" y="662" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="673" y="678" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">17 REP</text>
+<text x="673" y="694" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 6</text>
+<rect x="715" y="662" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="753" y="678" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">18 REP</text>
+<text x="753" y="694" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 8</text>
+<rect x="795" y="662" width="76" height="40" fill="#ffffff" stroke="#2e8b57" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="833" y="678" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">19 REP</text>
+<text x="833" y="694" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">arg = 8</text>
+<text x="66" y="642.5" font-size="12" fill="#57606a" text-anchor="end">date 0</text>
+<text x="66" y="686.5" font-size="12" fill="#57606a" text-anchor="end">date 1</text>
+<text x="20" y="746" font-size="14" fill="#1f2328" font-weight="bold">(d)  to scale: each header as a bar of its bytes</text>
+<text x="24" y="768" font-size="12" fill="#57606a">with a store target: 816 bytes (fixed part, then 20 records)</text>
+<rect x="24" y="774" width="16.7" height="22" fill="#f0f2f4" stroke="#1f2328" stroke-width="0.6"/>
+<rect x="40.7" y="774" width="41.8" height="22" fill="#d1e5da" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="82.5" y="774" width="41.8" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="124.2" y="774" width="41.8" height="22" fill="#d1e5da" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="166" y="774" width="41.8" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="207.8" y="774" width="41.8" height="22" fill="#d1e5da" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="249.5" y="774" width="41.8" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="291.3" y="774" width="41.8" height="22" fill="#d1e5da" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="333.1" y="774" width="41.8" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="374.8" y="774" width="41.8" height="22" fill="#d1e5da" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="416.6" y="774" width="41.8" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="458.4" y="774" width="41.8" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="500.1" y="774" width="41.8" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="541.9" y="774" width="41.8" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="583.6" y="774" width="41.8" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="625.4" y="774" width="41.8" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="667.2" y="774" width="41.8" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="708.9" y="774" width="41.8" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="750.7" y="774" width="41.8" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="792.5" y="774" width="41.8" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="834.2" y="774" width="41.8" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<text x="24" y="818" font-size="12" fill="#57606a">inline: true: 151 434 bytes; the records are the hairlines, the frames hold the values</text>
+<rect x="24" y="824" width="0.1" height="22" fill="#f0f2f4" stroke="#1f2328" stroke-width="0.6"/>
+<rect x="24.1" y="824" width="0.2" height="22" fill="#2e8b57" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="24.3" y="824" width="338.3" height="22" fill="#8cbfa3" stroke="#2e8b57" stroke-width="0.6"/>
+<text x="193.5" y="839.5" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">60 124 B</text>
+<rect x="362.6" y="824" width="0.2" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="362.8" y="824" width="0.2" height="22" fill="#2e8b57" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="363" y="824" width="125.5" height="22" fill="#8cbfa3" stroke="#2e8b57" stroke-width="0.6"/>
+<text x="425.8" y="839.5" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">22 305 B</text>
+<rect x="488.5" y="824" width="0.2" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="488.8" y="824" width="0.2" height="22" fill="#2e8b57" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="489" y="824" width="125.2" height="22" fill="#8cbfa3" stroke="#2e8b57" stroke-width="0.6"/>
+<text x="551.6" y="839.5" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">22 258 B</text>
+<rect x="614.2" y="824" width="0.2" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="614.4" y="824" width="0.2" height="22" fill="#2e8b57" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="614.7" y="824" width="129.5" height="22" fill="#8cbfa3" stroke="#2e8b57" stroke-width="0.6"/>
+<text x="679.4" y="839.5" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">23 024 B</text>
+<rect x="744.2" y="824" width="0.2" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="744.4" y="824" width="0.2" height="22" fill="#2e8b57" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="744.6" y="824" width="128.9" height="22" fill="#8cbfa3" stroke="#2e8b57" stroke-width="0.6"/>
+<text x="809.1" y="839.5" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">22 907 B</text>
+<rect x="873.5" y="824" width="0.2" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="873.7" y="824" width="0.2" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="874" y="824" width="0.2" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="874.2" y="824" width="0.2" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="874.4" y="824" width="0.2" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="874.6" y="824" width="0.2" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="874.9" y="824" width="0.2" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="875.1" y="824" width="0.2" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="875.3" y="824" width="0.2" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="875.5" y="824" width="0.2" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="875.8" y="824" width="0.2" height="22" fill="#ffffff" stroke="#2e8b57" stroke-width="0.6"/>
+<rect x="20" y="870" width="860" height="50" rx="6" fill="#f0f2f4" stroke="#1f2328" stroke-width="1.2"/>
+<text x="32" y="890" font-size="12.5" fill="#1f2328" font-weight="bold">frozen (header version 1): every offset and type above, the kind codes 0, 1, 2, the slot order and the</text>
+<text x="32" y="908" font-size="12.5" fill="#1f2328">Blosc frame of INLINE data. Not frozen: which kind a slot gets (it depends on the writer's sidecar and cache).</text>
+</svg>

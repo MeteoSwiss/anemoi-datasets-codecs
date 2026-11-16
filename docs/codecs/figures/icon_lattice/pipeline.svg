@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="492" viewBox="0 0 900 492" font-family="sans-serif">
+<title>One LATTICE field, encode and decode</title>
+<defs><marker id="a1f2328" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L10,5 L0,9 z" fill="#1f2328"/></marker><marker id="a2f6db5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L10,5 L0,9 z" fill="#2f6db5"/></marker><marker id="a57606a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L10,5 L0,9 z" fill="#57606a"/></marker></defs>
+<rect x="0" y="0" width="900" height="492" fill="#ffffff"/>
+<text x="20" y="26" font-size="14" fill="#1f2328" font-weight="bold">encoder (numpy, C rANS encoder), per field</text>
+<rect x="20" y="84" width="128" height="92" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1.4"/>
+<text x="84" y="104" font-size="13.5" fill="#1f2328" text-anchor="middle" font-weight="bold">field x</text>
+<text x="84" y="124" font-size="12.5" fill="#1f2328" text-anchor="middle">float32</text>
+<text x="84" y="141" font-size="12.5" fill="#1f2328" text-anchor="middle">native cell order</text>
+<rect x="165" y="84" width="128" height="92" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1.4"/>
+<text x="229" y="104" font-size="13.5" fill="#1f2328" text-anchor="middle" font-weight="bold">quantise</text>
+<text x="229" y="124" font-size="12.5" fill="#1f2328" text-anchor="middle">n = rint((x − o) / g)</text>
+<text x="229" y="141" font-size="12.5" fill="#1f2328" text-anchor="middle">zero-anchored offset</text>
+<text x="229" y="158" font-size="12.5" fill="#1f2328" text-anchor="middle">int16 or int32</text>
+<rect x="310" y="84" width="128" height="92" rx="6" fill="#f6dcc6" stroke="#d9711c" stroke-width="1.4"/>
+<text x="374" y="104" font-size="13.5" fill="#1f2328" text-anchor="middle" font-weight="bold">predict</text>
+<text x="374" y="124" font-size="12.5" fill="#1f2328" text-anchor="middle">per step, from the</text>
+<text x="374" y="141" font-size="12.5" fill="#1f2328" text-anchor="middle">decoded sources</text>
+<text x="374" y="158" font-size="12.5" fill="#1f2328" text-anchor="middle">+ cross terms</text>
+<rect x="455" y="84" width="128" height="92" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1.4"/>
+<text x="519" y="104" font-size="13.5" fill="#1f2328" text-anchor="middle" font-weight="bold">residual</text>
+<text x="519" y="124" font-size="12.5" fill="#1f2328" text-anchor="middle">q = round((n − pred)</text>
+<text x="519" y="141" font-size="12.5" fill="#1f2328" text-anchor="middle">/ 2^m), ties to even</text>
+<text x="519" y="158" font-size="12.5" fill="#1f2328" text-anchor="middle">v = pred + 2^m q</text>
+<rect x="600" y="84" width="128" height="92" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1.4"/>
+<text x="664" y="104" font-size="13.5" fill="#1f2328" text-anchor="middle" font-weight="bold">entropy code</text>
+<text x="664" y="124" font-size="12.5" fill="#1f2328" text-anchor="middle">zigzag symbols</text>
+<text x="664" y="141" font-size="12.5" fill="#1f2328" text-anchor="middle">contexts → tables</text>
+<text x="664" y="158" font-size="12.5" fill="#1f2328" text-anchor="middle">rANS, 32 lanes</text>
+<rect x="745" y="84" width="128" height="92" rx="6" fill="#d1dfef" stroke="#2f6db5" stroke-width="1.4"/>
+<text x="809" y="104" font-size="13.5" fill="#1f2328" text-anchor="middle" font-weight="bold">payload</text>
+<text x="809" y="124" font-size="12.5" fill="#1f2328" text-anchor="middle">LATTICE record</text>
+<text x="809" y="141" font-size="12.5" fill="#1f2328" text-anchor="middle">of the chunk</text>
+<path d="M150,130 L163,130" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M295,130 L308,130" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M440,130 L453,130" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M585,130 L598,130" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M730,130 L743,130" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M519,176 L519,196 L374,196 L374,180" fill="none" stroke="#2f6db5" stroke-width="1.4" marker-end="url(#a2f6db5)"/>
+<text x="446.5" y="212" font-size="12.5" fill="#1f2328" text-anchor="middle">v of decoded targets (closed loop)</text>
+<text x="374" y="54" font-size="12.5" fill="#57606a" text-anchor="middle">W, C fitted per step (IRLS)</text>
+<text x="374" y="70" font-size="12.5" fill="#57606a" text-anchor="middle">details d_c of decoded fields</text>
+<path d="M374,74 L374,84" fill="none" stroke="#57606a" stroke-width="1.2" marker-end="url(#a57606a)"/>
+<path d="M809,176 L809,322" fill="none" stroke="#57606a" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#a57606a)"/>
+<text x="801" y="216" font-size="12.5" fill="#1f2328" text-anchor="end" font-weight="bold">verify:</text>
+<text x="801" y="234" font-size="12.5" fill="#1f2328" text-anchor="end">the C decoder</text>
+<text x="801" y="251" font-size="12.5" fill="#1f2328" text-anchor="end">reproduces v, every</text>
+<text x="801" y="268" font-size="12.5" fill="#1f2328" text-anchor="end">cell within the bound;</text>
+<text x="801" y="285" font-size="12.5" fill="#1f2328" text-anchor="end">else LOSSLESS</text>
+<text x="20" y="300" font-size="14" fill="#1f2328" font-weight="bold">decoder: lc_decode_chunk, one C call per chunk, one OpenMP task per field</text>
+<rect x="20" y="322" width="128" height="92" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1.4"/>
+<text x="84" y="342" font-size="13.5" fill="#1f2328" text-anchor="middle" font-weight="bold">output</text>
+<text x="84" y="362" font-size="12.5" fill="#1f2328" text-anchor="middle">float32</text>
+<text x="84" y="379" font-size="12.5" fill="#1f2328" text-anchor="middle">native cell order</text>
+<rect x="165" y="322" width="128" height="92" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1.4"/>
+<text x="229" y="342" font-size="13.5" fill="#1f2328" text-anchor="middle" font-weight="bold">dequantise</text>
+<text x="229" y="362" font-size="12.5" fill="#1f2328" text-anchor="middle">clip(offset +</text>
+<text x="229" y="379" font-size="12.5" fill="#1f2328" text-anchor="middle">g · (float32) v)</text>
+<text x="229" y="396" font-size="12.5" fill="#1f2328" text-anchor="middle">2 float32 roundings</text>
+<rect x="310" y="322" width="128" height="92" rx="6" fill="#f6dcc6" stroke="#d9711c" stroke-width="1.4"/>
+<text x="374" y="342" font-size="13.5" fill="#1f2328" text-anchor="middle" font-weight="bold">predict</text>
+<text x="374" y="362" font-size="12.5" fill="#1f2328" text-anchor="middle">same arithmetic;</text>
+<text x="374" y="379" font-size="12.5" fill="#1f2328" text-anchor="middle">W, C from payload,</text>
+<text x="374" y="396" font-size="12.5" fill="#1f2328" text-anchor="middle">details d_c of sources</text>
+<rect x="455" y="322" width="128" height="92" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1.4"/>
+<text x="519" y="342" font-size="13.5" fill="#1f2328" text-anchor="middle" font-weight="bold">apply</text>
+<text x="519" y="362" font-size="12.5" fill="#1f2328" text-anchor="middle">v = pred + 2^m r</text>
+<text x="519" y="379" font-size="12.5" fill="#1f2328" text-anchor="middle">d = sat16(v−pred_sp)</text>
+<text x="519" y="396" font-size="12.5" fill="#1f2328" text-anchor="middle">(detail for later fields)</text>
+<rect x="600" y="322" width="128" height="92" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1.4"/>
+<text x="664" y="342" font-size="13.5" fill="#1f2328" text-anchor="middle" font-weight="bold">entropy decode</text>
+<text x="664" y="362" font-size="12.5" fill="#1f2328" text-anchor="middle">rANS → symbols,</text>
+<text x="664" y="379" font-size="12.5" fill="#1f2328" text-anchor="middle">table by source</text>
+<text x="664" y="396" font-size="12.5" fill="#1f2328" text-anchor="middle">spread; r or escape</text>
+<rect x="745" y="322" width="128" height="92" rx="6" fill="#d1dfef" stroke="#2f6db5" stroke-width="1.4"/>
+<text x="809" y="342" font-size="13.5" fill="#1f2328" text-anchor="middle" font-weight="bold">payload</text>
+<text x="809" y="362" font-size="12.5" fill="#1f2328" text-anchor="middle">header, steps,</text>
+<text x="809" y="379" font-size="12.5" fill="#1f2328" text-anchor="middle">tables, rANS,</text>
+<text x="809" y="396" font-size="12.5" fill="#1f2328" text-anchor="middle">escapes</text>
+<path d="M743,368 L730,368" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M598,368 L585,368" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M440,368 L453,368" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M163,368 L150,368" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M519,322 L519,310 L374,310 L374,318" fill="none" stroke="#2f6db5" stroke-width="1.4" marker-end="url(#a2f6db5)"/>
+<path d="M519,414 L519,436 L229,436 L229,418" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<text x="374" y="453" font-size="12.5" fill="#1f2328" text-anchor="middle">after the last step: all values v</text>
+<text x="593" y="444" font-size="12.5" fill="#57606a">steps in order; the ranges of a step in</text>
+<text x="593" y="461" font-size="12.5" fill="#57606a">parallel (taskloop); predict, rANS and</text>
+<text x="593" y="478" font-size="12.5" fill="#57606a">apply fused in L1-sized blocks</text>
+</svg>

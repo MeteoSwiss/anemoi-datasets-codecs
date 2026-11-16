@@ -1,0 +1,23 @@
+name: pr-title
+
+# Pull requests are squash-merged and the title becomes the commit on main, so the title follows Conventional
+# Commits (docs/contributing.md).
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+
+jobs:
+  conventional-title:
+    runs-on: ubuntu-latest
+    steps:
+    - name: check the pull request title
+      env:
+        TITLE: ${{ github.event.pull_request.title }}
+      run: |
+        pattern='^(feat|fix|perf|docs|refactor|test|build|ci|chore)(\([a-z0-9_./-]+\))?!?: [^ ].*$'
+        if printf '%s' "$TITLE" | grep -Eq "$pattern"; then
+          echo "ok: $TITLE"
+        else
+          echo "::error::The pull request title must follow Conventional Commits, e.g. 'fix(cli): message': $TITLE"
+          exit 1
+        fi

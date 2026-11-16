@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="780" viewBox="0 0 900 780" font-family="sans-serif">
+<title>Size per ICON-CH1 date: the codecs against Blosc lz4 and raw float32</title>
+<rect x="0" y="0" width="900" height="780" fill="#ffffff"/>
+<text x="20" y="26" font-size="16" fill="#1f2328" font-weight="bold">Size per date, ICON-CH1 (115 variables, 1,147,980 cells), sample date 6</text>
+<text x="20" y="46" font-size="12.5" fill="#57606a">Bytes of one chunk (one date). Sizes are deterministic and comparable across runs; one store per bar.</text>
+<text x="20" y="78" font-size="14" fill="#1f2328" font-weight="bold">(a)  MiB per date, with the ratio to Blosc lz4</text>
+<path d="M262,92 L262,330" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M344.3,92 L344.3,330" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M426.6,92 L426.6,330" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M508.9,92 L508.9,330" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M591.2,92 L591.2,330" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M673.5,92 L673.5,330" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<text x="252" y="111" font-size="12.5" fill="#1f2328" text-anchor="end">raw float32 (no codec)</text>
+<path d="M262,98 H672.5 Q676.5,98 676.5,102 V112 Q676.5,116 672.5,116 H262 Z" fill="#8c959f" stroke="none" stroke-width="1.0"/>
+<text x="684.5" y="111" font-size="12.5" fill="#1f2328">503.6 MiB</text>
+<text x="252" y="137" font-size="12.5" fill="#1f2328" text-anchor="end">Blosc lz4, clevel 5, byte shuffle</text>
+<path d="M262,124 H504.1 Q508.1,124 508.1,128 V138 Q508.1,142 504.1,142 H262 Z" fill="#7d8590" stroke="none" stroke-width="1.0"/>
+<text x="516.1" y="137" font-size="12.5" fill="#1f2328">298.95 MiB (the reference, 1x)</text>
+<text x="252" y="163" font-size="12.5" fill="#1f2328" text-anchor="end">single codec · tree, k = 1</text>
+<path d="M262,150 H293.7 Q297.7,150 297.7,154 V164 Q297.7,168 293.7,168 H262 Z" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<text x="305.7" y="163" font-size="12.5" fill="#1f2328">43.394 MiB (6.9x smaller than Blosc)</text>
+<text x="252" y="189" font-size="12.5" fill="#1f2328" text-anchor="end">chain · tree, k = 1</text>
+<path d="M262,176 H293.7 Q297.7,176 297.7,180 V190 Q297.7,194 293.7,194 H262 Z" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<text x="305.7" y="189" font-size="12.5" fill="#1f2328">43.386 MiB (6.9x smaller than Blosc)</text>
+<text x="252" y="215" font-size="12.5" fill="#1f2328" text-anchor="end">single codec · tree_b, k = 3</text>
+<path d="M262,202 H304.4 Q308.4,202 308.4,206 V216 Q308.4,220 304.4,220 H262 Z" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<text x="316.4" y="215" font-size="12.5" fill="#1f2328">56.351 MiB (5.3x smaller than Blosc)</text>
+<text x="252" y="241" font-size="12.5" fill="#1f2328" text-anchor="end">chain · tree_b, k = 3</text>
+<path d="M262,228 H304.3 Q308.3,228 308.3,232 V242 Q308.3,246 304.3,246 H262 Z" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<text x="316.3" y="241" font-size="12.5" fill="#1f2328">56.231 MiB (5.3x smaller than Blosc)</text>
+<text x="252" y="267" font-size="12.5" fill="#1f2328" text-anchor="end">single · the defaults, tree, k = 1</text>
+<path d="M262,254 H287.4 Q291.4,254 291.4,258 V268 Q291.4,272 287.4,272 H262 Z" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<text x="299.4" y="267" font-size="12.5" fill="#1f2328">35.69 MiB (8.4x smaller than Blosc)</text>
+<text x="252" y="293" font-size="12.5" fill="#1f2328" text-anchor="end">single, with dates · tree, k = 1</text>
+<path d="M262,280 H288.2 Q292.2,280 292.2,284 V294 Q292.2,298 288.2,298 H262 Z" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<text x="300.2" y="293" font-size="12.5" fill="#1f2328">36.71 MiB (8.1x smaller than Blosc)</text>
+<text x="252" y="319" font-size="12.5" fill="#1f2328" text-anchor="end">single, with dates · tree_b, k = 3</text>
+<path d="M262,306 H298.9 Q302.9,306 302.9,310 V320 Q302.9,324 298.9,324 H262 Z" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<text x="310.9" y="319" font-size="12.5" fill="#1f2328">49.67 MiB (6.0x smaller than Blosc)</text>
+<text x="262" y="346" font-size="12" fill="#57606a" text-anchor="middle">0</text>
+<text x="344.3" y="346" font-size="12" fill="#57606a" text-anchor="middle">100</text>
+<text x="426.6" y="346" font-size="12" fill="#57606a" text-anchor="middle">200</text>
+<text x="508.9" y="346" font-size="12" fill="#57606a" text-anchor="middle">300</text>
+<text x="591.2" y="346" font-size="12" fill="#57606a" text-anchor="middle">400</text>
+<text x="673.5" y="346" font-size="12" fill="#57606a" text-anchor="middle">500</text>
+<text x="706.4" y="346" font-size="12" fill="#57606a">MiB</text>
+<rect x="262" y="357" width="12" height="12" fill="#2f6db5" stroke="none" stroke-width="1"/>
+<text x="280" y="366" font-size="12.5" fill="#1f2328">rounding: grid, recipe_fit: false, no valid dates (zarr): forcings lossless</text>
+<rect x="262" y="377" width="12" height="12" fill="#8dafd6" stroke="none" stroke-width="1"/>
+<text x="280" y="386" font-size="12.5" fill="#1f2328">forcings as recipes: the defaults, or rounding: grid with dates</text>
+<text x="20" y="420" font-size="14" fill="#1f2328" font-weight="bold">(b)  Structure and k: size against the maximum error, mean over the 20 sample dates</text>
+<path d="M70,630 L700,630" fill="none" stroke="#8c959f" stroke-width="1"/>
+<text x="62" y="634" font-size="12" fill="#57606a" text-anchor="end">0</text>
+<path d="M70,598.3 L700,598.3" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<text x="62" y="602.3" font-size="12" fill="#57606a" text-anchor="end">0.2</text>
+<path d="M70,566.7 L700,566.7" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<text x="62" y="570.7" font-size="12" fill="#57606a" text-anchor="end">0.4</text>
+<path d="M70,535 L700,535" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<text x="62" y="539" font-size="12" fill="#57606a" text-anchor="end">0.6</text>
+<path d="M70,503.3 L700,503.3" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<text x="62" y="507.3" font-size="12" fill="#57606a" text-anchor="end">0.8</text>
+<path d="M70,471.7 L700,471.7" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<text x="62" y="475.7" font-size="12" fill="#57606a" text-anchor="end">1</text>
+<path d="M70,440 L70,630" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M175,440 L175,630" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M280,440 L280,630" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M385,440 L385,630" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M490,440 L490,630" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M595,440 L595,630" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<path d="M700,440 L700,630" fill="none" stroke="#f0f2f4" stroke-width="1"/>
+<text x="70" y="648" font-size="12" fill="#57606a" text-anchor="middle">0</text>
+<text x="175" y="648" font-size="12" fill="#57606a" text-anchor="middle">10</text>
+<text x="280" y="648" font-size="12" fill="#57606a" text-anchor="middle">20</text>
+<text x="385" y="648" font-size="12" fill="#57606a" text-anchor="middle">30</text>
+<text x="490" y="648" font-size="12" fill="#57606a" text-anchor="middle">40</text>
+<text x="595" y="648" font-size="12" fill="#57606a" text-anchor="middle">50</text>
+<text x="700" y="648" font-size="12" fill="#57606a" text-anchor="middle">60</text>
+<text x="713" y="648" font-size="12" fill="#57606a">MiB per date</text>
+<text x="80" y="456" font-size="12" fill="#57606a">worst error / bound</text>
+<circle cx="415.3" cy="471.7" r="7" fill="#ffffff" stroke="none" stroke-width="1.0"/>
+<circle cx="415.3" cy="471.7" r="5" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<text x="427.3" y="477.7" font-size="12.5" fill="#1f2328">tree, k = 1: 32.89 MiB</text>
+<circle cx="384.5" cy="471.7" r="7" fill="#ffffff" stroke="none" stroke-width="1.0"/>
+<circle cx="384.5" cy="471.7" r="5" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<text x="384.5" y="455.7" font-size="12.5" fill="#1f2328" text-anchor="middle">tree_b, k = 1: 29.95 MiB</text>
+<circle cx="372.4" cy="471.7" r="7" fill="#ffffff" stroke="none" stroke-width="1.0"/>
+<circle cx="372.4" cy="471.7" r="5" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<text x="362.4" y="495.7" font-size="12.5" fill="#1f2328" text-anchor="end">hc2_k3, k = 1: 28.80 MiB</text>
+<circle cx="549.9" cy="577.3" r="7" fill="#ffffff" stroke="none" stroke-width="1.0"/>
+<circle cx="549.9" cy="577.3" r="5" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<text x="539.9" y="567.3" font-size="12.5" fill="#1f2328" text-anchor="end">tree_b, k = 3: 45.70 MiB</text>
+<circle cx="638.2" cy="598.3" r="7" fill="#ffffff" stroke="none" stroke-width="1.0"/>
+<circle cx="638.2" cy="598.3" r="5" fill="#2f6db5" stroke="none" stroke-width="1.0"/>
+<text x="628.2" y="616.3" font-size="12.5" fill="#1f2328" text-anchor="end">tree_b, k = 5: 54.11 MiB</text>
+<text x="82" y="526" font-size="12.5" fill="#57606a">k divides the maximum error (bound / k);</text>
+<text x="82" y="542" font-size="12.5" fill="#57606a">the bytes it costs are the trade-off.</text>
+<text x="20" y="680" font-size="12" fill="#57606a">(a) Zarr writes of the codec-chains run (rounding: grid, forcings lossless); the defaults (rounding: direct,</text>
+<text x="20" y="696" font-size="12" fill="#57606a">physics.recipe_fit: true) from the configuration-choices run through the engine without dates (the bytes a zarr write</text>
+<text x="20" y="712" font-size="12" fill="#57606a">gives); the two 'with dates' bars from the physics-layer run (rounding: grid, scripts/physics_size.py); raw float32 from</text>
+<text x="20" y="728" font-size="12" fill="#57606a">the shape. The ratio is to the 298.95 MiB of the Blosc store of date 6.</text>
+<text x="20" y="744" font-size="12" fill="#57606a">(b) Structure table: rounding: grid, forcings as recipes, statics referenced; the worst error / bound is 1 / k in every</text>
+<text x="20" y="760" font-size="12" fill="#57606a">row. The RMSE / bound of each configuration is in the Configuration choices and Physics layer sections.</text>
+</svg>

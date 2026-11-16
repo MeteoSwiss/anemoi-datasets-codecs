@@ -1,0 +1,541 @@
+{
+ "tree": {
+  "file": "golden_chunk_tree.latc",
+  "chunk_sha256": "bad9cdf198de8c4d75b5d6e5d5c3cc55dc81a9aed9cfbc7f3ef306ec83847aa8",
+  "decoded_sha256": "74dfd0b2e5cef92fa89b96fd2c9fc18e20912fdd16b98eae9a7f942e0b300a71",
+  "configuration": {
+   "version": 1,
+   "variables": [
+    "T_2M",
+    "PMSL",
+    "WIDE",
+    "CLCT",
+    "TOT_PREC_1H",
+    "NOISY",
+    "FLAT",
+    "FIS"
+   ],
+   "bounds": {
+    "T_2M": 0.05,
+    "PMSL": 2.0,
+    "WIDE": 1.0,
+    "CLCT": 0.5,
+    "TOT_PREC_1H": 1e-05,
+    "NOISY": 0.01,
+    "FLAT": 0.1,
+    "FIS": 1.0
+   },
+   "clip": {
+    "CLCT": [
+     0.0,
+     100.0
+    ]
+   },
+   "static_fields": [],
+   "grid": {
+    "name": "test-lattice",
+    "n_cells": 16361,
+    "sha256": "9dff561cfe73e50d40279a084aab88af47730d06fbcf531cea44b34c70298c03"
+   },
+   "n_ensembles": 1,
+   "structure": "tree",
+   "lossless": {
+    "id": "blosc",
+    "cname": "lz4",
+    "clevel": 5,
+    "shuffle": 1
+   },
+   "options": {
+    "k": 1.0,
+    "contexts": 8,
+    "tables": "auto",
+    "table_penalty": 256,
+    "fit": "ls",
+    "statics": "ref",
+    "rdoq": false,
+    "max_depth": 1,
+    "prob_bits": "auto",
+    "recon_bits": 3
+   },
+   "physics": {
+    "enabled": true,
+    "convention": "icon-ch1",
+    "cross": "shallow",
+    "surface_terms": true,
+    "level_terms": true,
+    "hydrostatic": true,
+    "below_ground": false,
+    "forcings": true,
+    "recipe_bound": 1e-06
+   }
+  }
+ },
+ "tree_b": {
+  "file": "golden_chunk_tree_b.latc",
+  "chunk_sha256": "b05a5764f11746ebe3c8e60bb5be909de99028fd8a5dc42f36a24bb67494a6d4",
+  "decoded_sha256": "593eb266721272dd14a9e382953b17aba6b7200120455143dd0e47d09cc2a62f",
+  "sidecar_statics": [],
+  "written_by": "anemoi-datasets-codecs 0.1.0",
+  "covers": "structure tree_b; a clip; exact zeros of a precipitation field",
+  "modes": [
+   0,
+   0,
+   0
+  ],
+  "configuration": {
+   "version": 1,
+   "variables": [
+    "PMSL",
+    "CLCT",
+    "TOT_PREC_1H"
+   ],
+   "bounds": {
+    "PMSL": 2.0,
+    "CLCT": 0.5,
+    "TOT_PREC_1H": 1e-05
+   },
+   "clip": {
+    "CLCT": [
+     0.0,
+     100.0
+    ]
+   },
+   "static_fields": [],
+   "grid": {
+    "name": "test-lattice",
+    "n_cells": 16361,
+    "sha256": "9dff561cfe73e50d40279a084aab88af47730d06fbcf531cea44b34c70298c03"
+   },
+   "n_ensembles": 1,
+   "structure": "tree_b",
+   "lossless": {
+    "id": "blosc",
+    "cname": "lz4",
+    "clevel": 5,
+    "shuffle": 1
+   },
+   "options": {
+    "k": 1.0,
+    "contexts": 8,
+    "tables": "auto",
+    "table_penalty": 256,
+    "fit": "ls",
+    "statics": "ref",
+    "rdoq": false,
+    "max_depth": 1,
+    "prob_bits": "auto",
+    "recon_bits": 3,
+    "rounding": "direct"
+   },
+   "physics": {
+    "enabled": true,
+    "convention": "icon-ch1",
+    "cross": "shallow",
+    "surface_terms": true,
+    "level_terms": true,
+    "hydrostatic": true,
+    "below_ground": false,
+    "forcings": true,
+    "recipe_bound": 1e-06,
+    "recipe_fit": true
+   }
+  }
+ },
+ "hc2_k3": {
+  "file": "golden_chunk_hc2_k3.latc",
+  "chunk_sha256": "b53121ac6553f6db0f51a00a4802e997c3f194188e08a743ed5a4afdda2abeee",
+  "decoded_sha256": "7576d275db9d32a7b5eedd795ffa025e444892851ca31da17cf781748a6cda29",
+  "sidecar_statics": [],
+  "written_by": "anemoi-datasets-codecs 0.1.0",
+  "covers": "structure hc2_k3; a cross term on a lattice source (T_2M <- PMSL)",
+  "modes": [
+   0,
+   0
+  ],
+  "configuration": {
+   "version": 1,
+   "variables": [
+    "T_2M",
+    "PMSL"
+   ],
+   "bounds": {
+    "T_2M": 0.05,
+    "PMSL": 2.0
+   },
+   "static_fields": [],
+   "grid": {
+    "name": "test-lattice",
+    "n_cells": 16361,
+    "sha256": "9dff561cfe73e50d40279a084aab88af47730d06fbcf531cea44b34c70298c03"
+   },
+   "n_ensembles": 1,
+   "structure": "hc2_k3",
+   "lossless": {
+    "id": "blosc",
+    "cname": "lz4",
+    "clevel": 5,
+    "shuffle": 1
+   },
+   "options": {
+    "k": 1.0,
+    "contexts": 8,
+    "tables": "auto",
+    "table_penalty": 256,
+    "fit": "ls",
+    "statics": "ref",
+    "rdoq": false,
+    "max_depth": 1,
+    "prob_bits": "auto",
+    "recon_bits": 3,
+    "rounding": "direct"
+   },
+   "physics": {
+    "enabled": true,
+    "convention": "icon-ch1",
+    "cross": "shallow",
+    "surface_terms": true,
+    "level_terms": true,
+    "hydrostatic": true,
+    "below_ground": false,
+    "forcings": true,
+    "recipe_bound": 1e-06,
+    "recipe_fit": true
+   }
+  }
+ },
+ "below_ground": {
+  "file": "golden_chunk_below_ground.latc",
+  "chunk_sha256": "104fdcce4372fd2e66514377c1f640a1dda9b23b06cc5887b87ab5d15338d54b",
+  "decoded_sha256": "4bfb4066f49568360d6e978a884ed648d1dcc7d5d6148605d3b1890311e2e93e",
+  "sidecar_statics": [],
+  "written_by": "anemoi-datasets-codecs 0.1.0",
+  "covers": "a below-ground mask term (T_1000 where PS < 1000 hPa, from T_2M and PS); cross terms",
+  "modes": [
+   0,
+   0,
+   0
+  ],
+  "configuration": {
+   "version": 1,
+   "variables": [
+    "PS",
+    "T_2M",
+    "T_1000"
+   ],
+   "bounds": {
+    "PS": 2.0,
+    "T_2M": 0.05,
+    "T_1000": 0.05
+   },
+   "static_fields": [],
+   "grid": {
+    "name": "test-lattice",
+    "n_cells": 16361,
+    "sha256": "9dff561cfe73e50d40279a084aab88af47730d06fbcf531cea44b34c70298c03"
+   },
+   "n_ensembles": 1,
+   "structure": "tree",
+   "lossless": {
+    "id": "blosc",
+    "cname": "lz4",
+    "clevel": 5,
+    "shuffle": 1
+   },
+   "options": {
+    "k": 1.0,
+    "contexts": 8,
+    "tables": "auto",
+    "table_penalty": 256,
+    "fit": "ls",
+    "statics": "ref",
+    "rdoq": false,
+    "max_depth": 1,
+    "prob_bits": "auto",
+    "recon_bits": 3,
+    "rounding": "direct"
+   },
+   "physics": {
+    "enabled": true,
+    "convention": "icon-ch1",
+    "cross": "shallow",
+    "surface_terms": true,
+    "level_terms": true,
+    "hydrostatic": true,
+    "below_ground": true,
+    "forcings": true,
+    "recipe_bound": 1e-06,
+    "recipe_fit": true
+   }
+  }
+ },
+ "static_inline": {
+  "file": "golden_chunk_static_inline.latc",
+  "chunk_sha256": "3184fe7ec9c07f3d835fa7a108c82d80526c7c46cbf659fb9e597a516cfd3fdd",
+  "decoded_sha256": "b013926efc089b403f2219a63e0b4a45179164cfa22e73cc86aabd677abfa137",
+  "sidecar_statics": [],
+  "written_by": "anemoi-datasets-codecs 0.1.0",
+  "covers": "a STATIC_REF field stored inline (options.statics: inline) and used as a cross source (static details)",
+  "modes": [
+   0,
+   3
+  ],
+  "configuration": {
+   "version": 1,
+   "variables": [
+    "T_2M",
+    "FIS"
+   ],
+   "bounds": {
+    "T_2M": 0.05
+   },
+   "static_fields": [
+    "FIS"
+   ],
+   "grid": {
+    "name": "test-lattice",
+    "n_cells": 16361,
+    "sha256": "9dff561cfe73e50d40279a084aab88af47730d06fbcf531cea44b34c70298c03"
+   },
+   "n_ensembles": 1,
+   "structure": "tree",
+   "lossless": {
+    "id": "blosc",
+    "cname": "lz4",
+    "clevel": 5,
+    "shuffle": 1
+   },
+   "options": {
+    "k": 1.0,
+    "contexts": 8,
+    "tables": "auto",
+    "table_penalty": 256,
+    "fit": "ls",
+    "statics": "inline",
+    "rdoq": false,
+    "max_depth": 1,
+    "prob_bits": "auto",
+    "recon_bits": 3,
+    "rounding": "direct"
+   },
+   "physics": {
+    "enabled": true,
+    "convention": "icon-ch1",
+    "cross": "shallow",
+    "surface_terms": true,
+    "level_terms": true,
+    "hydrostatic": true,
+    "below_ground": false,
+    "forcings": true,
+    "recipe_bound": 1e-06,
+    "recipe_fit": true
+   }
+  }
+ },
+ "chain": {
+  "file": "golden_chunk_chain.fchn",
+  "chunk_sha256": "584363044c65d84f36f0f298b1110a2b1b752b7fd08ff2699c7a5398bc2d7df2",
+  "decoded_sha256": "557a10f244d45ab351c4ac705f2ed8abbe0d4374bdfcd009f88b557bd8a14766",
+  "sidecar_statics": [
+   "f149fa8db97a09f96dd006c79c22e8d8c9512b940e706068ae0a06050bf8f25f"
+  ],
+  "written_by": "anemoi-datasets-codecs 0.1.0",
+  "covers": "the chain field_terms (T_2M <- FIS) + static_ref (FIS through the sidecar) + icon_lattice_bytes (chain: true): the FCHN envelope with both stage headers, decoded through the chain",
+  "shape": [
+   1,
+   4,
+   1,
+   16361
+  ],
+  "chain": [
+   {
+    "name": "field_terms",
+    "configuration": {
+     "variables": [
+      "T_2M",
+      "PMSL",
+      "FIS",
+      "CLCT"
+     ],
+     "terms": {
+      "T_2M": {
+       "sources": [
+        "FIS"
+       ],
+       "intercept": true
+      },
+      "PMSL": {
+       "sources": [
+        "FIS"
+       ],
+       "intercept": true
+      }
+     },
+     "bounds": {
+      "T_2M": 0.05,
+      "PMSL": 2.0
+     },
+     "margin": 0.015625,
+     "written_by": "anemoi-datasets-codecs 0.1.0"
+    }
+   },
+   {
+    "name": "static_ref",
+    "configuration": {
+     "variables": [
+      "T_2M",
+      "PMSL",
+      "FIS",
+      "CLCT"
+     ],
+     "static_fields": [
+      "FIS"
+     ],
+     "inline": false,
+     "written_by": "anemoi-datasets-codecs 0.1.0"
+    }
+   },
+   {
+    "name": "icon_lattice_bytes",
+    "configuration": {
+     "version": 1,
+     "variables": [
+      "T_2M",
+      "PMSL",
+      "CLCT"
+     ],
+     "bounds": {
+      "T_2M": 0.049218750000000006,
+      "PMSL": 1.96875,
+      "CLCT": 0.5
+     },
+     "clip": {
+      "CLCT": [
+       0.0,
+       100.0
+      ]
+     },
+     "static_fields": [],
+     "grid": {
+      "name": "test-lattice",
+      "n_cells": 16361,
+      "sha256": "9dff561cfe73e50d40279a084aab88af47730d06fbcf531cea44b34c70298c03"
+     },
+     "n_ensembles": 1,
+     "structure": "tree",
+     "lossless": {
+      "id": "blosc",
+      "cname": "lz4",
+      "clevel": 5,
+      "shuffle": 1
+     },
+     "options": {
+      "k": 1.0,
+      "contexts": 8,
+      "tables": "auto",
+      "table_penalty": 256,
+      "fit": "ls",
+      "statics": "ref",
+      "rdoq": false,
+      "max_depth": 1,
+      "prob_bits": "auto",
+      "recon_bits": 3,
+      "rounding": "direct"
+     },
+     "physics": {
+      "enabled": true,
+      "convention": "icon-ch1",
+      "cross": "shallow",
+      "surface_terms": true,
+      "level_terms": true,
+      "hydrostatic": true,
+      "below_ground": false,
+      "forcings": true,
+      "recipe_bound": 1e-06,
+      "recipe_fit": true
+     },
+     "chain": true,
+     "written_by": "anemoi-datasets-codecs 0.1.0"
+    }
+   }
+  ]
+ },
+ "recipes_static_ref": {
+  "file": "golden_chunk_recipes_static_ref.latc",
+  "chunk_sha256": "0e1c43e052b4b2961a5da63b27e2c292459bfc38cbfdbda1b79839fbadfbd84f",
+  "decoded_sha256": "0907f8ceb5c69fb40073b2b864f9a558ba74852e154fc0d386db7b4525389094",
+  "sidecar_statics": [
+   "0bb3335e68df75672c4f3c68a1e104409cd9caf4caf7d5ef5277c261057e6d42",
+   "1ad063f31948ec50456073de6a670e24f0d36740e05e1153284b112b05b96b4d",
+   "d3f6a88781d5cdea2ec8845db7092aa36b172873c341b6e11672dc7eec614a55",
+   "d67c9ea70eced7af031bb2c13ff884aced22eb57358926c607741a4032444051"
+  ],
+  "written_by": "anemoi-datasets-codecs 0.1.0",
+  "covers": "RECIPE fields (coefficients fitted without a date, recipe_fit) whose inputs are STATIC_REF fields resolved through the sidecar (tests/data/golden_sidecar)",
+  "modes": [
+   3,
+   3,
+   3,
+   3,
+   4,
+   4,
+   4
+  ],
+  "configuration": {
+   "version": 1,
+   "variables": [
+    "sin_latitude",
+    "cos_latitude",
+    "sin_longitude",
+    "cos_longitude",
+    "cos_local_time",
+    "sin_local_time",
+    "insolation"
+   ],
+   "bounds": {},
+   "static_fields": [
+    "sin_latitude",
+    "cos_latitude",
+    "sin_longitude",
+    "cos_longitude"
+   ],
+   "grid": {
+    "name": "test-lattice",
+    "n_cells": 16361,
+    "sha256": "9dff561cfe73e50d40279a084aab88af47730d06fbcf531cea44b34c70298c03"
+   },
+   "n_ensembles": 1,
+   "structure": "tree",
+   "lossless": {
+    "id": "blosc",
+    "cname": "lz4",
+    "clevel": 5,
+    "shuffle": 1
+   },
+   "options": {
+    "k": 1.0,
+    "contexts": 8,
+    "tables": "auto",
+    "table_penalty": 256,
+    "fit": "ls",
+    "statics": "ref",
+    "rdoq": false,
+    "max_depth": 1,
+    "prob_bits": "auto",
+    "recon_bits": 3,
+    "rounding": "direct"
+   },
+   "physics": {
+    "enabled": true,
+    "convention": "icon-ch1",
+    "cross": "shallow",
+    "surface_terms": true,
+    "level_terms": true,
+    "hydrostatic": true,
+    "below_ground": false,
+    "forcings": true,
+    "recipe_bound": 1e-06,
+    "recipe_fit": true
+   }
+  }
+ }
+}

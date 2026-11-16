@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="908" viewBox="0 0 900 908" font-family="sans-serif">
+<title>Buffers and copies of a chain</title>
+<defs><marker id="a2e8b57" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L10,5 L0,9 z" fill="#2e8b57"/></marker><marker id="ad9711c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L10,5 L0,9 z" fill="#d9711c"/></marker><marker id="a1f2328" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L10,5 L0,9 z" fill="#1f2328"/></marker></defs>
+<rect x="0" y="0" width="900" height="908" fill="#ffffff"/>
+<text x="20" y="28" font-size="14" fill="#1f2328" font-weight="bold">(a)  decode: the buffers, to scale, and what writes them</text>
+<text x="20" y="65" font-size="13" fill="#1f2328" font-weight="bold">stored chunk</text>
+<text x="20" y="80" font-size="12" fill="#57606a">270 024 B</text>
+<text x="20" y="199" font-size="13" fill="#1f2328" font-weight="bold">envelope A</text>
+<text x="20" y="214" font-size="12" fill="#57606a">785 688 B</text>
+<text x="20" y="359" font-size="13" fill="#1f2328" font-weight="bold">envelope B</text>
+<text x="20" y="374" font-size="12" fill="#57606a">1 112 668 B</text>
+<rect x="129.5" y="52" width="126" height="30" fill="#d1dfef" stroke="#2f6db5" stroke-width="1"/>
+<rect x="128" y="52" width="1.5" height="30" fill="#1f2328" stroke="none" stroke-width="1.0"/>
+<text x="191" y="72" font-size="12.5" fill="#1f2328" text-anchor="middle" font-family="monospace">LATC</text>
+<text x="670" y="65" font-size="12.5" fill="#57606a">read-only, from the store; the dark</text>
+<text x="670" y="81" font-size="12.5" fill="#57606a">hairline: the 360 B prefix</text>
+<rect x="128" y="186" width="1.5" height="30" fill="#1f2328" stroke="none" stroke-width="1.0"/>
+<rect x="129.5" y="186" width="30.6" height="30" fill="#f6dcc6" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="160.1" y="186" width="30.6" height="30" fill="#f6dcc6" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="190.7" y="186" width="30.6" height="30" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="221.3" y="186" width="30.6" height="30" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="251.8" y="186" width="30.6" height="30" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="282.4" y="186" width="30.6" height="30" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="313" y="186" width="30.6" height="30" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="343.6" y="186" width="30.6" height="30" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="374.2" y="186" width="30.6" height="30" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="404.8" y="186" width="30.6" height="30" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="435.3" y="186" width="30.6" height="30" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="465.9" y="186" width="30.6" height="30" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="128" y="346" width="1.5" height="30" fill="#1f2328" stroke="none" stroke-width="1.0"/>
+<rect x="129.5" y="346" width="30.6" height="30" fill="#f6dcc6" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="160.1" y="346" width="30.6" height="30" fill="#f6dcc6" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="190.7" y="346" width="30.6" height="30" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="221.3" y="346" width="30.6" height="30" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="251.8" y="346" width="30.6" height="30" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="282.4" y="346" width="30.6" height="30" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="313" y="346" width="30.6" height="30" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="343.6" y="346" width="30.6" height="30" fill="#d1e5da" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="374.2" y="346" width="30.6" height="30" fill="#d1e5da" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="404.8" y="346" width="30.6" height="30" fill="#d1e5da" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="435.3" y="346" width="30.6" height="30" fill="#d1e5da" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="465.9" y="346" width="30.6" height="30" fill="#d1e5da" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="496.5" y="346" width="30.6" height="30" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="527.1" y="346" width="30.6" height="30" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="557.7" y="346" width="30.6" height="30" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="588.3" y="346" width="30.6" height="30" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<rect x="618.9" y="346" width="30.6" height="30" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.6"/>
+<polygon points="129.5,82 255.5,82 496.5,186 129.5,186" fill="#d1dfef" stroke="#2f6db5" stroke-width="0.6" stroke-linejoin="round"/>
+<text x="259.3" y="139" font-size="12.5" fill="#2f6db5" text-anchor="middle">C decoder</text>
+<text x="670" y="116" font-size="12.5" fill="#1f2328" font-weight="bold">1  icon_lattice_bytes</text>
+<text x="670" y="132" font-size="12.5" fill="#1f2328">envelope.allocate makes A (the</text>
+<text x="670" y="148" font-size="12.5" fill="#1f2328">same stack); the C decoder</text>
+<text x="670" y="164" font-size="12.5" fill="#1f2328">writes the 12 fields straight into</text>
+<text x="670" y="180" font-size="12.5" fill="#1f2328">its array (decode(…, out))</text>
+<polygon points="129.5,216 343.6,216 343.6,346 129.5,346" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.8" stroke-linejoin="round"/>
+<polygon points="343.6,216 496.5,216 649.4,346 496.5,346" fill="#f0f2f4" stroke="#8c959f" stroke-width="0.8" stroke-linejoin="round"/>
+<text x="235" y="286" font-size="12.5" fill="#57606a" text-anchor="middle">copy</text>
+<rect x="380.1" y="398" width="80" height="26" rx="4" fill="#d1e5da" stroke="#2e8b57" stroke-width="1.2"/>
+<text x="420.1" y="416" font-size="12.5" fill="#1f2328" text-anchor="middle">sidecar</text>
+<path d="M420.1,398 L420.1,378" fill="none" stroke="#2e8b57" stroke-width="1.4" marker-end="url(#a2e8b57)"/>
+<text x="670" y="250" font-size="12.5" fill="#1f2328" font-weight="bold">2  static_ref, 12 → 17 fields</text>
+<text x="670" y="266" font-size="12.5" fill="#1f2328">envelope.allocate makes B (stack</text>
+<text x="670" y="282" font-size="12.5" fill="#1f2328">[field_terms]), its array is out;</text>
+<text x="670" y="298" font-size="12.5" fill="#1f2328">the stage copies the 2 runs of</text>
+<text x="670" y="314" font-size="12.5" fill="#1f2328">kept fields and writes the 5</text>
+<text x="670" y="330" font-size="12.5" fill="#1f2328">static fields from the sidecar</text>
+<path d="M135.5,378 C135.5,406 184.7,406 184.7,380" fill="none" stroke="#d9711c" stroke-width="1.6" marker-end="url(#ad9711c)"/>
+<text x="670" y="359" font-size="12.5" fill="#1f2328" font-weight="bold">3  field_terms</text>
+<text x="670" y="375" font-size="12.5" fill="#1f2328">residuals → T_2M, PMSL, in place</text>
+<text x="670" y="406" font-size="12.5" fill="#1f2328" font-weight="bold">4  field_terms → zarr</text>
+<path d="M129.5,436 L129.5,442 L649.4,442 L649.4,436" fill="none" stroke="#1f2328" stroke-width="1.2"/>
+<text x="389.5" y="460" font-size="12.5" fill="#1f2328" text-anchor="middle">a byte view of B's array (offset 120) → zarr</text>
+<text x="670" y="422" font-size="12.5" fill="#1f2328">the stack is empty: zarr's bytes</text>
+<text x="670" y="438" font-size="12.5" fill="#1f2328">codec gets a byte view of B's</text>
+<text x="670" y="454" font-size="12.5" fill="#1f2328">array and views it as the chunk</text>
+<text x="20" y="488" font-size="12.5" fill="#1f2328">Nothing is copied in steps 1, 3 and 4; step 2, the one full write of a stage that changes the field count, writes into</text>
+<text x="20" y="504" font-size="12.5" fill="#1f2328">the envelope it hands on. envelope.repack_in_place is not needed: the in-place stage, field_terms, is the first.</text>
+<text x="20" y="546" font-size="14" fill="#1f2328" font-weight="bold">(b)  the other decode paths of a stage (none taken by this chain)</text>
+<text x="20" y="584" font-size="12" fill="#57606a">before</text>
+<text x="20" y="612" font-size="12" fill="#57606a">after</text>
+<rect x="72" y="568" width="56" height="22" fill="#d0d7de" stroke="#1f2328" stroke-width="1"/>
+<text x="100" y="584" font-size="12" fill="#1f2328" text-anchor="middle">prefix</text>
+<rect x="128" y="568" width="40" height="22" fill="#d0d7de" stroke="#1f2328" stroke-width="1"/>
+<text x="148" y="584" font-size="12" fill="#1f2328" text-anchor="middle">top</text>
+<rect x="168" y="568" width="150" height="22" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="243" y="584" font-size="12" fill="#1f2328" text-anchor="middle">array (decoded in place)</text>
+<rect x="72" y="596" width="40" height="22" fill="#ffffff" stroke="#8c959f" stroke-width="1" stroke-dasharray="3 2"/>
+<rect x="112" y="596" width="56" height="22" fill="#d0d7de" stroke="#1f2328" stroke-width="1"/>
+<text x="140" y="612" font-size="12" fill="#1f2328" text-anchor="middle">prefix</text>
+<rect x="168" y="596" width="150" height="22" fill="#f0f2f4" stroke="#1f2328" stroke-width="1"/>
+<text x="243" y="612" font-size="12" fill="#1f2328" text-anchor="middle">array, not moved</text>
+<text x="338" y="584" font-size="12.5" fill="#1f2328">an in-place stage with headers left below it: envelope.repack_in_place</text>
+<text x="338" y="600" font-size="12.5" fill="#1f2328">writes the shorter prefix just before the array, in the same buffer</text>
+<text x="20" y="644" font-size="12.5" fill="#1f2328">a read-only envelope (a compressor such as blosc after the stage): an in-place stage works on one copy;</text>
+<text x="20" y="661" font-size="12.5" fill="#1f2328">the first stage of a chain that changes the field count decodes into a new array, handed to zarr as a byte view.</text>
+<text x="20" y="698" font-size="14" fill="#1f2328" font-weight="bold">(c)  encode: the adapter copies each stage's output once into the next envelope</text>
+<text x="172" y="724" font-size="12.5" fill="#57606a" font-weight="bold">reads (a view)</text>
+<text x="412" y="724" font-size="12.5" fill="#57606a" font-weight="bold">its engine returns</text>
+<text x="652" y="724" font-size="12.5" fill="#57606a" font-weight="bold">the adapter copies it into</text>
+<text x="20" y="753" font-size="12.5" fill="#1f2328" font-weight="bold" font-family="monospace">field_terms</text>
+<rect x="172" y="738" width="196" height="20" fill="#f0f2f4" stroke="#1f2328" stroke-width="0.8"/>
+<rect x="412" y="738" width="196" height="20" fill="#f0f2f4" stroke="#1f2328" stroke-width="0.8"/>
+<rect x="652" y="738" width="196" height="20" fill="#f0f2f4" stroke="#1f2328" stroke-width="0.8"/>
+<rect x="652" y="738" width="1.2" height="20" fill="#1f2328" stroke="none" stroke-width="1.0"/>
+<path d="M374,748 L404,748" fill="none" stroke="#d9711c" stroke-width="1.3" marker-end="url(#ad9711c)"/>
+<path d="M614,748 L644,748" fill="none" stroke="#1f2328" stroke-width="1.3" marker-end="url(#a1f2328)"/>
+<text x="412" y="772" font-size="12" fill="#57606a">residuals: a copy of x, 1 112 548 B</text>
+<text x="652" y="772" font-size="12" fill="#57606a">envelope.pack (kind 0), 1 112 668 B</text>
+<text x="172" y="772" font-size="12" fill="#57606a">zarr's bare bytes</text>
+<text x="20" y="805" font-size="12.5" fill="#1f2328" font-weight="bold" font-family="monospace">static_ref</text>
+<rect x="172" y="790" width="196" height="20" fill="#f0f2f4" stroke="#1f2328" stroke-width="0.8"/>
+<rect x="172" y="790" width="1.2" height="20" fill="#1f2328" stroke="none" stroke-width="1.0"/>
+<rect x="412" y="790" width="138.4" height="20" fill="#f0f2f4" stroke="#1f2328" stroke-width="0.8"/>
+<rect x="652" y="790" width="138.4" height="20" fill="#f0f2f4" stroke="#1f2328" stroke-width="0.8"/>
+<rect x="652" y="790" width="1.2" height="20" fill="#1f2328" stroke="none" stroke-width="1.0"/>
+<path d="M374,800 L404,800" fill="none" stroke="#2e8b57" stroke-width="1.3" marker-end="url(#a2e8b57)"/>
+<path d="M614,800 L644,800" fill="none" stroke="#1f2328" stroke-width="1.3" marker-end="url(#a1f2328)"/>
+<text x="412" y="824" font-size="12" fill="#57606a">x[:, kept]: a new array, 785 328 B</text>
+<text x="652" y="824" font-size="12" fill="#57606a">envelope.pack (kind 0), 785 688 B</text>
+<text x="172" y="824" font-size="12" fill="#57606a">the envelope's array</text>
+<text x="20" y="857" font-size="12.5" fill="#1f2328" font-weight="bold" font-family="monospace">icon_lattice_bytes</text>
+<rect x="172" y="842" width="138.4" height="20" fill="#f0f2f4" stroke="#1f2328" stroke-width="0.8"/>
+<rect x="172" y="842" width="1.2" height="20" fill="#1f2328" stroke="none" stroke-width="1.0"/>
+<rect x="412" y="842" width="47.5" height="20" fill="#d1dfef" stroke="#2f6db5" stroke-width="0.8"/>
+<rect x="652" y="842" width="47.6" height="20" fill="#d1dfef" stroke="#2f6db5" stroke-width="0.8"/>
+<rect x="652" y="842" width="1.2" height="20" fill="#1f2328" stroke="none" stroke-width="1.0"/>
+<path d="M374,852 L404,852" fill="none" stroke="#1f2328" stroke-width="1.3" marker-end="url(#a1f2328)"/>
+<path d="M614,852 L644,852" fill="none" stroke="#1f2328" stroke-width="1.3" marker-end="url(#a1f2328)"/>
+<text x="412" y="876" font-size="12" fill="#57606a">the LATC container, 269 664 B</text>
+<text x="652" y="876" font-size="12" fill="#57606a">envelope.pack_bytes (kind 1), 270 024 B</text>
+<text x="172" y="876" font-size="12" fill="#57606a">the envelope's array</text>
+<text x="20" y="900" font-size="12" fill="#57606a">a stage's input is read-only (it can be the caller's array); bars to scale, the dark end is the envelope prefix</text>
+</svg>

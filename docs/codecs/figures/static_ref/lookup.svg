@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="932" viewBox="0 0 900 932" font-family="sans-serif">
+<title>How static_ref finds and stores a static array</title>
+<defs><marker id="a1f2328" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L10,5 L0,9 z" fill="#1f2328"/></marker></defs>
+<rect x="0" y="0" width="900" height="932" fill="#ffffff"/>
+<text x="20" y="28" font-size="14" fill="#1f2328" font-weight="bold">(a)  encoder, for each slot in C order (stage.py, statics.StaticCapture, ensure_durable)</text>
+<rect x="20" y="48" width="384" height="44" rx="6" fill="#ffffff" stroke="#1f2328" stroke-width="1.2"/>
+<text x="32" y="66.5" font-size="12.5" fill="#1f2328">slot (date d, static field i, member e): v = x[d, i, e];</text>
+<text x="32" y="82.5" font-size="12.5" fill="#1f2328">sha = sha256 of v as little-endian float32</text>
+<rect x="20" y="120" width="384" height="44" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1.2"/>
+<text x="32" y="146.5" font-size="12.5" fill="#1f2328">is sha the sha of an earlier slot of this chunk?</text>
+<path d="M60,92 L60,119" fill="none" stroke="#1f2328" stroke-width="1.2" marker-end="url(#a1f2328)"/>
+<rect x="20" y="184" width="384" height="44" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1.2"/>
+<text x="32" y="210.5" font-size="12.5" fill="#1f2328">inline: true in the configuration?</text>
+<path d="M60,164 L60,183" fill="none" stroke="#1f2328" stroke-width="1.2" marker-end="url(#a1f2328)"/>
+<text x="66" y="178" font-size="12" fill="#57606a" font-style="italic">no</text>
+<rect x="20" y="248" width="384" height="44" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1.2"/>
+<text x="32" y="266.5" font-size="12.5" fill="#1f2328">has this codec already referenced 4 arrays</text>
+<text x="32" y="282.5" font-size="12.5" fill="#1f2328">(MAX_VERSIONS) for this name, none with this sha?</text>
+<path d="M60,228 L60,247" fill="none" stroke="#1f2328" stroke-width="1.2" marker-end="url(#a1f2328)"/>
+<text x="66" y="242" font-size="12" fill="#57606a" font-style="italic">no</text>
+<rect x="20" y="328" width="384" height="44" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1.2"/>
+<text x="32" y="346.5" font-size="12.5" fill="#1f2328">is there a store target? the first writable</text>
+<text x="32" y="362.5" font-size="12.5" fill="#1f2328">registered store or $ANEMOI_DATASETS_CODECS_PATH entry</text>
+<path d="M60,292 L60,327" fill="none" stroke="#1f2328" stroke-width="1.2" marker-end="url(#a1f2328)"/>
+<text x="66" y="314" font-size="12" fill="#57606a" font-style="italic">no</text>
+<rect x="20" y="452" width="384" height="44" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1.2"/>
+<text x="32" y="470.5" font-size="12.5" fill="#1f2328">no target: is sha on the search path? a file in</text>
+<text x="32" y="486.5" font-size="12.5" fill="#1f2328">3 to 6 of (b), or found there before by this process</text>
+<path d="M60,372 L60,451" fill="none" stroke="#1f2328" stroke-width="1.2" marker-end="url(#a1f2328)"/>
+<text x="66" y="416" font-size="12" fill="#57606a" font-style="italic">no</text>
+<rect x="20" y="532" width="384" height="44" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1.2"/>
+<text x="32" y="550.5" font-size="12.5" fill="#1f2328">capture: write statics/&lt;sha&gt;.f4.blosc into the</text>
+<text x="32" y="566.5" font-size="12.5" fill="#1f2328">cache directory (unless the cache is off)</text>
+<path d="M60,496 L60,531" fill="none" stroke="#1f2328" stroke-width="1.2" marker-end="url(#a1f2328)"/>
+<text x="66" y="518" font-size="12" fill="#57606a" font-style="italic">no</text>
+<path d="M404,142 L663,142" fill="none" stroke="#1f2328" stroke-width="1.2" marker-end="url(#a1f2328)"/>
+<text x="412" y="136" font-size="12" fill="#57606a" font-style="italic">yes</text>
+<rect x="664" y="128" width="108" height="28" rx="14" fill="#ffffff" stroke="#2e8b57" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="718" y="146.5" font-size="12.5" fill="#1f2328" text-anchor="middle" font-weight="bold">REPEAT</text>
+<text x="780" y="146.5" font-size="12" fill="#57606a">arg = that slot</text>
+<path d="M404,206 L663,206" fill="none" stroke="#1f2328" stroke-width="1.2" marker-end="url(#a1f2328)"/>
+<text x="412" y="200" font-size="12" fill="#57606a" font-style="italic">yes</text>
+<rect x="664" y="192" width="108" height="28" rx="14" fill="#2e8b57" stroke="#2e8b57" stroke-width="1.4"/>
+<text x="718" y="210.5" font-size="12.5" fill="#ffffff" text-anchor="middle" font-weight="bold">INLINE</text>
+<text x="780" y="210.5" font-size="12" fill="#57606a">arg = m bytes</text>
+<path d="M404,270 L663,270" fill="none" stroke="#1f2328" stroke-width="1.2" marker-end="url(#a1f2328)"/>
+<text x="412" y="264" font-size="12" fill="#57606a" font-style="italic">yes</text>
+<rect x="664" y="256" width="108" height="28" rx="14" fill="#2e8b57" stroke="#2e8b57" stroke-width="1.4"/>
+<text x="718" y="274.5" font-size="12.5" fill="#ffffff" text-anchor="middle" font-weight="bold">INLINE</text>
+<text x="780" y="274.5" font-size="12" fill="#57606a">+ warning</text>
+<path d="M404,350 L435,350" fill="none" stroke="#1f2328" stroke-width="1.2" marker-end="url(#a1f2328)"/>
+<text x="410" y="344" font-size="12" fill="#57606a" font-style="italic">yes</text>
+<rect x="436" y="320" width="196" height="60" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1.2"/>
+<text x="448" y="338.5" font-size="12.5" fill="#1f2328">the file in the target's</text>
+<text x="448" y="354.5" font-size="12.5" fill="#1f2328">sidecar? if not, write it</text>
+<text x="448" y="370.5" font-size="12.5" fill="#1f2328">there (not in the cache)</text>
+<path d="M632,350 L663,350" fill="none" stroke="#1f2328" stroke-width="1.2" marker-end="url(#a1f2328)"/>
+<text x="640" y="344" font-size="12" fill="#57606a" font-style="italic"></text>
+<rect x="664" y="336" width="108" height="28" rx="14" fill="#d1e5da" stroke="#2e8b57" stroke-width="1.4"/>
+<text x="718" y="354.5" font-size="12.5" fill="#1f2328" text-anchor="middle" font-weight="bold">REFERENCE</text>
+<path d="M534,380 L534,414 L663,414" fill="none" stroke="#1f2328" stroke-width="1.2" marker-end="url(#a1f2328)"/>
+<text x="542" y="408" font-size="12" fill="#57606a" font-style="italic">write fails</text>
+<rect x="664" y="400" width="108" height="28" rx="14" fill="#2e8b57" stroke="#2e8b57" stroke-width="1.4"/>
+<text x="718" y="418.5" font-size="12.5" fill="#ffffff" text-anchor="middle" font-weight="bold">INLINE</text>
+<text x="780" y="418.5" font-size="12" fill="#57606a">+ warning</text>
+<path d="M404,474 L663,474" fill="none" stroke="#1f2328" stroke-width="1.2" marker-end="url(#a1f2328)"/>
+<text x="412" y="468" font-size="12" fill="#57606a" font-style="italic">yes</text>
+<rect x="664" y="460" width="108" height="28" rx="14" fill="#d1e5da" stroke="#2e8b57" stroke-width="1.4"/>
+<text x="718" y="478.5" font-size="12.5" fill="#1f2328" text-anchor="middle" font-weight="bold">REFERENCE</text>
+<path d="M404,554 L663,554" fill="none" stroke="#1f2328" stroke-width="1.2" marker-end="url(#a1f2328)"/>
+<text x="412" y="548" font-size="12" fill="#57606a" font-style="italic">written</text>
+<rect x="664" y="540" width="108" height="28" rx="14" fill="#d1e5da" stroke="#2e8b57" stroke-width="1.4"/>
+<text x="718" y="558.5" font-size="12.5" fill="#1f2328" text-anchor="middle" font-weight="bold">REFERENCE</text>
+<text x="780" y="558.5" font-size="12" fill="#57606a">captured</text>
+<path d="M212,576 L212,608 L663,608" fill="none" stroke="#1f2328" stroke-width="1.2" marker-end="url(#a1f2328)"/>
+<text x="220" y="602" font-size="12" fill="#57606a" font-style="italic">cache off, or the write fails</text>
+<rect x="664" y="594" width="108" height="28" rx="14" fill="#2e8b57" stroke="#2e8b57" stroke-width="1.4"/>
+<text x="718" y="612.5" font-size="12.5" fill="#ffffff" text-anchor="middle" font-weight="bold">INLINE</text>
+<text x="780" y="612.5" font-size="12" fill="#57606a">+ warning</text>
+<text x="20" y="648" font-size="12.5" fill="#1f2328">A REFERENCE is written only once its file is durably stored; its sha then counts as one of the name's arrays. REPEAT and</text>
+<text x="20" y="666" font-size="12.5" fill="#1f2328">INLINE slots never touch a sidecar. Whatever the kind, a static never goes on as a field, and decodes the same.</text>
+<text x="20" y="714" font-size="14" fill="#1f2328" font-weight="bold">(b)  decoder, for a REFERENCE or INLINE slot (statics.lookup): the first source that has it</text>
+<rect x="20" y="736" width="126" height="66" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1.2"/>
+<text x="83" y="756" font-size="13.5" fill="#1f2328" text-anchor="middle" font-weight="bold">1 process</text>
+<text x="83" y="774" font-size="12.5" fill="#1f2328" text-anchor="middle">arrays already</text>
+<text x="83" y="790" font-size="12.5" fill="#1f2328" text-anchor="middle">read, by sha</text>
+<rect x="166" y="736" width="126" height="66" rx="6" fill="#d1e5da" stroke="#2e8b57" stroke-width="1.2"/>
+<text x="229" y="756" font-size="13.5" fill="#1f2328" text-anchor="middle" font-weight="bold">2 inline</text>
+<text x="229" y="774" font-size="12.5" fill="#1f2328" text-anchor="middle">INLINE slots:</text>
+<text x="229" y="790" font-size="12.5" fill="#1f2328" text-anchor="middle">the header's bytes</text>
+<path d="M146,769 L165,769" fill="none" stroke="#1f2328" stroke-width="1.2" marker-end="url(#a1f2328)"/>
+<rect x="312" y="736" width="126" height="66" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1.2"/>
+<text x="375" y="756" font-size="13.5" fill="#1f2328" text-anchor="middle" font-weight="bold">3 registered</text>
+<text x="375" y="774" font-size="12.5" fill="#1f2328" text-anchor="middle">register_store,</text>
+<text x="375" y="790" font-size="12.5" fill="#1f2328" text-anchor="middle">latest first</text>
+<path d="M292,769 L311,769" fill="none" stroke="#1f2328" stroke-width="1.2" marker-end="url(#a1f2328)"/>
+<rect x="458" y="736" width="126" height="66" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1.2"/>
+<text x="521" y="756" font-size="13.5" fill="#1f2328" text-anchor="middle" font-weight="bold">4 path</text>
+<text x="521" y="774" font-size="12.5" fill="#1f2328" text-anchor="middle">the entries of</text>
+<text x="521" y="790" font-size="12.5" fill="#1f2328" text-anchor="middle">the path variable</text>
+<path d="M438,769 L457,769" fill="none" stroke="#1f2328" stroke-width="1.2" marker-end="url(#a1f2328)"/>
+<rect x="604" y="736" width="126" height="66" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1.2"/>
+<text x="667" y="756" font-size="13.5" fill="#1f2328" text-anchor="middle" font-weight="bold">5 cache</text>
+<text x="667" y="774" font-size="12.5" fill="#1f2328" text-anchor="middle">the user cache</text>
+<text x="667" y="790" font-size="12.5" fill="#1f2328" text-anchor="middle">directory</text>
+<path d="M584,769 L603,769" fill="none" stroke="#1f2328" stroke-width="1.2" marker-end="url(#a1f2328)"/>
+<rect x="750" y="736" width="126" height="66" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1.2"/>
+<text x="813" y="756" font-size="13.5" fill="#1f2328" text-anchor="middle" font-weight="bold">6 package</text>
+<text x="813" y="774" font-size="12.5" fill="#1f2328" text-anchor="middle">directories</text>
+<text x="813" y="790" font-size="12.5" fill="#1f2328" text-anchor="middle">bundled</text>
+<path d="M730,769 L749,769" fill="none" stroke="#1f2328" stroke-width="1.2" marker-end="url(#a1f2328)"/>
+<path d="M813,802 L813,835" fill="none" stroke="#1f2328" stroke-width="1.2" marker-end="url(#a1f2328)"/>
+<text x="819" y="823" font-size="12" fill="#57606a" font-style="italic">none</text>
+<rect x="710" y="836" width="166" height="30" rx="6" fill="#ffffff" stroke="#1f2328" stroke-width="1.4"/>
+<text x="793" y="856" font-size="12.5" fill="#1f2328" text-anchor="middle" font-weight="bold">MissingReference</text>
+<text x="20" y="828" font-size="12.5" fill="#1f2328">3 to 6: sidecar directories (statics/&lt;sha&gt;.f4.blosc), in the order of sidecar.search_dirs;</text>
+<text x="20" y="846" font-size="12.5" fill="#1f2328">4 is $ANEMOI_DATASETS_CODECS_PATH, 5 $ANEMOI_DATASETS_CODECS_CACHE.</text>
+<text x="20" y="864" font-size="12.5" fill="#1f2328">Bytes read (2 to 6) are verified against the sha256, then kept in</text>
+<text x="20" y="882" font-size="12.5" fill="#1f2328">the process (1); every array's size is checked against the cells.</text>
+<text x="20" y="900" font-size="12.5" fill="#1f2328">A REPEAT slot takes the array of its earlier slot: no lookup.</text>
+<text x="20" y="918" font-size="12.5" fill="#1f2328">MissingReference names the sha and the directories searched.</text>
+</svg>

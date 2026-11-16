@@ -1,0 +1,15 @@
+.venv
+.venv-*
+.local
+build/
+dist/
+*.egg-info/
+__pycache__/
+*.so
+.pytest_cache/
+.ruff_cache/
+.coverage
+.DS_Store
+CLAUDE.local.md
+WORK.md
+.claude/settings.local.json

@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="604" viewBox="0 0 900 604" font-family="sans-serif">
+<title>Quantisation and the bound</title>
+<defs><marker id="a57606a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L10,5 L0,9 z" fill="#57606a"/></marker><marker id="a1f2328" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L10,5 L0,9 z" fill="#1f2328"/></marker><marker id="a2f6db5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L10,5 L0,9 z" fill="#2f6db5"/></marker></defs>
+<rect x="0" y="0" width="900" height="604" fill="#ffffff"/>
+<text x="20" y="28" font-size="14" fill="#1f2328" font-weight="bold">(a)  plain rule (recon_bits = 0): step = 2 (bound − e_fp) / k, here k = 1</text>
+<rect x="479.2" y="74" width="304" height="60" fill="#f0f2f4" stroke="#d0d7de" stroke-width="1"/>
+<text x="779.2" y="70" font-size="12" fill="#57606a" text-anchor="end">x ± bound / k</text>
+<path d="M46,104 L836.4,104" fill="none" stroke="#8c959f" stroke-width="1"/>
+<text x="114.4" y="124" font-size="12" fill="#57606a" text-anchor="middle">-2 b</text>
+<text x="266.4" y="124" font-size="12" fill="#57606a" text-anchor="middle">-1 b</text>
+<text x="418.4" y="124" font-size="12" fill="#57606a" text-anchor="middle">0 b</text>
+<text x="570.4" y="124" font-size="12" fill="#57606a" text-anchor="middle">1 b</text>
+<text x="722.4" y="124" font-size="12" fill="#57606a" text-anchor="middle">2 b</text>
+<circle cx="114.4" cy="104" r="6" fill="#ffffff" stroke="#2f6db5" stroke-width="1.8"/>
+<circle cx="418.4" cy="104" r="6" fill="#ffffff" stroke="#2f6db5" stroke-width="1.8"/>
+<circle cx="722.4" cy="104" r="6" fill="#ffffff" stroke="#2f6db5" stroke-width="1.8"/>
+<path d="M631.2,78 L631.2,130" fill="none" stroke="#1f2328" stroke-width="2"/>
+<text x="631.2" y="148" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold">x (true)</text>
+<circle cx="722.4" cy="104" r="6" fill="#2f6db5" stroke="#2f6db5" stroke-width="1.8"/>
+<text x="722.4" y="90" font-size="14" fill="#2f6db5" text-anchor="middle" font-weight="bold">v</text>
+<text x="266.4" y="66" font-size="13" fill="#1f2328" text-anchor="middle">v = offset + step · n, n = rint((x − offset) / step):</text>
+<text x="266.4" y="84" font-size="13" fill="#1f2328" text-anchor="middle">the prediction only changes the coded residual n − pred</text>
+<text x="46" y="148" font-size="13" fill="#1f2328">|v − x| = 0.60 b ≤ step / 2 = (bound − e_fp) / k</text>
+<text x="20" y="186" font-size="14" fill="#1f2328" font-weight="bold">(b)  residual-domain rule (recon_bits = m = 3, the default)</text>
+<text x="20" y="206" font-size="13" fill="#1f2328">fine grid g = step / 2^m, step = 2 (bound − e_fp) / k / (1 + 2^−m)</text>
+<rect x="479.2" y="240" width="304" height="60" fill="#f0f2f4" stroke="#d0d7de" stroke-width="1"/>
+<text x="779.2" y="236" font-size="12" fill="#57606a" text-anchor="end">x ± bound / k</text>
+<path d="M46,270 L836.4,270" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M46.8,266 L46.8,274" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M80.6,266 L80.6,274" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M114.4,266 L114.4,274" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M148.2,266 L148.2,274" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M182,266 L182,274" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M215.7,266 L215.7,274" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M249.5,266 L249.5,274" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M283.3,266 L283.3,274" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M317.1,266 L317.1,274" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M350.8,266 L350.8,274" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M384.6,266 L384.6,274" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M418.4,266 L418.4,274" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M452.2,266 L452.2,274" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M486,266 L486,274" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M519.7,266 L519.7,274" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M553.5,266 L553.5,274" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M587.3,266 L587.3,274" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M621.1,266 L621.1,274" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M654.8,266 L654.8,274" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M688.6,266 L688.6,274" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M722.4,266 L722.4,274" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M756.2,266 L756.2,274" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M790,266 L790,274" fill="none" stroke="#8c959f" stroke-width="1"/>
+<path d="M823.7,266 L823.7,274" fill="none" stroke="#8c959f" stroke-width="1"/>
+<text x="114.4" y="290" font-size="12" fill="#57606a" text-anchor="middle">-2 b</text>
+<text x="266.4" y="290" font-size="12" fill="#57606a" text-anchor="middle">-1 b</text>
+<text x="418.4" y="290" font-size="12" fill="#57606a" text-anchor="middle">0 b</text>
+<text x="570.4" y="290" font-size="12" fill="#57606a" text-anchor="middle">1 b</text>
+<text x="722.4" y="290" font-size="12" fill="#57606a" text-anchor="middle">2 b</text>
+<circle cx="249.5" cy="270" r="6" fill="#ffffff" stroke="#2f6db5" stroke-width="1.8"/>
+<circle cx="519.7" cy="270" r="6" fill="#ffffff" stroke="#2f6db5" stroke-width="1.8"/>
+<circle cx="790" cy="270" r="6" fill="#ffffff" stroke="#2f6db5" stroke-width="1.8"/>
+<path d="M631.2,244 L631.2,296" fill="none" stroke="#1f2328" stroke-width="2"/>
+<text x="631.2" y="314" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold">x (true)</text>
+<path d="M621.1,258 L621.1,274" fill="none" stroke="#1f2328" stroke-width="1.6"/>
+<text x="617.1" y="256" font-size="14" fill="#1f2328" text-anchor="end" font-weight="bold">n</text>
+<path d="M249.5,261 l7,9 l-7,9 l-7,-9 z" fill="#d9711c" stroke="#d9711c" stroke-width="1.0"/>
+<text x="249.5" y="256" font-size="14" fill="#d9711c" text-anchor="middle" font-weight="bold">pred</text>
+<circle cx="519.7" cy="270" r="6" fill="#2f6db5" stroke="#2f6db5" stroke-width="1.8"/>
+<text x="519.7" y="256" font-size="14" fill="#2f6db5" text-anchor="middle" font-weight="bold">v</text>
+<path d="M249.5,326 L519.7,326" fill="none" stroke="#57606a" stroke-width="1.4" marker-end="url(#a57606a)"/>
+<text x="384.6" y="344" font-size="13" fill="#1f2328" text-anchor="middle">2^m · q = 8 · 1 fine steps</text>
+<text x="46" y="378" font-size="13" fill="#1f2328">n = rint((x − offset) / g) = 6</text>
+<text x="46" y="396" font-size="13" fill="#1f2328">pred = -5 (from the decoded sources)</text>
+<text x="46" y="414" font-size="13" fill="#1f2328">q = round((n − pred) / 2^m) = round(11 / 8) = 1</text>
+<text x="470" y="378" font-size="13" fill="#1f2328">v = pred + 2^m q = 3   (all in units of g)</text>
+<text x="470" y="396" font-size="13" fill="#1f2328">|v − x| ≤ |v − n| + |n − x|</text>
+<text x="470" y="414" font-size="13" fill="#1f2328">  ≤ step / 2 + g / 2 = (bound − e_fp) / k</text>
+<circle cx="53.6" cy="444" r="6" fill="#ffffff" stroke="#2f6db5" stroke-width="1.8"/>
+<text x="65.6" y="448" font-size="12.5" fill="#57606a">values v can take</text>
+<circle cx="266.4" cy="444" r="6" fill="#2f6db5" stroke="#2f6db5" stroke-width="1.8"/>
+<text x="278.4" y="448" font-size="12.5" fill="#57606a">decoded v</text>
+<path d="M403.2,435 l7,9 l-7,9 l-7,-9 z" fill="#d9711c" stroke="#d9711c" stroke-width="1.0"/>
+<text x="415.2" y="448" font-size="12.5" fill="#57606a">prediction (fine grid)</text>
+<text x="608.4" y="448" font-size="12.5" fill="#57606a">small ticks: the fine grid g; q rounds ties to even</text>
+<text x="20" y="482" font-size="14" fill="#1f2328" font-weight="bold">(c)  closed loop: the prediction uses decoded values, so encoder and decoder agree</text>
+<rect x="20" y="496" width="178" height="50" rx="6" fill="#d1dfef" stroke="#2f6db5" stroke-width="1.4"/>
+<text x="109" y="517" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold" font-family="monospace">v[s0], v[s1], v[s2]</text>
+<text x="109" y="536" font-size="12.5" fill="#1f2328" text-anchor="middle">decoded sources</text>
+<rect x="242" y="496" width="178" height="50" rx="6" fill="#f6dcc6" stroke="#d9711c" stroke-width="1.4"/>
+<text x="331" y="517" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold" font-family="monospace">pred</text>
+<text x="331" y="536" font-size="12.5" fill="#1f2328" text-anchor="middle">gather + cross terms</text>
+<rect x="464" y="496" width="178" height="50" rx="6" fill="#f0f2f4" stroke="#8c959f" stroke-width="1.4"/>
+<text x="553" y="517" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold" font-family="monospace">q</text>
+<text x="553" y="536" font-size="12.5" fill="#1f2328" text-anchor="middle">coded residual (rANS)</text>
+<rect x="686" y="496" width="178" height="50" rx="6" fill="#d1dfef" stroke="#2f6db5" stroke-width="1.4"/>
+<text x="775" y="517" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="bold" font-family="monospace">v[t] = pred + 2^m q</text>
+<text x="775" y="536" font-size="12.5" fill="#1f2328" text-anchor="middle">decoded target</text>
+<path d="M201,521 L239,521" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M423,521 L461,521" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M645,521 L683,521" fill="none" stroke="#1f2328" stroke-width="1.4" marker-end="url(#a1f2328)"/>
+<path d="M775,546 L775,570 L109,570 L109,550" fill="none" stroke="#2f6db5" stroke-width="1.4" marker-end="url(#a2f6db5)"/>
+<text x="442" y="588" font-size="13" fill="#1f2328" text-anchor="middle">v[t] is a source of later steps; the encoder never predicts from x or n</text>
+</svg>

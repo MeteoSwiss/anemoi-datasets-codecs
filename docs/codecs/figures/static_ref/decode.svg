@@ -1,0 +1,206 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="794" viewBox="0 0 900 794" font-family="sans-serif">
+<title>static_ref decode: the one full-chunk write</title>
+<defs><marker id="a2f6db5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L10,5 L0,9 z" fill="#2f6db5"/></marker><marker id="a2e8b57" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L10,5 L0,9 z" fill="#2e8b57"/></marker></defs>
+<rect x="0" y="0" width="900" height="794" fill="#ffffff"/>
+<text x="20" y="26" font-size="14" fill="#1f2328" font-weight="bold">decode: pop the header, then write every value of the chunk once, into the out array of the next envelope</text>
+<text x="44" y="70" font-size="12.5" fill="#1f2328" font-weight="bold">from icon_lattice_bytes: y</text>
+<rect x="44" y="78" width="262" height="24" fill="#f0f2f4" stroke="#8c959f" stroke-width="1"/>
+<text x="54" y="94.5" font-size="12.5" fill="#1f2328">FCHN, version 1, kind 0, ndim 4</text>
+<rect x="44" y="102" width="262" height="26" fill="#f0f2f4" stroke="#8c959f" stroke-width="1"/>
+<text x="54" y="119.5" font-size="12.5" fill="#1f2328">shape (2, 12, 2, 16 361)</text>
+<rect x="44" y="128" width="262" height="26" fill="#f0f2f4" stroke="#8c959f" stroke-width="1"/>
+<text x="54" y="145.5" font-size="12.5" fill="#1f2328">header field_terms: 116 B</text>
+<rect x="44" y="154" width="262" height="30" fill="#d1e5da" stroke="#2e8b57" stroke-width="1.4" stroke-dasharray="5 3"/>
+<text x="54" y="173.5" font-size="12.5" fill="#1f2328" font-weight="bold">header static_ref: 816 B, popped</text>
+<rect x="44" y="184" width="262" height="232" fill="#ffffff" stroke="#8c959f" stroke-width="1"/>
+<text x="172" y="206" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">T_2M</text>
+<rect x="179" y="196" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="203" y="196" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="235" y="196" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="259" y="196" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<text x="172" y="222" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">PMSL</text>
+<rect x="179" y="212" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="203" y="212" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="235" y="212" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="259" y="212" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<text x="172" y="238" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">WIDE</text>
+<rect x="179" y="228" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="203" y="228" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="235" y="228" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="259" y="228" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<text x="172" y="254" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">CLCT</text>
+<rect x="179" y="244" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="203" y="244" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="235" y="244" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="259" y="244" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<text x="172" y="270" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">TOT_PREC_1H</text>
+<rect x="179" y="260" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="203" y="260" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="235" y="260" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="259" y="260" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<text x="172" y="286" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">NOISY</text>
+<rect x="179" y="276" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="203" y="276" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="235" y="276" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="259" y="276" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<text x="172" y="302" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">FLAT</text>
+<rect x="179" y="292" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="203" y="292" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="235" y="292" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="259" y="292" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<text x="172" y="318" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">cos_local_time</text>
+<rect x="179" y="308" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="203" y="308" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="235" y="308" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="259" y="308" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<text x="172" y="334" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">sin_local_time</text>
+<rect x="179" y="324" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="203" y="324" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="235" y="324" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="259" y="324" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<text x="172" y="350" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">insolation</text>
+<rect x="179" y="340" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="203" y="340" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="235" y="340" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="259" y="340" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<text x="172" y="366" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">cos_julian_day</text>
+<rect x="179" y="356" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="203" y="356" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="235" y="356" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="259" y="356" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<text x="172" y="382" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">EXTRA</text>
+<rect x="179" y="372" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="203" y="372" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="235" y="372" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="259" y="372" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<text x="54" y="406" font-size="12.5" fill="#57606a">payload y: float32, 3 141 312 B</text>
+<text x="536" y="100" font-size="12.5" fill="#1f2328" font-weight="bold">to field_terms: x = out (envelope.allocate)</text>
+<rect x="536" y="108" width="262" height="24" fill="#f0f2f4" stroke="#8c959f" stroke-width="1"/>
+<text x="546" y="124.5" font-size="12.5" fill="#1f2328">FCHN, version 1, kind 0, ndim 4</text>
+<rect x="536" y="132" width="262" height="26" fill="#f0f2f4" stroke="#8c959f" stroke-width="1"/>
+<text x="546" y="149.5" font-size="12.5" fill="#1f2328">shape (2, 17, 2, 16 361)</text>
+<rect x="536" y="158" width="262" height="26" fill="#f0f2f4" stroke="#8c959f" stroke-width="1"/>
+<text x="546" y="175.5" font-size="12.5" fill="#1f2328">header field_terms: 116 B</text>
+<rect x="536" y="184" width="262" height="312" fill="#ffffff" stroke="#8c959f" stroke-width="1"/>
+<text x="664" y="206" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">T_2M</text>
+<rect x="671" y="196" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="695" y="196" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="727" y="196" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="751" y="196" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<text x="664" y="222" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">PMSL</text>
+<rect x="671" y="212" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="695" y="212" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="727" y="212" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="751" y="212" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<text x="664" y="238" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">WIDE</text>
+<rect x="671" y="228" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="695" y="228" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="727" y="228" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="751" y="228" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<text x="664" y="254" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">CLCT</text>
+<rect x="671" y="244" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="695" y="244" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="727" y="244" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="751" y="244" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<text x="664" y="270" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">TOT_PREC_1H</text>
+<rect x="671" y="260" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="695" y="260" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="727" y="260" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="751" y="260" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<text x="664" y="286" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">NOISY</text>
+<rect x="671" y="276" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="695" y="276" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="727" y="276" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="751" y="276" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<text x="664" y="302" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">FLAT</text>
+<rect x="671" y="292" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="695" y="292" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="727" y="292" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="751" y="292" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<text x="664" y="318" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">FIS</text>
+<rect x="671" y="308" width="22" height="12" fill="#8cbfa3" stroke="none" stroke-width="1.0"/>
+<rect x="695" y="308" width="22" height="12" fill="#8cbfa3" stroke="none" stroke-width="1.0"/>
+<rect x="727" y="308" width="22" height="12" fill="#8cbfa3" stroke="none" stroke-width="1.0"/>
+<rect x="751" y="308" width="22" height="12" fill="#8cbfa3" stroke="none" stroke-width="1.0"/>
+<text x="664" y="334" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">sin_latitude</text>
+<rect x="671" y="324" width="22" height="12" fill="#8cbfa3" stroke="none" stroke-width="1.0"/>
+<rect x="695" y="324" width="22" height="12" fill="#8cbfa3" stroke="none" stroke-width="1.0"/>
+<rect x="727" y="324" width="22" height="12" fill="#8cbfa3" stroke="none" stroke-width="1.0"/>
+<rect x="751" y="324" width="22" height="12" fill="#8cbfa3" stroke="none" stroke-width="1.0"/>
+<text x="664" y="350" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">cos_latitude</text>
+<rect x="671" y="340" width="22" height="12" fill="#8cbfa3" stroke="none" stroke-width="1.0"/>
+<rect x="695" y="340" width="22" height="12" fill="#8cbfa3" stroke="none" stroke-width="1.0"/>
+<rect x="727" y="340" width="22" height="12" fill="#8cbfa3" stroke="none" stroke-width="1.0"/>
+<rect x="751" y="340" width="22" height="12" fill="#8cbfa3" stroke="none" stroke-width="1.0"/>
+<text x="664" y="366" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">sin_longitude</text>
+<rect x="671" y="356" width="22" height="12" fill="#8cbfa3" stroke="none" stroke-width="1.0"/>
+<rect x="695" y="356" width="22" height="12" fill="#8cbfa3" stroke="none" stroke-width="1.0"/>
+<rect x="727" y="356" width="22" height="12" fill="#8cbfa3" stroke="none" stroke-width="1.0"/>
+<rect x="751" y="356" width="22" height="12" fill="#8cbfa3" stroke="none" stroke-width="1.0"/>
+<text x="664" y="382" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">cos_longitude</text>
+<rect x="671" y="372" width="22" height="12" fill="#8cbfa3" stroke="none" stroke-width="1.0"/>
+<rect x="695" y="372" width="22" height="12" fill="#8cbfa3" stroke="none" stroke-width="1.0"/>
+<rect x="727" y="372" width="22" height="12" fill="#8cbfa3" stroke="none" stroke-width="1.0"/>
+<rect x="751" y="372" width="22" height="12" fill="#8cbfa3" stroke="none" stroke-width="1.0"/>
+<text x="664" y="398" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">cos_local_time</text>
+<rect x="671" y="388" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="695" y="388" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="727" y="388" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="751" y="388" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<text x="664" y="414" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">sin_local_time</text>
+<rect x="671" y="404" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="695" y="404" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="727" y="404" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="751" y="404" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<text x="664" y="430" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">insolation</text>
+<rect x="671" y="420" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="695" y="420" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="727" y="420" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="751" y="420" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<text x="664" y="446" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">cos_julian_day</text>
+<rect x="671" y="436" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="695" y="436" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="727" y="436" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="751" y="436" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<text x="664" y="462" font-size="12" fill="#1f2328" text-anchor="end" font-family="monospace">EXTRA</text>
+<rect x="671" y="452" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="695" y="452" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="727" y="452" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<rect x="751" y="452" width="22" height="12" fill="#8dafd6" stroke="none" stroke-width="1.0"/>
+<text x="546" y="486" font-size="12.5" fill="#57606a">payload out: float32, 4 450 192 B</text>
+<path d="M294,195 L300,195 L300,305 L294,305" fill="none" stroke="#2f6db5" stroke-width="1.4"/>
+<path d="M308,250 L534,250" fill="none" stroke="#2f6db5" stroke-width="1.6" marker-end="url(#a2f6db5)"/>
+<text x="421" y="240" font-size="12.5" fill="#2f6db5" text-anchor="middle" font-family="monospace">x[:, 0:7] = y[:, 0:7]</text>
+<path d="M294,307 L300,307 L300,385 L294,385" fill="none" stroke="#2f6db5" stroke-width="1.4"/>
+<path d="M308,346 L534,426" fill="none" stroke="#2f6db5" stroke-width="1.6" marker-end="url(#a2f6db5)"/>
+<text x="421" y="376" font-size="12.5" fill="#2f6db5" text-anchor="middle" font-family="monospace" transform="rotate(19.493061911150996 421 376)">x[:, 12:17] = y[:, 7:12]</text>
+<path d="M44,169 L24,169 L24,582 L43,582" fill="none" stroke="#2e8b57" stroke-width="1.4" marker-end="url(#a2e8b57)"/>
+<rect x="44" y="536" width="420" height="92" rx="6" fill="#d1e5da" stroke="#2e8b57" stroke-width="1.4"/>
+<text x="56" y="558" font-size="12.5" fill="#1f2328">its 20 slots, k = (d · 5 + i) · 2 + e:</text>
+<text x="56" y="575" font-size="12.5" fill="#1f2328">5 REFERENCE: statics.lookup(sha), from the sidecar</text>
+<text x="56" y="592" font-size="12.5" fill="#1f2328">15 REPEAT: the array of slot arg (no lookup)</text>
+<text x="56" y="609" font-size="12.5" fill="#1f2328">0 INLINE: statics.lookup(sha, the frame in the header)</text>
+<rect x="44" y="662" width="160" height="26" fill="#ffffff" stroke="#2e8b57" stroke-width="1"/>
+<text x="124" y="679" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">5cfe5b7ba763….f4.blosc</text>
+<rect x="212" y="662" width="160" height="26" fill="#ffffff" stroke="#2e8b57" stroke-width="1"/>
+<text x="292" y="679" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">1ad063f31948….f4.blosc</text>
+<rect x="380" y="662" width="160" height="26" fill="#ffffff" stroke="#2e8b57" stroke-width="1"/>
+<text x="460" y="679" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">d3f6a88781d5….f4.blosc</text>
+<rect x="548" y="662" width="160" height="26" fill="#ffffff" stroke="#2e8b57" stroke-width="1"/>
+<text x="628" y="679" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">d67c9ea70ece….f4.blosc</text>
+<rect x="716" y="662" width="160" height="26" fill="#ffffff" stroke="#2e8b57" stroke-width="1"/>
+<text x="796" y="679" font-size="12" fill="#1f2328" text-anchor="middle" font-family="monospace">0bb3335e68df….f4.blosc</text>
+<text x="44" y="708" font-size="12" fill="#57606a">statics/ in a sidecar on the search path (inline: true: none, the frames are in the header)</text>
+<path d="M378.1,661.5 L255.9,628.5" fill="none" stroke="#2e8b57" stroke-width="1.2" marker-end="url(#a2e8b57)"/>
+<path d="M464,582 L844,582 L844,314" fill="none" stroke="#2e8b57" stroke-width="1.6"/>
+<path d="M844,314 L796,314" fill="none" stroke="#2e8b57" stroke-width="1.4" marker-end="url(#a2e8b57)"/>
+<path d="M844,330 L796,330" fill="none" stroke="#2e8b57" stroke-width="1.4" marker-end="url(#a2e8b57)"/>
+<path d="M844,346 L796,346" fill="none" stroke="#2e8b57" stroke-width="1.4" marker-end="url(#a2e8b57)"/>
+<path d="M844,362 L796,362" fill="none" stroke="#2e8b57" stroke-width="1.4" marker-end="url(#a2e8b57)"/>
+<path d="M844,378 L796,378" fill="none" stroke="#2e8b57" stroke-width="1.4" marker-end="url(#a2e8b57)"/>
+<text x="836" y="604" font-size="12.5" fill="#2e8b57" text-anchor="end">x[d, static i, e] = v</text>
+<text x="836" y="621" font-size="12.5" fill="#2e8b57" text-anchor="end">for each slot</text>
+<text x="20" y="742" font-size="12.5" fill="#1f2328">out has the stage's input shape (2, 17, 2, ·), so the adapter (zarr3.FieldStageBytesCodec) passes the array inside the</text>
+<text x="20" y="760" font-size="12.5" fill="#1f2328">envelope it allocates for the stages before (here field_terms, which then works on it in place); when static_ref is the first</text>
+<text x="20" y="778" font-size="12.5" fill="#1f2328">stage, out is a new array that zarr gets as the bare chunk. Every value is written once: 2 block copies of the kept fields and 20 slot writes.</text>
+</svg>

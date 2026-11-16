@@ -1,0 +1,66 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v7
+    - uses: astral-sh/setup-uv@v6
+      with:
+        enable-cache: true
+    - uses: actions/cache@v6
+      with:
+        path: ~/.cache/pre-commit
+        key: pre-commit-${{ runner.os }}-${{ hashFiles('.pre-commit-config.yaml') }}
+    - run: uvx pre-commit run --all-files --show-diff-on-failure
+
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # 3.11: the oldest supported Python; 3.14: .python-version, with numpy 2.5.4 (uv.lock), the numpy of the
+        # chunk-byte baseline in tests/data (tests/test_physics.py checks the plan_baseline chunks against it and
+        # skips with another numpy)
+        python-version: ["3.11", "3.14"]
+    steps:
+    - uses: actions/checkout@v7
+    - uses: astral-sh/setup-uv@v6
+      with:
+        enable-cache: true
+        python-version: ${{ matrix.python-version }}
+    # builds the C kernels (gcc and libgomp are on the runner image): AVX2 and scalar variants on x86-64
+    - run: uv sync --locked
+    - run: uv run --no-sync anemoi-datasets-codecs isa
+    # the realdata tests need the ICON-CH1 sample and grid file, which are not distributed. OPENBLAS_CORETYPE: the
+    # chunk-byte baseline of the below-ground terms depends on the kernels OpenBLAS picks for the runner's CPU
+    - run: uv run --no-sync pytest -m "not realdata" -q -rs
+      env:
+        OPENBLAS_CORETYPE: Haswell
+    - name: tests on the scalar kernels
+      run: uv run --no-sync pytest -m "not realdata" -q tests/test_codec.py tests/test_zarr.py tests/test_chain.py
+      env:
+        ANEMOI_DATASETS_CODECS_ISA: scalar
+
+  anemoi-datasets:
+    # reading and writing stores through anemoi-datasets (Zarr 3 output from release 0.5.50; Python < 3.14)
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v7
+    - uses: astral-sh/setup-uv@v6
+      with:
+        enable-cache: true
+        python-version: "3.13"
+    - run: uv sync --locked
+    # fasteners: imported by anemoi-datasets' create path, declared only in its "create" extra
+    - run: uv pip install "anemoi-datasets>=0.5.50" fasteners
+    - run: uv run --no-sync pytest -m "not realdata" -q -rs tests/test_zarr.py
